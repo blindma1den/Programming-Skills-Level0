@@ -1,3 +1,6 @@
+Author: Daniela Maissi
+Username: @blindma1den
+
 1. Create an online banking system with the following features:
 
 * Users must be able to log in with a username and password.
@@ -42,3 +45,11 @@
 * 		If the user spends the same amount of money they earn, the system should display a message advising the user to reduce expenses in the category where they have spent the most money.
 * 		If the user spends less than they earn, the system displays a congratulatory message on the screen.
 * 		If the user spends more than they earn, the system will display advice to improve the user's financial health.
+
+
+
+Enjoy coding :) 
+
+Cheers! 
+
+@blindma1den
