@@ -57,6 +57,7 @@ def login(userid:str, password:str)->bool:
     User has three tries to log in. If failed three times, suspend user.
 
     :param: userid, password: str - user credentials.
+    :return: bool - Inició sesión correctamente?
     '''
     limit = 3
 
@@ -116,19 +117,29 @@ def withdraw(userid,sum):
     return
 
 def view(userid):
-    '''mostrar cantidad actual'''
+    '''mostrar balance actual.
+    :param: userid: str - usuario actual.
+    :return: str - balance de cuenta.
+    '''
     user=search_user(userid)
     if type(user) == User:
         return f"Balance actual: {user.balance}"
     
-def transfer(userid,sum, dest_userid):
+def transfer(userid:str,sum:int, dest_userid:str):
     '''
     validar userid del cliente destino, 
-    validar que la cantidad a transferir sea menor o igual a la disponible
-    restar de la cantidad actual lo que se transfiere
+    validar que la cantidad a transferir sea menor o igual a la disponible,
+    restar del balance del usuario actual la cantidad a transferir.
+
+    :param: userid, dest_userid: str, sum: int - id del usuario que envia, 
+    usuario que recibe y suma a enviar.
+    :return: str - success or failure.
     '''
     user=search_user(userid)
     dest_user=search_user(dest_userid)
+    if type(dest_user) != User:
+        print("Usuario no encontrado.")
+        return
     if type(user) == User and type(dest_user) == User:
         if 0 < sum <= user.balance:
             user.balance -= sum
@@ -137,6 +148,7 @@ def transfer(userid,sum, dest_userid):
             return 
         print( "Operation Failed. Not enough funds.")
         return
+    
 
 def main():
     print("bienvenido! Por favor ingrese sus datos.")
