@@ -21,8 +21,9 @@ func main() {
 		return
 	}
 
+	user.ResetFailedLoginAttempts()
+
 	for {
-		user.ResetFailedLoginAttempts()
 		input.PresentOptions()
 		choice := input.GetChoice()
 
