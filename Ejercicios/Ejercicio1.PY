@@ -5,9 +5,10 @@ class account:
     def __init__(self):
         self.user = "a"
         self.password = "1"
-    
-    def balance(self):
         self.balance = 2000
+
+    def balance(self):
+        print(self.balance)
 
 class login(account):
     def __init__(self):
@@ -30,7 +31,7 @@ class login(account):
 
 
 
-class menu:
+class menu(account):
     def select(self):
     
         print("1. Deposit")
@@ -48,16 +49,27 @@ class menu:
 class actions(menu):
     
     def deposit(self):
-        print("deposit")
+        to_deposit = int(input(f"Enter amount to DEPOSIT: "))
+        self.balance += to_deposit
+        print(f"The updated balance is: {self.balance}")
+        
    
     def withdraw(self):
-       print("withdraw")
+        will_withdraw = int(input(f"Enter amount to WITHDRAW: "))
+        self.balance -= will_withdraw
+        print(f"The updated balance is: {self.balance}")
    
     def check_balance(self):
-        print("check")
+        print(f"The account balance is: {self.balance} ")
+        
    
     def transfer_money(self):
-        print("transfer")
+        friend = input(f"Enter user to transfer: ")
+        to_transfer = int(input(f"Enter amount to transfer: "))
+        self.balance -= to_transfer
+        print(f"Will be transdered: {to_transfer}")
+        print(f"to the user: {friend}")
+        print(f"updated balance: {self.balance}")
    
     def exit(self):
         print("exit")
@@ -92,6 +104,6 @@ if __name__ == "__main__":
     while True:
         opcion = menu_instance.select()
         actions_instance.numbers(opcion)
-        break
+        
            
 
