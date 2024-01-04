@@ -108,7 +108,6 @@ class User:
       
         conn = self.connect_database()
         query = conn.query(f'select * from account where first_name = "{username}"')
-        # query = conn.cursor.execute(f"select * from account where first_name='{username}' and password='{password}'")
         
         if query:
             result = query[0]
