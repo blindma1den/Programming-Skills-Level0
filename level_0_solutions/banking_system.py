@@ -23,15 +23,44 @@ Select an option to procceed
 2.- Log in your {BANK_NAME} account
 3.- Exit
 """
+MAIN_MENU = """
+########## Welcome to {BANK_NAME}, {user} ##########
+Select an option to procceed
+1.- Transfer money to another account
+2.- Withdraw money from your account
+3.- Show your available money
+4.- Deposit money into your account
+5.- Log out from your account
+"""
 
 
 class InputTypes(Enum):
     # Enum for input types and messages
     REGISTER_ACCOUNT = f'Register a {BANK_NAME} account with username and password'
     LOGIN = f'Log in your {BANK_NAME} account with username and password'
+    TRANSFER = f'Transfer money to another account'
+    WITHDRAW = f'Transfer money to another account'
+    READ = f'Transfer money to another account'
+    DEPOSIT = f'Transfer money to another account'
+
+
+class WelcomeMenuOption(Enum):
+    REGISTER = 1
+    LOGIN = 2
+    EXIT = 3
+
+
+class MainMenuOption(Enum):
+    TRANSFER = 1
+    WITHDRAW = 2
+    READ = 3
+    DEPOSIT = 4
+    LOGOUT = 5
 
 
 class Bank:
+    __exit_menu_loop = False    
+    __exit_main_loop = False    
     def __init__(self):
         # Initialize the bank should take the json with the accounts and the users if they exist
         self.__users = self.__load_data()
@@ -93,6 +122,32 @@ class Bank:
                 else:
                     print(f'Welcome back, {username}!')
                     return username
+            elif input_type == InputTypes.TRANSFER:
+                print(f'\n{InputTypes.TRANSFER.value}')
+                while True:
+                    objective_account = input('Type the username of the objective account: ')
+                    if objective_account == self.current_user:
+                        print('You cannot transfer yourself, type another account username')
+                        continue
+                    if objective_account not in self.__users.keys():
+                        print('That username does not belong to any account, try another one')
+                        continue
+                    else:
+                        break
+                while True:
+                    quantity_to_transfer = input('Type the money quantity to transfer: ')
+                    try:
+                        quantity_to_transfer = float(quantity_to_transfer)
+                    except Exception:
+                        print('Wrong input, try again.')
+                        continue
+                    if quantity_to_transfer < self.__users[self.current_user]['money']:
+                        print('You do not have that quantity available in your account, try again.')
+                        continue
+                    else:
+                        break
+                return objective_account, quantity_to_transfer
+                
 
     def __register_account(self):
         username, password = self.__user_input(InputTypes.REGISTER_ACCOUNT)
@@ -114,22 +169,101 @@ class Bank:
             json.dump(self.__users, f, indent=4)
 
     def __transfer_money(self):
-        pass
+        objective_user, quantity_to_transfer = self.__user_input(InputTypes.TRANSFER)
+        print(f"\n{'*'*5} Transfer done! {'*'*5}")
+        self.__users[self.current_user]['money'] -= quantity_to_transfer
+        self.__users[objective_user]['money'] += quantity_to_transfer
+        self.__save_data()
 
     def __withdraw_money(self):
-        pass
+        quantity_to_withdraw = self.__user_input(InputTypes.WITHDRAW)
+        self.__users[self.current_user]['money'] -= quantity_to_withdraw
+        self.__save_data()
 
     def __read__money(self):
-        pass
+        print(f"You have {self.__users[self.current_user]['money']} available in your account")
 
     def __deposit_money(self):
-        pass
+        quantity_to_deposit = self.__user_input(InputTypes.DEPOSIT)
+        self.__users[self.current_user]['money'] += quantity_to_deposit
+        self.__save_data()
 
-    def __show_menu(self):
-        pass
+    def __logout(self):
+        print(f'\nThanks for your trust in {BANK_NAME}, come back soon, {self.current_user}!')
+        self.__exit_menu_loop = True
+
+    def __menu_input(self, options: dict):
+        while True:
+            user_option = input('Type the number of the option you want to select: ')
+            
+            try:
+                user_option = int(user_option)
+            except Exception:
+                print('Wrong input, try again.')
+                continue
+            
+            if not user_option in options.keys():
+                print('Wrong input, try again.')
+                continue
+
+            break
+        return user_option
+
+    def __show_welcome_menu(self) -> WelcomeMenuOption:
+        options = {
+            1: WelcomeMenuOption.REGISTER,
+            2: WelcomeMenuOption.LOGIN,
+            3: WelcomeMenuOption.EXIT
+        }
+        
+        print(f'\n{WELCOME_MENU}')
+
+        user_option = self.__menu_input(options)
+
+        return options[user_option]
+
+    def __show_main_menu(self) -> MainMenuOption:
+        options = {
+            1: MainMenuOption.TRANSFER,
+            2: MainMenuOption.WITHDRAW,
+            3: MainMenuOption.READ,
+            4: MainMenuOption.DEPOSIT,
+            5: MainMenuOption.LOGOUT
+        }
+        
+        print()
+        print(MAIN_MENU.format(BANK_NAME=BANK_NAME, user=self.current_user))
+        user_option = self.__menu_input(options)
+
+        return options[user_option]
+
+    def __exit(self):
+        print(f'\nThanks for your trust in {BANK_NAME}, come back soon!')
+        self.__exit_menu_loop = True
 
     def main(self):
-        pass
+        # Here lives the control flow of the bank and the stuff that users can do in the bank
+        welcome_menu_options = {
+            WelcomeMenuOption.REGISTER: self.__register_account,
+            WelcomeMenuOption.LOGIN: self.__login,
+            WelcomeMenuOption.EXIT: self.__exit
+        }
+
+        main_menu_options = {
+            MainMenuOption.TRANSFER: self.__transfer_money,
+            MainMenuOption.WITHDRAW: self.__withdraw_money,
+            MainMenuOption.READ: self.__read__money,
+            MainMenuOption.DEPOSIT: self.__deposit_money,
+            MainMenuOption.LOGOUT: self.__logout
+        }
+
+        while not self.__exit_menu_loop:
+            welcome_menu_user_option = self.__show_welcome_menu()
+            welcome_menu_options[welcome_menu_user_option]()
+            if welcome_menu_user_option != WelcomeMenuOption.EXIT:
+                while not self.__exit_main_loop:
+                    main_menu_user_option = self.__show_main_menu()
+                    main_menu_options[main_menu_user_option]()
 
         
 def run():
