@@ -1,0 +1,30 @@
+[
+    {
+        "username": "leniador",
+        "password": "123",
+        "accountId": "001",
+        "balance": {
+            "USD": 2000,
+            "EUR": 0,
+            "CLP": 50000,
+            "GBP": 1000,
+            "ARS": 30000,
+            "TRY": 2500
+        },
+        "isLocked": false
+    },
+    {
+        "username": "daniela",
+        "password": "321",
+        "accountId": "002",
+        "balance": {
+            "USD": 2000,
+            "EUR": 0,
+            "CLP": 50000,
+            "GBP": 1000,
+            "ARS": 30000,
+            "TRY": 2500
+        },
+        "isLocked": false
+    }
+]
