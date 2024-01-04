@@ -1,4 +1,5 @@
 import json
+import sys
 from enum import Enum
 
 
@@ -39,9 +40,9 @@ class InputTypes(Enum):
     REGISTER_ACCOUNT = f'Register a {BANK_NAME} account with username and password'
     LOGIN = f'Log in your {BANK_NAME} account with username and password'
     TRANSFER = f'Transfer money to another account'
-    WITHDRAW = f'Transfer money to another account'
-    READ = f'Transfer money to another account'
-    DEPOSIT = f'Transfer money to another account'
+    WITHDRAW = f'Withdraw money from your account'
+    READ = f'Show available money in your {BANK_NAME} account'
+    DEPOSIT = f'Transfer money into your {BANK_NAME} account'
 
 
 class WelcomeMenuOption(Enum):
@@ -108,6 +109,7 @@ class Bank:
                     if username in self.__users.keys():
                         if self.__users[username]['password'] == password:
                             logged_user = True
+                            break
                         else:
                             print(f'Username or password does not match, you have {2-i} tries left')
                             continue
@@ -118,7 +120,7 @@ class Bank:
                 if not logged_user:
                     print(f"{'*'*20} WARNING {'*'*20}")
                     print(f'You failed to log in 3 times, try again later, thanks for using {BANK_NAME}')
-                    exit
+                    sys.exit()
                 else:
                     print(f'Welcome back, {username}!')
                     return username
@@ -141,12 +143,46 @@ class Bank:
                     except Exception:
                         print('Wrong input, try again.')
                         continue
-                    if quantity_to_transfer < self.__users[self.current_user]['money']:
+                    if quantity_to_transfer > self.__users[self.current_user]['money']:
                         print('You do not have that quantity available in your account, try again.')
+                        continue
+                    elif quantity_to_transfer < 0.0:
+                        print('You have to type a positive number')
                         continue
                     else:
                         break
                 return objective_account, quantity_to_transfer
+            elif input_type == InputTypes.WITHDRAW:
+                print(f'\n{InputTypes.WITHDRAW.value}')
+                while True:
+                    quantity_to_withdraw = input('Type the money quantity to withdraw: ')
+                    try:
+                        quantity_to_withdraw = float(quantity_to_withdraw)
+                    except Exception:
+                        print('Wrong input, try again.')
+                        continue
+                    if quantity_to_withdraw > self.__users[self.current_user]['money']:
+                        print('You do not have that quantity available in your account, try again.')
+                        continue
+                    elif quantity_to_withdraw <= 0.0:
+                        print('You have to type a positive number')
+                        continue
+                    else:
+                        return quantity_to_withdraw
+            elif input_type == InputTypes.DEPOSIT:
+                print(f'\n{InputTypes.DEPOSIT.value}')
+                while True:
+                    quantity_to_deposit = input('Type the money quantity to deposit: ')
+                    try:
+                        quantity_to_deposit = float(quantity_to_deposit)
+                    except Exception:
+                        print('Wrong input, try again.')
+                        continue
+                    if quantity_to_deposit <= 0.0:
+                        print('You have to type a positive number')
+                        continue
+                    else:
+                        return quantity_to_deposit
                 
 
     def __register_account(self):
@@ -190,7 +226,7 @@ class Bank:
 
     def __logout(self):
         print(f'\nThanks for your trust in {BANK_NAME}, come back soon, {self.current_user}!')
-        self.__exit_menu_loop = True
+        self.__exit_main_loop = True
 
     def __menu_input(self, options: dict):
         while True:
@@ -258,10 +294,12 @@ class Bank:
         }
 
         while not self.__exit_menu_loop:
+            self.__exit_main_loop = False
             welcome_menu_user_option = self.__show_welcome_menu()
             welcome_menu_options[welcome_menu_user_option]()
             if welcome_menu_user_option != WelcomeMenuOption.EXIT:
                 while not self.__exit_main_loop:
+                    self.__exit_menu_loop = False
                     main_menu_user_option = self.__show_main_menu()
                     main_menu_options[main_menu_user_option]()
 
