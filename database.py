@@ -113,8 +113,10 @@ class User:
             result = query[0]
             
             if result[4] >= 3:
+                print('\n-'*50)
                 print('USUARIO BLOQUEADO')
                 print('POR AHORA NO CONTAMOS CON LA OPCION DE RECUPERAR USUARIO, ESPERE LA ACTUALIZACION DEL SISTEMA')
+                return False
 
             if result[2] == password:
                 self.first_name = result[0]
