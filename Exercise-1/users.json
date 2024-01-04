@@ -1,0 +1,16 @@
+[
+    {
+        "username": "leniador",
+        "password": "123",
+        "accountId": "001",
+        "balance": 2000,
+        "isLocked": false
+    },
+    {
+        "username": "daniela",
+        "password": "321",
+        "accountId": "002",
+        "balance": 2000,
+        "isLocked": false
+    }
+]
