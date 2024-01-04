@@ -13,7 +13,7 @@ available_programs = {
     "Computer science": {"London": 1, "Manchester": 3, "Liverpool": 1},
     "Medicine": {"London": 1, "Manchester": 3, "Liverpool": 1},
     "Marketing": {"London": 1, "Manchester": 3, "Liverpool": 1},
-    "Arts": {"London": 0, "Manchester": 0, "Liverpool": 0}
+    "Arts": {"London": 1, "Manchester": 3, "Liverpool": 1}
 }
 limit=3
 
