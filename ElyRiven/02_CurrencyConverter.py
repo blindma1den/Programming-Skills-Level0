@@ -57,7 +57,6 @@ CURRENCY_CONVERSION = {
 
 def main():
     end = 1
-    # currentFund = DefaultUser.get('funds')
     while end != 0:
         print(f'\t\t\tCurrency Converter\n\n{DefaultUser.get("username")}s Account\nCurrent Fund: {"{:.2f}".format(DefaultUser.get("funds"))}\n\nInitial Currency\n')
         initCurrency = selectCurrency()
@@ -75,7 +74,8 @@ def main():
                         if checkFund < 0:
                             print('You do not have enough funds in your account. Operation Canceled\n')
                         else:
-                            fundUpdate = float('{:.2f}'.format(DefaultUser.get('funds') - amount))
+                            commision = amount * 0.01
+                            fundUpdate = float('{:.2f}'.format(DefaultUser.get('funds') - (amount - commision)))
                             DefaultUser['funds'] = fundUpdate
                             print('Operation completed succesfully')
                 except:

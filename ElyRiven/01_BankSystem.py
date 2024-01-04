@@ -10,12 +10,9 @@
 # User1{username:'elyriven', password: 'devtraining123'}
 # User2{username:'shadowrun', password: 'devtraining321'}
 
-USERSDATA = {
-        # 'user1': {'username': 'elyriven',
-        #           'password': 'devtraining123'
-        #          },
-        'user1': {'username': 'e',
-                  'password': 'e'
+USERS_DATA = {
+        'user1': {'username': 'elyriven',
+                  'password': 'devtraining123'
                  },
         'user2': {'username': 'shadowrun',
                   'password': 'devtraining321',
@@ -37,9 +34,9 @@ def main():
         else:
             attempts -= 1
             print(f"\nYou have {attempts} attempts left\n")
-            if attempts == 0:
-                print('User Locked Out')
-                exit()
+    else:
+        print('User Locked Out')
+        exit()
 
     # Create Account with User
     userAccount = Account(loggedUser)
@@ -90,10 +87,9 @@ class User:
     
     def checkUser(self,user,passw):
         x = 0
-        y = 0
         userFlag = False
-        while x < len(USERSDATA):
-            if user == USERSDATA[f'user{x+1}']['username']:
+        while x < len(USERS_DATA):
+            if user == USERS_DATA[f'user{x+1}']['username']:
                 userFlag = True
                 break
             else:
@@ -102,7 +98,7 @@ class User:
             print('Wrong Username')
             return False
         if userFlag == True:
-            if passw == USERSDATA[f'user{x+1}']['password']:
+            if passw == USERS_DATA[f'user{x+1}']['password']:
                 return True
             else:
                 print('Wrong Password')
