@@ -8,7 +8,7 @@ print('Welcome'.center(50,'-'))
 def login():
     user = User()
     username = input('USUARIO: ')
-    password = input('PASSWORD: ')
+    password = getpass.getpass('PASSWORD: ')
     connection = user.login(username, password)
     if connection:
         global log_in
