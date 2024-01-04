@@ -18,6 +18,7 @@ class User:
         self.balance = balance       
 
 user_credentials = [User(userid="user", password="password"), User(userid="Mayber", password="codingchallenge")]
+
     
 def create_account(userid,password):
     return {"Error": "El usuario ya existe"} if search_user(userid) else user_credentials.update({userid:password})
@@ -25,6 +26,7 @@ def menu(userid):
     control = "n"
     
     while control == "n":
+        print("Welcome.\n")
         print("1. ver saldo.")
         print("2. depositar dinero.")
         print("3. retirar dinero.")
@@ -51,29 +53,8 @@ def menu(userid):
         
         if control == 'y':
             print("Hasta luego. Vuelva pronto!")
-
-def login(userid:str, password:str)->bool:
-    '''
-    User has three tries to log in. If failed three times, suspend user.
-
-    :param: userid, password: str - user credentials.
-    :return: bool - Inició sesión correctamente?
-    '''
-    limit = 3
-
-    while limit >0:
     
-        if validate_credentials(userid,password):
-            print("success.\n")
-            return True
-        else:
-            print('wrong credentials.\n')
-            limit -= 1
-    if limit == 0: 
-        print("sorry. You're suspended.\n")
-        return False
-
-def search_user(userid:str)->User or any:
+def search_user(userid:str)->User | bool:
     '''
     hace una búsqueda del usuario en las credenciales almacenadas si el usuario existe.
     
@@ -85,9 +66,9 @@ def search_user(userid:str)->User or any:
     try:
         return list(user)[0]
     except:
-        return {"Error": "No se ha encontrado el usuario"}
+        return False
     
-def validate_credentials(userid:str, password:str)->bool:
+def login(userid:str, password:str)->bool:
     '''
     valida que las credenciales pertenezcan al usuario.
 
@@ -95,7 +76,9 @@ def validate_credentials(userid:str, password:str)->bool:
     :return: bool - son correctas ambas credenciales?
     '''
     user= search_user(userid)
-    return True if userid == user.userid and password == user.password else False
+    if not user: return False
+    if userid == user.userid and password == user.password: return True 
+    
 
 def deposit(userid:str,sum):
     '''sumar cantidad actual mas deposito'''
@@ -135,27 +118,29 @@ def transfer(userid:str,sum:int, dest_userid:str):
     usuario que recibe y suma a enviar.
     :return: str - success or failure.
     '''
-    user=search_user(userid)
-    dest_user=search_user(dest_userid)
-    if type(dest_user) != User:
-        print("Usuario no encontrado.")
-        return
-    if type(user) == User and type(dest_user) == User:
-        if 0 < sum <= user.balance:
-            user.balance -= sum
-            dest_user.balance += sum
-            print(f"Success. {view(userid)}")
-            return 
-        print( "Operation Failed. Not enough funds.")
-        return
+    search_user(userid)
+    search_user(dest_userid)
+    withdraw(userid,sum)
+    deposit(dest_userid,sum)
+    
+        
     
 
 def main():
     print("bienvenido! Por favor ingrese sus datos.")
+    
     userid = input("ingrese su ID: ")
     password = input("ingrese su contraseña: ")
+    limit = 2
 
-    if login(userid, password):
+    while not login(userid, password)and limit >0:
+        print("wrong credentials!")
+        limit -=1
+        userid = input("ingrese su ID: ")
+        password = input("ingrese su contraseña: ")
+    if limit == 0:
+        print("sorry, you're suspended")
+    else:  
         menu(userid)
 
 
