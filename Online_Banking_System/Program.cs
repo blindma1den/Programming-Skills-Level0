@@ -1,6 +1,4 @@
-﻿using System.Security.Cryptography.X509Certificates;
-
-namespace Online_Banking_System;
+﻿namespace Online_Banking_System;
 
 static class Program
 {
@@ -49,7 +47,7 @@ static class Program
                     Console.WriteLine("Thanks by using our services");
                     break;
                 default:
-                    Console.WriteLine("Opción errónea, intente nuevamente");
+                    Console.WriteLine("Wrong option, try again");
                     Console.WriteLine("");
                     optionSelected = int.Parse(Console.ReadLine());
                     Console.WriteLine("");
