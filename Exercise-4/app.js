@@ -1,26 +1,3 @@
-// 4. Create an online shipping system with the following features:
-// * 		The system has a login that locks after the third failed attempt.
-// * 		Display a menu that allows: Sending a package, exiting the system.
-// * 		To send a package, sender and recipient details are required.
-// * 		The system assigns a random package number to each sent package.
-// * 		The system calculates the shipping price. $2 per kg.
-// * 		The user must input the total weight of their package, and the system should display the amount to pay.
-// * 		The system should ask if the user wants to perform another operation.
-// If the answer is yes, it should return to the main menu. If it's no, it should close the system.
-
-/*
-Sistema de login con 3 intentos
-Menu: enviar paquete y logout
-Para enviar un paquete: sender, recipient details
-El sistema asigna un id random para cada paquete
-El precio del KG es de $2 y calcula el precio total del paquete
-El usuario debe poner cuanto pesa el paquete y le dira cuanto valio vrg
-El sistema te pregunta si querés hacer algo mas. Si es si, vuelve al menu principal, sino logout (prompt)
-
-HTML: LOGIN - FORM CON SENDER Y RECIPIENT: Full Name, Address, City, Country, Postal Code, Phone, Email. Package Weight.
-Button to calculate shipping cost, and send package
-*/
-
 const loginForm = document.querySelector('.form');
 const usernameInput = document.getElementById('username');
 const passwordInput = document.getElementById('password');
@@ -36,7 +13,7 @@ const packageDescriptionInput = document.getElementById('packageDescription');
 const packageWeightInput = document.getElementById('packageWeight');
 const calculateButton = document.getElementById('calculate-button');
 const sendButton = document.getElementById('send-button');
-
+const logoutButton = document.getElementById('logout-button');
 let wrongPasswordTimes = 0;
 let currentUser;
 const maxWrongAttempts = 3;
@@ -150,11 +127,12 @@ const sendOrder = () => {
 };
 
 //Function to logout
-const logout = (e) => {
-  e.preventDefault();
+const logout = () => {
   currentUser = null;
   loginForm.style.display = 'block';
   shippingSection.style.display = 'none';
+  usernameInput.value = '';
+  passwordInput.value = '';
 
   console.log('Logged out.');
 };
