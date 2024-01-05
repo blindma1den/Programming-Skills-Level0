@@ -184,7 +184,6 @@ class Bank:
                     else:
                         return quantity_to_deposit
                 
-
     def __register_account(self):
         username, password = self.__user_input(InputTypes.REGISTER_ACCOUNT)
 
