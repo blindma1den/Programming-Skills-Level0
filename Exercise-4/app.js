@@ -72,6 +72,7 @@ const showOperations = () => {
   loginForm.style.display = 'none';
   shippingSection.style.display = 'flex';
 };
+//Function to calculate shipping cost
 const calculateShipping = (weight) => {
   return weight * 2;
 };
@@ -81,6 +82,7 @@ const calculateShippingCost = () => {
   console.log(`$${shippingCost.toFixed(2)}`);
 };
 
+//Function to capture values from input, create order object and push into the orders array.
 const sendOrder = () => {
   const senderName = senderNameInput.value;
   const senderPhone = senderPhoneInput.value;
@@ -110,6 +112,7 @@ const sendOrder = () => {
     shippingCost,
   };
   orders.push(order);
+  //Prompt if you want to make another order or want to exit.
   let newOrder = prompt(
     'If you want to make a new order, press 1. If you want to see your orders, and exit press 2'
   );
