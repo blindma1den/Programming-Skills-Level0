@@ -1,10 +1,10 @@
 #Exercise 2#
 #!Create a currency converter between CLP, ARS, USD, EUR, TRY, GBP!#
 #|The user must choose their initial currency and the currency they want to exchange to.
-#?The user can choose whether or not to withdraw their funds. If they choose not to withdraw, it should return to the main menu.
-#?Tf the user decides to withdraw the funds, the system will charge a 1% commission.
-#?Tet a minimum and maximum amount for each currency, it can be of your choice.
-#?The system should ask the user if they want to perform another operation. If they choose to do so, it should restart the process; otherwise, the system should close.
+#|The user can choose whether or not to withdraw their funds. If they choose not to withdraw, it should return to the main menu.
+#|If the user decides to withdraw the funds, the system will charge a 1% commission.
+#|Tet a minimum and maximum amount for each currency, it can be of your choice.
+#|The system should ask the user if they want to perform another operation. If they choose to do so, it should restart the process; otherwise, the system should close.
 
 currency_values = { #*I dont know how to put changing values :(
     1:0.0011,
@@ -66,12 +66,20 @@ def converter(FC, SC, amount):
     print(f"This amount in {currency_index[SC]} is: ${amount_converted}")
     return amount_converted
 
+def withdraw(amount):
+    withdraw_funds = input("Would you like to withdraw your funds? (Y/N): ").lower()
+    if(withdraw_funds == "y"):
+        print(f"The amount to withdraw is: ${amount * .99}")
+    else:
+        pass
+
 def main(state):
     print("Welcome to the currency converter")
     first_currency = choose_currency("Choose your actual currency: ")
     second_currency = choose_currency("Choose the currency you want to convert to: ")
     actual_balance = set_balance(first_currency)
-    converter(first_currency, second_currency, actual_balance)
+    new_balance = converter(first_currency, second_currency, actual_balance)
+    withdraw(new_balance)
 
     cycle = input("Would you like to do another conversion? (Y/N): ").lower()
     if(cycle == "y"):
