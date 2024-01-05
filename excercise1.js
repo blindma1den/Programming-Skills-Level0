@@ -52,3 +52,4 @@ let login = (user, password) => {
 // console.log(withdraw('user1', 500))
 console.log(transfer('user1', 'user2', 500))
 login('user1', 12346)
+
