@@ -1,0 +1,15 @@
+C:\Users\luis_\source\repos\Programming-Skills-Level0\BankingOnline\bin\Debug\net8.0\BankingOnline.exe
+C:\Users\luis_\source\repos\Programming-Skills-Level0\BankingOnline\bin\Debug\net8.0\BankingOnline.deps.json
+C:\Users\luis_\source\repos\Programming-Skills-Level0\BankingOnline\bin\Debug\net8.0\BankingOnline.runtimeconfig.json
+C:\Users\luis_\source\repos\Programming-Skills-Level0\BankingOnline\bin\Debug\net8.0\BankingOnline.dll
+C:\Users\luis_\source\repos\Programming-Skills-Level0\BankingOnline\bin\Debug\net8.0\BankingOnline.pdb
+C:\Users\luis_\source\repos\Programming-Skills-Level0\BankingOnline\obj\Debug\net8.0\BankingOnline.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\luis_\source\repos\Programming-Skills-Level0\BankingOnline\obj\Debug\net8.0\BankingOnline.AssemblyInfoInputs.cache
+C:\Users\luis_\source\repos\Programming-Skills-Level0\BankingOnline\obj\Debug\net8.0\BankingOnline.AssemblyInfo.cs
+C:\Users\luis_\source\repos\Programming-Skills-Level0\BankingOnline\obj\Debug\net8.0\BankingOnline.csproj.CoreCompileInputs.cache
+C:\Users\luis_\source\repos\Programming-Skills-Level0\BankingOnline\obj\Debug\net8.0\BankingOnline.sourcelink.json
+C:\Users\luis_\source\repos\Programming-Skills-Level0\BankingOnline\obj\Debug\net8.0\BankingOnline.dll
+C:\Users\luis_\source\repos\Programming-Skills-Level0\BankingOnline\obj\Debug\net8.0\refint\BankingOnline.dll
+C:\Users\luis_\source\repos\Programming-Skills-Level0\BankingOnline\obj\Debug\net8.0\BankingOnline.pdb
+C:\Users\luis_\source\repos\Programming-Skills-Level0\BankingOnline\obj\Debug\net8.0\BankingOnline.genruntimeconfig.cache
+C:\Users\luis_\source\repos\Programming-Skills-Level0\BankingOnline\obj\Debug\net8.0\ref\BankingOnline.dll
