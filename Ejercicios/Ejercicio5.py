@@ -85,7 +85,6 @@ class opciones(menu):
             print("tienes más ingresos que gastos. Felicitaciones!")
         else:
             print("tus ingresos son iguales a tus gastos")
-
         
 
     
