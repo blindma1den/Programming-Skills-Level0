@@ -6,10 +6,39 @@
 # * 		The system should ask the user if they want to perform another operation. If they choose to do so, it should restart the process; otherwise, the system should close.
 import sys
 
-class valores:
+class menu:
+
+    def __init__(self) -> None:
+        self.select()
+  
+
+    def select(self):
+        while True:
+            print("----------------------")
+            print("1. ver monedas")
+            print("2. cambiar")
+            print("3. exti")
+            print("----------------------")
+            opcion = int(input(f"Enter option: "))
+            self.algo(opcion)
+            
+        
+    
+    def algo(self, opcion):
+        if opcion == 1:
+            valores()
+        elif opcion == 2:
+            cambio()
+        elif opcion == 3:
+            sys.exit()
+        else:
+            print("Invalid option")
+
+class valores(menu):
 
     def __init__(self) -> None:
         self.monedas()
+        self.ver_monedas()
 
 
     def monedas(self):
@@ -21,8 +50,10 @@ class valores:
         self.gbp = 0.79
     
     def ver_monedas(self):
+        print("----------------------")
         print("Valores \n 1 dolar equivale a:")
         print(f" chile = {self.clp}\n arg = {self.arg} \n eur = {self.eur}\n try = {self.lira} \n gdp = {self.gbp}")
+        print("----------------------")
 
 
 class cambio(valores):
@@ -74,13 +105,6 @@ class cambio(valores):
         total = (total_dolares * moneda_final) 
 
         print(f"el total es de:{total} ")
-        
-
 
         
-
-        
-
-
-
-santi = cambio()
+menu()
