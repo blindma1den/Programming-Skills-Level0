@@ -95,7 +95,7 @@ def security_access():
 
     while attempts < attempts_limit:
         if verify_code(code):
-            print('** ACCESS GRANTED **')
+            print('\n** ACCESS GRANTED **\n')
             break
         else:
             print('** ACCESS DENIED **\n')
@@ -136,12 +136,13 @@ def transfer():
     contact = input('Enter the username you want to transfer: ')
     quantity = int(input(f'How much money do you want to transfer to "{contact}"?\n=> '))
     account_info['balance'] -= quantity
-    print(f'\nYOU TRANSFERED ${quantity} TO {contact}. Your current balance is: ${account_info["balance"]}')
+    print(f'\nYOU TRANSFERED ${quantity} TO "{contact}". Your current balance is: ${account_info["balance"]}')
 
     if not contact in suggested_accounts:
       save_contact = input('Do you want to save this contact? Y/N\n=> ')
       if save_contact == 'Y' or save_contact == 'y':
         suggested_accounts.append(contact)
+        print(f'{contact} has been saved.')
       elif save_contact == 'N' or save_contact == 'n':
         main_menu()
     else:
@@ -196,42 +197,45 @@ def info():
 
 
 def main_menu():
-    options = ['deposit', 'withdraw', 'transfer', 'balance', 'info', 'exit']
+    # options = ['deposit', 'withdraw', 'transfer', 'balance', 'info', 'exit']
+    welcome_message = f'Hello {account_info["username"]}!'
+    print(welcome_message.upper())
+    type_option = (input('\nType an option:\n- Deposit\n- Withdraw\n- Transfer\n- Balance\n- Info\n- Exit\n=> '))
+    type_option = type_option.lower().strip()
 
-    print(f'Hello {account_info["username"]}!')
-    choice = (input('\nType an option:\n- Deposit\n- Withdraw\n- Transfer\n- Balance\n- Info\n- Exit\n=> '))
-    while not choice:
-        print('ENTER AN OPTION!\n')
-        choice = (input('Type an option:\n- Deposit\n- Withdraw\n- Transfer\n- Balance\n- Info\n- Exit\n=> '))
+    while not type_option:
+        print('TYPE AN OPTION!\n')
+        type_option = (input('Type an option:\n- Deposit\n- Withdraw\n- Transfer\n- Balance\n- Info\n- Exit\n=> '))
+        type_option = type_option.lower().strip()
 
-    if choice == options[0]:
+    match type_option:
+      case 'deposit':
         deposit()
         main_menu()
-    elif choice == options[1]:
+      case 'withdraw':
         withdraw()
         main_menu()
-    elif choice == options[2]:
+      case 'transfer':
         transfer()
         main_menu()
-    elif choice == options[3]:
+      case 'balance':
         balance()
         main_menu()
-    elif choice == options[4]:
+      case 'info':
         info()
-        main_menu()
-    elif choice == options[5]:
+      case 'exit':
         print('SEE YOU LATER AND HAVE A NICE DAY! :)')
         exit()
-    else:
-        print(f'"{choice}" DOES NOT EXIST - TRY AGAIN')
+      case _:
+        print('That option does not exist. Try again.\n')
         main_menu()
 
     return True
 
 def run_app():
   print('* * * WELCOME TO PIGGYBANK * * *')
-  login()
-  security_access()
+ # login()
+ # security_access()
   main_menu()
 
 run_app()
