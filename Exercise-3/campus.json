@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "city": "Manchester",
+        "totalSlots": 3,
+        "availableSlots": 3
+    },
+    {
+        "id": 2,
+        "city": "Liverpool",
+        "totalSlots": 1,
+        "availableSlots": 1
+    },
+    {
+        "id": 3,
+        "city": "London",
+        "totalSlots": 1,
+        "availableSlots": 1
+    }
+]

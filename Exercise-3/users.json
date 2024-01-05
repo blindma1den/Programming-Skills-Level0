@@ -1,0 +1,56 @@
+[
+    {
+        "id": "001",
+        "username": "leniador",
+        "password": "123",
+        "firstName": "",
+        "lastName": "",
+        "program": "",
+        "campus": ""
+    },
+    {
+        "id": "002",
+        "username": "daniela",
+        "password": "321",
+        "firstName": "",
+        "lastName": "",
+        "program": "",
+        "campus": ""
+    },
+    {
+        "id": "003",
+        "username": "lucas",
+        "password": "123",
+        "firstName": "",
+        "lastName": "",
+        "program": "",
+        "campus": ""
+    },
+    {
+        "id": "004",
+        "username": "sacul",
+        "password": "321",
+        "firstName": "",
+        "lastName": "",
+        "program": "",
+        "campus": ""
+    },
+    {
+        "id": "005",
+        "username": "bl1nd",
+        "password": "123",
+        "firstName": "",
+        "lastName": "",
+        "program": "",
+        "campus": ""
+    },
+    {
+        "id": "006",
+        "username": "noPlace",
+        "password": "321",
+        "firstName": "",
+        "lastName": "",
+        "program": "",
+        "campus": ""
+    }
+]

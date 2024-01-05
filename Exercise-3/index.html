@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 3 | CAMPUS ENROLLMENT</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./app.js"></script>
+  </head>
+  <body>
+    <section class="form-container">
+      <form class="form">
+        <h2>LOGIN FORM</h2>
+        <input type="text" id="username" placeholder="Enter your username" />
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter your password"
+        />
+        <input type="submit" id="login-button" value="Login" />
+      </form>
+    </section>
+    <section id="enrollment-container" class="enrollment-container">
+      <h2>CAMPUS ENROLLMENT</h2>
+      <form id="enrollment-form" class="enrollment-form">
+        <input
+          id="first-name"
+          type="text"
+          placeholder="Enter your first name"
+          required
+        />
+        <input
+          id="last-name"
+          type="text"
+          placeholder="Enter your last name"
+          required
+        />
+        <label>Choose a Program</label>
+        <select id="program-select">
+          <option value="Computer Science">Computer Science</option>
+          <option value="Medicine">Medicine</option>
+          <option value="Marketing">Marketing</option>
+          <option value="Arts">Arts</option>
+        </select>
+        <label>Choose a Campus City</label>
+        <select id="campus-select">
+          <option value="1">Manchester</option>
+          <option value="2">Liverpool</option>
+          <option value="3">London</option>
+        </select>
+        <input
+          type="submit"
+          id="enrollment-button"
+          class="enrollment-button"
+          value="Enroll"
+        />
+      </form>
+      <button id="logout-button">LOGOUT</button>
+    </section>
+  </body>
+</html>
