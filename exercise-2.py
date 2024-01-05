@@ -30,23 +30,23 @@ def menu():
             print("Opcion invalida, Intenta de nuevo")
             continue
         
-        ammount = float(input("Por favor, introducir monto a convertir: "))
+        amount = float(input("Por favor, introducir monto a convertir: "))
         #monto minimo y maximo
-        if ammount < 10 or ammount > 100:
+        if amount < 10 or amount > 100:
             print("Lo siento, el monto debe ser entre 10 y 100, Por favor, intenta de nuevo")
             continue
 
         #Funcion de conversion
-        def convert_currency(ammount, initial_currency, final_currency, withdraw):
+        def convert_currency(amount, initial_currency, final_currency, withdraw):
             
             exchange_rate = rates[final_currency] / rates[initial_currency]
             
-            ammount_converted = ammount * exchange_rate
+            amount_converted = amount * exchange_rate
             
             if withdraw:
-                comission = ammount_converted * 0.01
-                ammount_converted -= comission
-            return f"El monto convertido es {ammount_converted:.2f} {final_currency}"
+                comission = amount_converted * 0.01
+                amount_converted -= comission
+            return f"El monto convertido es {amount_converted:.2f} {final_currency}"
 
         # Retiro de fondos y comisiones
         withdraw = input("¿Desea retirar los fondos? (s/n): ")
@@ -55,7 +55,7 @@ def menu():
         else:
             withdraw = False
 
-        result = convert_currency(ammount, ["CLP", "ARS", "USD", "EUR", "TRY", "GBP"] [int(initial_currency) -1], ["CLP", "ARS", "USD", "EUR", "TRY", "GBP"] [int(final_currency) -1], withdraw)
+        result = convert_currency(amount, ["CLP", "ARS", "USD", "EUR", "TRY", "GBP"] [int(initial_currency) -1], ["CLP", "ARS", "USD", "EUR", "TRY", "GBP"] [int(final_currency) -1], withdraw)
         print(result)
 
 
