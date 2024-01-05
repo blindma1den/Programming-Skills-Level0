@@ -5,28 +5,20 @@ import sys
 # TODO: Obtain these prices thru an api.
 # The system allow you to exchange a total of 2000 USD max.
 # You cannot exchange less than 50 USD.
-usd_price = 1
-clp_price = 892.86
-ars_price = 811.2
-eur_price = 0.91
+usd = 1
+clp = 892.86
+ars = 811.2
+eur = 0.91
 try_price = 29.82
-gbp_price = 0.79
+gbp = 0.79
+exchange_rates = [usd, clp, ars, eur, try_price, gbp]
+
+def exchange_currency(initial_currency, final_currency, initial_amount):
+    result = (initial_amount / exchange_rates[initial_currency - 1]) * exchange_rates[final_currency - 1]
+    return result    
 
 def verify_min_max(currency, amount):
-    amount_in_usd = 0
-    if currency == "USD":
-        amount_in_usd = amount / usd_price
-    elif currency == "CLP":
-        amount_in_usd = amount / clp_price
-    elif currency == "ARS":
-        amount_in_usd = amount / ars_price
-    elif currency == "EUR":
-        amount_in_usd = amount / eur_price
-    elif currency == "TRY":
-        amount_in_usd = amount / try_price
-    elif currency == "GBP":
-        amount_in_usd = amount / gbp_price
-
+    amount_in_usd = amount / exchange_rates[currency - 1]
     if amount_in_usd >= 50 and amount_in_usd <= 2000:
         return True
     return False
@@ -47,7 +39,10 @@ print_currencies()
 initial_option = int(input("Choose an option: "))
 initial_money = float(input("How much money do you want to exchange? "))
 #Verify min and max.
-if initial_option == 1 and verify_min_max("USD", initial_money):
+if verify_min_max(initial_option, initial_money):
+    print("\n")
     print("Select the currency you want to convert to:")
     print_currencies()
     exchange_option = int(input("Choose an option: "))
+else:
+    print("Sorry you can exchange from 50 USD to 2000 USD max.")
