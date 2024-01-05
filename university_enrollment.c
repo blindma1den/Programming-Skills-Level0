@@ -58,7 +58,6 @@ int main(){
                 k=1;
             }
             campus_slots[i].slots[j].slots_amount=k;
-            printf("%i\n",campus_slots[i].slots[j].slots_amount);
         }
     }
 
