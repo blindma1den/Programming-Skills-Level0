@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Currency Converter{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+<form class="row g-3">
+   <select class="form-select" name="moneda1" id="moneda1">
+     <option disabled selected value="">Selecciona tu moneda</option>
+     <option value="CLP">CLP</option>
+     <option value="ARS">ARS</option>
+     <option value="USD">USD</option>
+     <option value="EUR">EUR</option>
+     <option value="TRY">TRY</option>
+     <option value="GBP ">GBP </option>
+   </select>
+
+    <select class="form-select" required" name="moneda2" id="moneda2">
+        <option disabled selected value="">Selecciona la moneda final</option>
+        <option value="CLP">CLP</option>
+        <option value="ARS">ARS</option>
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="TRY">TRY</option>
+        <option value="GBP ">GBP </option>
+      </select>
+  <div class="col-auto">
+     <label for="valor1" class="visually-hidden">Moneda inicial</label>
+     <input type="number" class="form-control" id="valor1" placeholder="Mi moneda" min="1">
+   </div>
+  <div class="col-auto">
+    <label for="valor2" class="visually-hidden">Moneda final</label>
+    <input type="text" class="form-control" id="valor2" placeholder="Moneda final">
+  </div>
+  <div class="col-auto">
+    <button type="button" class="btn btn-primary mb-3" onclick="convertir()">Convertir moneda</button>
+     <button type="button" class="btn btn-primary mb-3">Extraer moneda</button>
+  </div>
+</form>
+
+</div>
+{% endblock %}
