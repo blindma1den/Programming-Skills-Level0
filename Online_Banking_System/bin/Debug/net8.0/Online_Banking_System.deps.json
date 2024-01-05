@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Online_Banking_System/1.0.0": {
+        "runtime": {
+          "Online_Banking_System.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Online_Banking_System/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

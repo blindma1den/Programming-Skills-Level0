@@ -1,0 +1,15 @@
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Finance_Management_Application\obj\Debug\net8.0\Finance_Management_Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Finance_Management_Application\obj\Debug\net8.0\Finance_Management_Application.AssemblyInfoInputs.cache
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Finance_Management_Application\obj\Debug\net8.0\Finance_Management_Application.AssemblyInfo.cs
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Finance_Management_Application\obj\Debug\net8.0\Finance_Management_Application.csproj.CoreCompileInputs.cache
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Finance_Management_Application\obj\Debug\net8.0\Finance_Management_Application.sourcelink.json
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Finance_Management_Application\bin\Debug\net8.0\Finance_Management_Application.exe
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Finance_Management_Application\bin\Debug\net8.0\Finance_Management_Application.deps.json
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Finance_Management_Application\bin\Debug\net8.0\Finance_Management_Application.runtimeconfig.json
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Finance_Management_Application\bin\Debug\net8.0\Finance_Management_Application.dll
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Finance_Management_Application\bin\Debug\net8.0\Finance_Management_Application.pdb
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Finance_Management_Application\obj\Debug\net8.0\Finance_Management_Application.dll
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Finance_Management_Application\obj\Debug\net8.0\refint\Finance_Management_Application.dll
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Finance_Management_Application\obj\Debug\net8.0\Finance_Management_Application.pdb
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Finance_Management_Application\obj\Debug\net8.0\Finance_Management_Application.genruntimeconfig.cache
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Finance_Management_Application\obj\Debug\net8.0\ref\Finance_Management_Application.dll

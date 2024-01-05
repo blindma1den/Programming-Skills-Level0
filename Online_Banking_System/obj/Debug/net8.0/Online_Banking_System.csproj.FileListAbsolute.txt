@@ -1,0 +1,15 @@
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Online_Banking_System\obj\Debug\net8.0\Online_Banking_System.GeneratedMSBuildEditorConfig.editorconfig
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Online_Banking_System\obj\Debug\net8.0\Online_Banking_System.AssemblyInfoInputs.cache
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Online_Banking_System\obj\Debug\net8.0\Online_Banking_System.AssemblyInfo.cs
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Online_Banking_System\obj\Debug\net8.0\Online_Banking_System.csproj.CoreCompileInputs.cache
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Online_Banking_System\obj\Debug\net8.0\Online_Banking_System.sourcelink.json
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Online_Banking_System\bin\Debug\net8.0\Online_Banking_System.exe
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Online_Banking_System\bin\Debug\net8.0\Online_Banking_System.deps.json
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Online_Banking_System\bin\Debug\net8.0\Online_Banking_System.runtimeconfig.json
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Online_Banking_System\bin\Debug\net8.0\Online_Banking_System.dll
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Online_Banking_System\bin\Debug\net8.0\Online_Banking_System.pdb
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Online_Banking_System\obj\Debug\net8.0\Online_Banking_System.dll
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Online_Banking_System\obj\Debug\net8.0\refint\Online_Banking_System.dll
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Online_Banking_System\obj\Debug\net8.0\Online_Banking_System.pdb
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Online_Banking_System\obj\Debug\net8.0\Online_Banking_System.genruntimeconfig.cache
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Online_Banking_System\obj\Debug\net8.0\ref\Online_Banking_System.dll

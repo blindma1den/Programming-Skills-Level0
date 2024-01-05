@@ -1,0 +1,15 @@
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Currency_Converter\obj\Debug\net8.0\Currency_Converter.GeneratedMSBuildEditorConfig.editorconfig
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Currency_Converter\obj\Debug\net8.0\Currency_Converter.AssemblyInfoInputs.cache
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Currency_Converter\obj\Debug\net8.0\Currency_Converter.AssemblyInfo.cs
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Currency_Converter\obj\Debug\net8.0\Currency_Converter.csproj.CoreCompileInputs.cache
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Currency_Converter\obj\Debug\net8.0\Currency_Converter.sourcelink.json
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Currency_Converter\bin\Debug\net8.0\Currency_Converter.exe
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Currency_Converter\bin\Debug\net8.0\Currency_Converter.deps.json
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Currency_Converter\bin\Debug\net8.0\Currency_Converter.runtimeconfig.json
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Currency_Converter\bin\Debug\net8.0\Currency_Converter.dll
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Currency_Converter\bin\Debug\net8.0\Currency_Converter.pdb
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Currency_Converter\obj\Debug\net8.0\Currency_Converter.dll
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Currency_Converter\obj\Debug\net8.0\refint\Currency_Converter.dll
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Currency_Converter\obj\Debug\net8.0\Currency_Converter.pdb
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Currency_Converter\obj\Debug\net8.0\Currency_Converter.genruntimeconfig.cache
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\Currency_Converter\obj\Debug\net8.0\ref\Currency_Converter.dll
