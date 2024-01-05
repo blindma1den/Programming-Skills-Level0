@@ -1,0 +1,15 @@
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\University_Enrollment_System\obj\Debug\net8.0\University_Enrollment_System.GeneratedMSBuildEditorConfig.editorconfig
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\University_Enrollment_System\obj\Debug\net8.0\University_Enrollment_System.AssemblyInfoInputs.cache
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\University_Enrollment_System\obj\Debug\net8.0\University_Enrollment_System.AssemblyInfo.cs
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\University_Enrollment_System\obj\Debug\net8.0\University_Enrollment_System.csproj.CoreCompileInputs.cache
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\University_Enrollment_System\obj\Debug\net8.0\University_Enrollment_System.sourcelink.json
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\University_Enrollment_System\bin\Debug\net8.0\University_Enrollment_System.exe
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\University_Enrollment_System\bin\Debug\net8.0\University_Enrollment_System.deps.json
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\University_Enrollment_System\bin\Debug\net8.0\University_Enrollment_System.runtimeconfig.json
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\University_Enrollment_System\bin\Debug\net8.0\University_Enrollment_System.dll
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\University_Enrollment_System\bin\Debug\net8.0\University_Enrollment_System.pdb
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\University_Enrollment_System\obj\Debug\net8.0\University_Enrollment_System.dll
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\University_Enrollment_System\obj\Debug\net8.0\refint\University_Enrollment_System.dll
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\University_Enrollment_System\obj\Debug\net8.0\University_Enrollment_System.pdb
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\University_Enrollment_System\obj\Debug\net8.0\University_Enrollment_System.genruntimeconfig.cache
+C:\Desarrollo\Discord_blindma1den\Programming-Skills-Level0\University_Enrollment_System\obj\Debug\net8.0\ref\University_Enrollment_System.dll

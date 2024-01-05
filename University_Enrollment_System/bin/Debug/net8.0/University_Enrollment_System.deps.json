@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "University_Enrollment_System/1.0.0": {
+        "runtime": {
+          "University_Enrollment_System.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "University_Enrollment_System/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
