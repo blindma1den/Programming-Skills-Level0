@@ -84,7 +84,7 @@ class opciones(menu):
         elif total < self.sueldo:
             print("tienes más ingresos que gastos. Felicitaciones!")
         else:
-            print("tus ingresos son iguales a tus gastos")
+            print("tus ingresos son iguales a tus gastos") 
         
 
     
