@@ -3,7 +3,7 @@ use std::io::stdin;
 pub struct Response {
   pub message: String,
   pub success: bool,
- }
+}
 struct User {
   online: bool,
   username: &'static str,
@@ -11,7 +11,6 @@ struct User {
   balance: u32,
   lock: u64,
 }
-
 
 trait System {
   fn new(username: &'static str, password: &'static str) -> Self;
