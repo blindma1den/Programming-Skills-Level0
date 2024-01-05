@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Poiret+One&display=swap" rel="stylesheet">
+  <title>Bank of Roiber</title>
+</head>
+<body>
+  <main class="container" >
+    <h1 class="logo">Bank of Roiber</h1>
+    <div class="loginContainer" style="display: grid;" id="login-container">
+      <div class="items">
+        <h2>Login here</h2>
+        <label for="username">username</label>
+        <input type="text" placeholder="Username" id="username">
+        <label for="">password</label>
+        <input  placeholder="Password" type="password" name="password" id="password">
+        <button onclick="login()">Login</button>
+        <h3  id="messageError" style="display: none; width: 100%; margin: auto;"  >error</h3>
+        <p>or <strong onclick="singUp()">sing up</strong></p>
+      </div>
+    </div>
+    <div id="singUp" style="display: none;" class="loginContainer">
+      <div class="items">
+        <h2>sing in</h2>
+        <form id="singIn" action="">
+          <label  for="newUsername">username</label>
+          <input placeholder="Username"  id="newUsername" type="text" required>
+          <label for="newPassword">password</label>
+          <input placeholder="Password" id="newPassword" type="password" required>
+    
+          <button onclick="createAccount()">create Account</button>
+        </form>
+        <p>or <strong onclick="LoginHere()">login here</strong></p>
+      </div>
+    </div>
+
+    <section  style="display: none;" id="Account-container">
+      <div class="infoAccount">
+        <h1 id="user">username</h1>
+        <button onclick="logout()">logout</button>
+       <div style="display: flex; gap:1rem;">
+        <h1 id="balance">2000$</h1>
+        <h2>Balance</h2>
+       </div>
+      </div>
+      <section class="containerAccount">
+        <div class="transactionContainer">
+          <h1>transaction</h1>
+          <label for="username">To</label>
+          <input type="text" placeholder="Username" id="usernameTo">
+          <label for="username">Amount</label>
+          <input type="number" placeholder="Amount" id="monto">
+          <button onclick="transaction()">send</button>
+        </div>
+        <div class="transactionContainer">
+          <h1>Deposit</h1>
+          <label for="username">Your user</label>
+          <input type="text" placeholder="Username" id="usernameDeposit">
+          <label for="username">Amount</label>
+          <input type="number" placeholder="Amount" id="montoDeposit">
+          <button onclick="toDeposit()">Deposit</button>
+        </div>
+        <div class="transactionContainer">
+          <h1>withdraw</h1>
+          <label for="username">Your user</label>
+          <input type="text" placeholder="Username" id="usernameWithdraw">
+          <label for="username">Amount</label>
+          <input type="number" placeholder="Amount" id="montoWithdraw">
+          <button onclick="toWithdraw()">withdraw</button>
+        </div>
+
+      </section>
+
+
+    </section>
+
+  </main>
+  <script src="main.js" ></script>
+</body>
+</html>

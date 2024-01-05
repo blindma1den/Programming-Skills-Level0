@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap");
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family: "Montserrat", sans-serif;
+  background-color: rgba(247, 247, 247, 0.87);
+}
+
+.logo{
+  font-family: 'Cinzel', serif;
+  font-size: 4rem;
+  justify-content: center;
+  display: flex;
+  margin: 3rem;
+}
+.loginContainer{
+ display: grid;
+ justify-items: center;
+ gap: 1rem;
+ width: 50%;
+ height: 40rem;
+ grid-template-columns:  1fr;
+ margin: auto;
+ background-color: rgba(138, 216, 145, 0.521);
+ font-family: 'Poiret One', sans-serif;
+ padding: 4rem;
+ border-radius: 1rem;
+}
+.items p{
+  margin: auto;
+  cursor: pointer;
+}
+.items{
+  font-size: 1.6rem;
+  gap: 1rem;
+  display: grid;
+  height: 50%;
+}
+.items form{
+  gap: 1rem;
+  display: grid;
+}
+
+.items input{
+  width: 20rem;
+  border: none;
+  height: 3rem;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.items button{
+  width: 18rem;
+  justify-self: center;
+  margin: 1rem;
+  border-radius: 1rem;
+  text-align: center;
+  height: 4rem;
+  border: none;
+  cursor: pointer;
+  background-color: rgba(27, 27, 27, 0.945);
+  color: rgb(240, 240, 240);
+}
+.items label{
+  font-size: 1.7rem;
+}
+
+.infoAccount{
+  display: grid;
+  width: 50rem;
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
+  gap: 3rem;
+}
+
+.infoAccount h1{
+  font-family: 'Poiret One', sans-serif;
+  font-size: 3rem;
+}
+.infoAccount button{
+  font-family: 'Poiret One', sans-serif;
+  font-size: 1.7rem;
+  width: 18rem;
+  justify-self: center;
+  margin: 1rem;
+  border-radius: 1rem;
+  text-align: center;
+  height: 4rem;
+  border: none;
+  cursor: pointer;
+  background-color: rgba(27, 27, 27, 0.945);
+  color: rgb(255, 255, 255);
+
+}
+.infoAccount h2{
+  color: rgba(116, 116, 116, 0.89);
+  text-align: end;
+  height: 4rem;
+  width: 3rem;
+}
+.transactionContainer{
+ background-color: rgb(226, 226, 226);
+ font-family: 'Poiret One', sans-serif;
+ border-radius: 1rem;
+ display: grid;
+ width: 30rem;
+ margin: 3rem;
+ padding: 2rem;
+ gap: 1rem;
+}
+.transactionContainer h1{
+  font-size: 2rem;
+}
+.transactionContainer label{
+  font-size: 1.6rem;
+}
+.transactionContainer input{
+  width: 20rem;
+  border: none;
+  height: 3rem;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+.transactionContainer button{
+  font-family: 'Poiret One', sans-serif;
+  font-size: 1.7rem;
+  width: 18rem;
+  justify-self: center;
+  margin: 1rem;
+  border-radius: 1rem;
+  text-align: center;
+  height: 4rem;
+  border: none;
+  cursor: pointer;
+  background-color: rgba(27, 27, 27, 0.945);
+  color: rgb(255, 255, 255);
+}
+.containerAccount{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
