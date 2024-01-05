@@ -5,4 +5,21 @@ edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+
 [dependencies]
+freecurrencyapi-rs = "0.1.0"
+reqwest = { version = "0.11", features = ["json"] }
+serde = "1.0.194"
+tokio = { version = "1", features = ["full"] }
+mini-redis = "0.4"
+
+
+[term]
+quiet = false          # whether cargo output is quiet
+verbose = false        # whether cargo provides verbose output
+color = 'auto'         # whether cargo colorizes output
+hyperlinks = true      # whether cargo inserts links into output
+progress.when = 'auto' # whether cargo shows progress bar
+progress.width = 80    # width of progress bar
+
+
