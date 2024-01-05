@@ -1,4 +1,9 @@
 use std::io::stdin;
+
+pub struct Response {
+  pub message: String,
+  pub success: bool,
+ }
 struct User {
   online: bool,
   username: &'static str,
@@ -7,10 +12,6 @@ struct User {
   lock: u64,
 }
 
-struct Response {
-  message: &'static str,
-  success: bool,
-}
 
 trait System {
   fn new(username: &'static str, password: &'static str) -> Self;
@@ -29,25 +30,25 @@ impl User {
       if self.lock == 2 {
         self.mark_wrong_user();
         Response {
-          message: "user locked",
+          message: "user locked".to_owned(),
           success: false,
         }
       } else {
         self.mark_wrong_user();
         Response {
-          message: "password does not match",
+          message: "password does not match".to_owned(),
           success: false,
         }
       }
     } else if usr.trim() == self.username && psw.trim() == self.password {
       self.set_usr_online();
       Response {
-        message: "usr logged in",
+        message: "usr logged in".to_owned(),
         success: true,
       }
     } else {
       Response {
-        message: "user not found",
+        message: "user not found".to_owned(),
         success: false,
       }
     }
@@ -61,18 +62,18 @@ impl User {
     let amount_u32 = amount as u32;
     if amount_u32 > self.balance {
       Response {
-        message: "insufficient funds",
+        message: "insufficient funds".to_owned(),
         success: false,
       }
     } else if amount_u32 > 0 {
       self.balance -= amount_u32;
       Response {
-        message: "withdraw successful",
+        message: "withdraw successful".to_owned(),
         success: true,
       }
     } else {
       Response {
-        message: "withdraw only positive amount",
+        message: "withdraw only positive amount".to_owned(),
         success: false,
       }
     }
@@ -81,7 +82,7 @@ impl User {
     let amount_u32 = amount as u32;
     if amount_u32 > self.balance {
       Response {
-        message: "insufficient funds",
+        message: "insufficient funds".to_owned(),
         success: false,
       }
     } else if amount_u32 > 0 {
@@ -89,12 +90,12 @@ impl User {
       self.balance -= amount_u32;
 
       Response {
-        message: "transference successful",
+        message: "transference successful".to_owned(),
         success: true,
       }
     } else {
       Response {
-        message: "transfer only positive amount",
+        message: "transfer only positive amount".to_owned(),
         success: false,
       }
     }
@@ -104,12 +105,12 @@ impl User {
     if amount_u32 > 0 {
       self.balance += amount_u32;
       Response {
-        message: "deposit successful",
+        message: "deposit successful".to_owned(),
         success: true,
       }
     } else {
       Response {
-        message: "deposit only positive amount",
+        message: "deposit only positive amount".to_owned(),
         success: false,
       }
     }
@@ -211,7 +212,7 @@ pub fn main() {
 
     let Response { message, success } = bank.log_in(username.as_str(), password.as_str());
 
-    match (success, message) {
+    match (success, message.as_str()) {
       (false, "user locked") => {
         println!("{}, exit from system", message);
       }
