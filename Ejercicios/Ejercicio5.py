@@ -56,6 +56,9 @@ class opciones(menu):
         self.educacion = 0
         
         print("registrar los ingresos")
+        self.sueldo = int(input("ingresar sueldo: "))
+
+        print("ingresar los siguientes gastos")
 
         self.medicos =int(input("ingresar gastos medicos: "))
         self.hogar = int(input("ingresar gastos del hogar: "))
@@ -75,6 +78,18 @@ class opciones(menu):
         print(f"ocio: {self.ocio}")
         print(f"ahorro: {self.ahorro}")
         print(f"educacion: {self.educacion}")
+
+        if total > self.sueldo:
+            print("Gastas más que tus ingresos")
+        elif total < self.sueldo:
+            print("tienes más ingresos que gastos. Felicitaciones!")
+        else:
+            print("tus ingresos son iguales a tus gastos")
+
+        
+
+    
+
 
 
 
