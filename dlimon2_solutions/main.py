@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-from flask import Flask
+from flask import Flask, render_template
 
 load_dotenv()
 
@@ -18,7 +18,7 @@ app.register_blueprint(shippingsystem)
 
 @app.route('/')
 def hello():
-    return 'Programming skills Level 0. Solutions by @dlimon2'
+    return render_template('hello.html')
 
 
 if __name__ == '__main__':
