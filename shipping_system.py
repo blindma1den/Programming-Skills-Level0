@@ -44,9 +44,10 @@ def shipping_price(weight, min_price=2):
     return weight*min_price
 
 def menu(userid):
-    control=int(input("Welcome to th shipment system! choose your option:\n1. Send a package.\n2. Exit.\n"))
+    
     again="y"
     while again=="y":
+        control=int(input("Welcome to th shipment system! choose your option:\n1. Send a package.\n2. Exit.\n"))
         match(control):
             case 1:
                 weight=int(input("type your package's weight."))
