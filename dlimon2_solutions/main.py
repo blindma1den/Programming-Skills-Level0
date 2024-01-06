@@ -9,14 +9,16 @@ app.secret_key = os.getenv('FLASK_SECRET_KEY')
 
 # import blueprints
 from _code.blueprints.banking_system import bankingsystem
+from _code.blueprints.shipping_system import shippingsystem
 
 # register blueprints
 app.register_blueprint(bankingsystem)
+app.register_blueprint(shippingsystem)
 
 
 @app.route('/')
 def hello():
-    return 'Programming skills Level 0'
+    return 'Programming skills Level 0. Solutions by @dlimon2'
 
 
 if __name__ == '__main__':

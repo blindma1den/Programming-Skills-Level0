@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard - Shipping Dev</title>
+</head>
+<body>
+    <header>
+        <h1>Shipping Dev</h1>
+    </header>
+    <main>
+        <h2>Dashboard</h2>
+        <p>Welcome, {{username}}!</p>
+
+            <ul>
+                <li><a href="{{url_for('shippingsystem.send')}}">Send package</a></li>
+            </ul>
+
+        {% if shipping_history %}
+        <h3>Shipping history</h3>
+        <table style="border: 1px solid black;">
+            <thead>
+                <tr>
+                    <th>Shipping ID</th>
+                    <th>Sender</th>
+                    <th>Receiver</th>
+                    <th>Weight</th>
+                    <th>Total Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for shipping in shipping_history %}
+                <tr>
+                    <td>{{ shipping.shipping_id }}</td>
+                    <td>{{ shipping.sender }}</td>
+                    <td>{{ shipping.receiver }}</td>
+                    <td>{{ shipping.weight }}</td>
+                    <td>${{ shipping.total_price }}</td>
+                    <td>{{ shipping.shipping_status }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+    </main>
+    <footer>
+        <a href="{{url_for('shippingsystem.logout')}}">Logout</a>
+        <p>by: dlimon.net</p>
+    </footer>
+</body>
+</html>
+

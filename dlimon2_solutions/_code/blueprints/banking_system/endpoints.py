@@ -8,16 +8,16 @@ PASSWORD = os.getenv('BANCADEV_PASSWORD')
 @bankingsystem.route('/')
 def hello():
 
-    if 'login_counter' not in session:
-        session['login_counter'] = 0
+    if 'bancadev_login_counter' not in session:
+        session['bancadev_login_counter'] = 0
 
-    if 'balance' not in session:
-        session['balance'] = 2000
+    if 'bancadev_balance' not in session:
+        session['bancadev_balance'] = 2000
     
-    if 'login' not in session or session['login'] == False:
-        session['login'] = False
-        return render_template('login.html')
-    elif 'login' in session and session['login'] == True:
+    if 'bancadev_login' not in session or session['bancadev_login'] == False:
+        session['bancadev_login'] = False
+        return render_template('banking_system/login.html')
+    elif 'bancadev_login' in session and session['bancadev_login'] == True:
         return redirect(url_for('bankingsystem.dashboard'))
 
     
@@ -27,7 +27,7 @@ def hello():
 @bankingsystem.route('/login', methods=['POST'])
 def login():
 
-    session['login_counter'] += 1
+    session['bancadev_login_counter'] += 1
 
     user_submitted = request.form.get('bancadev_username')
     password_submitted = request.form.get('bancadev_password')
@@ -35,39 +35,39 @@ def login():
     print(user_submitted, password_submitted, type(user_submitted), type(password_submitted))
     print(USER, PASSWORD, type(USER), type(PASSWORD))
 
-    if session['login_counter'] > 3:
+    if session['bancadev_login_counter'] > 3:
         return 'error: too many login attempts'
     
     if user_submitted != USER or password_submitted != PASSWORD:
         return 'error. bad data'
     
     if user_submitted == USER and password_submitted == PASSWORD:
-        session['login'] = True
+        session['bancadev_login'] = True
         return redirect(url_for('bankingsystem.dashboard'))
     
 
 @bankingsystem.route('/dashboard')
 def dashboard():
 
-    if session['login'] == False:
+    if session['bancadev_login'] == False:
         return redirect(url_for('bankingsystem.hello'))
     
     context = {
-        'balance': session['balance'],
-        'login': session['login'],
+        'balance': session['bancadev_balance'],
+        'login': session['bancadev_login'],
         'username': USER }
     
-    return render_template('dashboard.html', **context)
+    return render_template('banking_system/dashboard.html', **context)
 
 
 @bankingsystem.route('/deposit', methods=['GET', 'POST'])
 def deposit():
 
-    if session['login'] == False:
+    if session['bancadev_login'] == False:
         return redirect(url_for('bankingsystem.hello'))
     
     if request.method == 'GET':
-        return render_template('deposit.html', balance=session['balance'])
+        return render_template('banking_system/deposit.html', balance=session['bancadev_balance'])
     
     if request.method == 'POST':
         deposit_amount = request.form.get('bancadev_deposit_amount')
@@ -84,18 +84,18 @@ def deposit():
         if deposit_amount > 9999:
             return 'error: deposit amount exceeds the limit'
         
-        session['balance'] += deposit_amount
+        session['bancadev_balance'] += deposit_amount
         return redirect(url_for('bankingsystem.dashboard'))
     
 
 @bankingsystem.route('/withdraw', methods=['GET', 'POST'])
 def withdraw():
 
-    if session['login'] == False:
+    if session['bancadev_login'] == False:
         return redirect(url_for('bankingsystem.hello'))
     
     if request.method == 'GET':
-        return render_template('withdraw.html', balance=session['balance'])
+        return render_template('banking_system/withdraw.html', balance=session['bancadev_balance'])
     
     if request.method == 'POST':
         withdraw_amount = request.form.get('bancadev_withdraw_amount')
@@ -109,21 +109,21 @@ def withdraw():
         #value check
         if withdraw_amount < 0:
             return 'error: withdraw amount cannot be negative'
-        if withdraw_amount > session['balance']:
+        if withdraw_amount > session['bancadev_balance']:
             return 'error: withdraw amount exceeds the limit'
         
-        session['balance'] -= withdraw_amount
+        session['bancadev_balance'] -= withdraw_amount
         return redirect(url_for('bankingsystem.dashboard'))
     
 
 @bankingsystem.route('/transfer', methods=['GET', 'POST'])
 def transfer():
 
-    if session['login'] == False:
+    if session['bancadev_login'] == False:
         return redirect(url_for('bankingsystem.hello'))
     
     if request.method == 'GET':
-        return render_template('transfer.html', balance=session['balance'])
+        return render_template('banking_system/transfer.html', balance=session['bancadev_balance'])
     
     if request.method == 'POST':
         transfer_amount = request.form.get('bancadev_transfer_amount')
@@ -138,25 +138,29 @@ def transfer():
         #value check
         if transfer_amount < 0:
             return 'error: transfer amount cannot be negative'
-        if transfer_amount > session['balance']:
+        if transfer_amount > session['bancadev_balance']:
             return 'error: transfer amount exceeds the limit'
         
         #transfer to check
         if transfer_to == USER:
             return 'error: invalid transfer to'
         
-        session['balance'] -= transfer_amount
+        session['bancadev_balance'] -= transfer_amount
         return redirect(url_for('bankingsystem.dashboard'))
     
 
 @bankingsystem.route('/logout')
 def logout():
-    session['login'] = False
-    session['login_counter'] = 0
+    
+    session['bancadev_login'] = False
+    session['bancadev_login_counter'] = 0
     return redirect(url_for('bankingsystem.hello'))
 
 
 @bankingsystem.route('/reset')
 def reset():
-    session.clear()
+
+    for key in list(session.keys()):
+        if key.startswith('bancadev_'):
+            session.pop(key)
     return redirect(url_for('bankingsystem.hello'))

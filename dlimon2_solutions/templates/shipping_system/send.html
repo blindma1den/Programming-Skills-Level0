@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Send package - Shipping Dev</title>
+</head>
+<body>
+    <header>
+        <h1>Shipping Dev</h1>
+    </header>
+    <main>
+        <h2>Send a package</h2>
+        <form action="{{url_for('shippingsystem.send')}}" method="post">
+            <label for="shipping_sender">Sender</label>
+            <input type="text" name="shipping_sender" id="shipping_sender" value="{{ sender }}" readonly required>
+            <label for="shipping_receiver">Receiver</label>
+            <input type="text" name="shipping_receiver" id="shipping_receiver" required>
+            <label for="shipping_package_weight">Weight</label>
+            <input type="number" name="shipping_package_weight" id="shipping_package_weight" required>
+            <input type="submit" value="Preview">
+        </form>
+        <a href="{{url_for('shippingsystem.dashboard')}}">Back to Dashboard</a>
+    </main>
+    <footer>
+        <p>dev: dlimon.net</p>
+    </footer>
+</body>
+</html>
+

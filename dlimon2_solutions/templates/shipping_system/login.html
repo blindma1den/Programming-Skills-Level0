@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - Shipping Dev</title>
+</head>
+<body>
+    <header>
+        <h1>Shipping Dev</h1>
+    </header>
+    <main>
+        <form action="{{url_for('shippingsystem.login')}}" method="post">
+            <label for="shipping_username">Username:</label>
+            <input type="text" id="shipping_username" name="shipping_username" required><br><br>
+            <label for="shipping_password">Password:</label>
+            <input type="shipping_password" id="shipping_password" name="shipping_password" required><br><br>
+            <input type="submit" value="Login">
+        </form>
+    </main>
+    <footer>
+        <p>dev: dlimon.net</p>
+    </footer>
+</body>
+</html>
