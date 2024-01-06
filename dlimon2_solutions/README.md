@@ -1,14 +1,17 @@
 # Dev Level 0 - @dlimon2 solutions
 
-This solutions were made in Flask
-This is also deployed on dev.dlimon.net/dev_level_zero
+made in Flask
+
+This code is deployed on <a href="https://dev.dlimon.net/dev_level_zero">dev.dlimon.net/dev_level_zero</a>
+
+For local run, follow this steps:
 
 ## Installation
 
 1. Clone the repository:
 
     ```bash
-    git clone <repository_url>
+    git clone https://github.com/dlimon2/Programming-Skills-Level0/
     ```
 
 2. Go to the code directory and activate virtualenv (python-venv package required on your system)
@@ -29,9 +32,6 @@ This is also deployed on dev.dlimon.net/dev_level_zero
     ```
 
 2. Open your web browser and navigate to `http://localhost:5000` to access the application.
-
-Banking System: localhost:5000/bankingsystem
-Shipping System: localhost:5000/shippingsystem
 
 @dlimon2 ;)
 
