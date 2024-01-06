@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deposit - Banca Dev</title>
+</head>
+<body>
+    <header>
+        <h1>Banca Dev</h1>
+    </header>
+    <main>
+        <h2>Deposit</h2>
+        <p>Current balance: {{balance}}</p>
+        <p>The deposit limit is $9999</p>
+        <form action="{{url_for('bankingsystem.deposit')}}" method="post">
+            <label for="bancadev_deposit_amount">Amount</label>
+            <input type="number" name="bancadev_deposit_amount" id="bancadev_deposit_amount" min="1" step="0.01" required>
+            <input type="submit" value="Deposit">
+        </form>
+        <a href="{{url_for('bankingsystem.dashboard')}}">Back to Dashboard</a>
+    </main>
+    <footer>
+        <p>dev: dlimon.net</p>
+    </footer>
+</body>
+</html>
+

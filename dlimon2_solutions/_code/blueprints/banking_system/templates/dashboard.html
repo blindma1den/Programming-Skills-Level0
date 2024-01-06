@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard - Banca Dev</title>
+</head>
+<body>
+    <header>
+        <h1>Banca Dev</h1>
+    </header>
+    <main>
+        <h2>Dashboard</h2>
+        <p>Welcome, {{username}}!</p>
+        <p>Current balance: {{balance}}</p>
+
+        {% if balance <= 0 %}
+            <p>It looks like you have no funds!</p>
+            <a href="{{url_for('bankingsystem.deposit')}}">Deposit money</a>
+        {% else %}
+            <ul>
+                <li><a href="{{url_for('bankingsystem.deposit')}}">Deposit</a></li>
+                <li><a href="{{url_for('bankingsystem.withdraw')}}">Withdraw</a></li>
+                <li><a href="{{url_for('bankingsystem.transfer')}}">Transfer Money</a></li>
+            </ul>
+        {% endif %}
+    </main>
+    <footer>
+        <a href="{{url_for('bankingsystem.logout')}}">Logout</a>
+        <p>by: dlimon.net</p>
+    </footer>
+</body>
+</html>
+

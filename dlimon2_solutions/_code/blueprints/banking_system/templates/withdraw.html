@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Withdraw - Banca Dev</title>
+</head>
+<body>
+    <header>
+        <h1>Banca Dev</h1>
+    </header>
+    <main>
+        <h2>Withdraw</h2>
+        <p>Current balance: {{balance}}</p>
+        <p>The withdraw limit is $9999</p>
+        <form action="{{url_for('bankingsystem.withdraw')}}" method="post">
+            <label for="bancadev_deposit_amount">Amount</label>
+            <input type="number" name="bancadev_withdraw_amount" id="bancadev_withdraw_amount" min="1" step="0.01" required>
+            <button type="submit">Withdraw</button>
+        </form>
+        <a href="{{url_for('bankingsystem.dashboard')}}">Back to Dashboard</a>
+    </main>
+    <footer>
+        <p>dev: dlimon.net</p>
+    </footer>
+</body>
+</html>
+

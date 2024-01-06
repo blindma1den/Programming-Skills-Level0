@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transfer - Banca Dev</title>
+</head>
+<body>
+    <header>
+        <h1>Banca Dev</h1>
+    </header>
+    <main>
+        <h2>Transfer</h2>
+        <p>Current balance: {{balance}}</p>
+        <p>The transfer limit is $9999</p>
+        <form action="{{url_for('bankingsystem.transfer')}}" method="post">
+            <label for="bancadev_transfer_amount">Amount</label>
+            <input type="number" name="bancadev_transfer_amount" id="bancadev_transfer_amount" min="1" step="0.01" required>
+            <label for="bancadev_transfer_user">User</label>
+            <input type="text" name="bancadev_transfer_user" id="bancadev_transfer_user" required>
+            <input type="submit" value="Transfer">
+        </form>
+        <a href="{{url_for('bankingsystem.dashboard')}}">Back to Dashboard</a>
+    </main>
+    <footer>
+        <p>dev: dlimon.net</p>
+    </footer>
+</body>
+</html>
