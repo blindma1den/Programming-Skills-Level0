@@ -66,12 +66,22 @@ while alive:
         final_amount = exchange_currency(initial_option, exchange_option, initial_money)
         print("\n")
         print("Now you have {} {}".format(final_amount, abreviation(exchange_option)))
+
+        #withdraw
+        commission = final_amount * 0.01
+        withdraw = input("Would you like to perform a withdraw with a commission of {} {}? (Y/N) ".format(commission, abreviation(exchange_option)))
+        if withdraw == "Y" or withdraw == "y":
+            print("\n")
+            print("** Successful withdraw for {} {} **".format(final_amount - commission, abreviation(exchange_option)))
+            print("\n")
+
+        #another operation?
         another_exchange = input("Would you like to perform another operation? (Y/N) ")
         if another_exchange == "N" or another_exchange == "n":
             print("\n")
             print("Thank you for using our Currency Converter. Goodbye")
             alive = False
-            #sys.exit()
+        
     else:
         print("Sorry you can exchange from 50 USD to 2000 USD max.")
         alive = False
