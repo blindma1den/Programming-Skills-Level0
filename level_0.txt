@@ -47,7 +47,6 @@ Username: @blindma1den
 * 		If the user spends more than they earn, the system will display advice to improve the user's financial health.
 
 
-
 Enjoy coding :) 
 
 Cheers! 

@@ -118,10 +118,14 @@ def transfer(userid:str,sum:int, dest_userid:str):
     usuario que recibe y suma a enviar.
     :return: str - success or failure.
     '''
-    search_user(userid)
-    search_user(dest_userid)
-    withdraw(userid,sum)
-    deposit(dest_userid,sum)
+    
+    if type(search_user(userid)) == User and type(search_user(dest_userid)) == User:
+        withdraw(userid,sum)
+        deposit(dest_userid,sum)
+        return
+    else: 
+        print("error!")
+        return
     
         
     
