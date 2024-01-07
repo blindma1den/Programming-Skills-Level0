@@ -46,7 +46,7 @@ def convert_currency(amount, from_currency, to_currency):
         print("Funds not withdrawn.")
 
 # Main function
-def main():
+def main2():
     while True:
         print("\nCurrency Converter\n")
         print("1. CLP")
@@ -66,6 +66,4 @@ def main():
 
         convert_currency(amount, from_currency, to_currency)
 
-# Run the program
-if __name__ == "__main__":
-    main()
+main2()

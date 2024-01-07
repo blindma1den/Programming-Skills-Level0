@@ -1,5 +1,6 @@
 import csv
 
+
 def register_form():
     with open("users.csv", "a", newline="") as file:
         writer = csv.writer(file, delimiter=",")
@@ -41,6 +42,7 @@ def login_form():
 
 
 balance = 2000
+
 
 def deposit():
     print("How much would you like to deposit?")
@@ -89,34 +91,38 @@ def user_menu():
     elif choice == 5:
         exit()
 
-active = True
 
-logged_in = False
+def main1():
+    active = True
+    logged_in = False
 
-while active:
-    if logged_in:
-        print("Hello! What would you like to do?")
-        print("Create a movement (Type 1), Logout (Type 2)")
-    else:
-        print("View Info Users (Type 0), Register (Type 1), Login (Type 2) or Exit (Type 3)")
+    while active:
+        if logged_in:
+            print("Hello! What would you like to do?")
+            print("Create a movement (Type 1), Logout (Type 2)")
+        else:
+            print(
+                "View Info Users (Type 0), Register (Type 1), Login (Type 2) or Exit (Type 3)")
 
-    choice = int(input())
+        choice = int(input())
 
-    if choice == 0:
-        with open('users.csv', newline='') as csvfile:
-            spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
-            for row in spamreader:
-                print(', '.join(row))
-                print()
+        if choice == 0:
+            with open('users.csv', newline='') as csvfile:
+                spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
+                for row in spamreader:
+                    print(', '.join(row))
+                    print()
 
-    elif choice == 1 and not logged_in:
-        register_form()
-    elif choice == 1 and logged_in:
-        user_menu()
-    elif choice == 2 and not logged_in:
-        logged_in = login_form()
-    elif choice == 2 and logged_in:
-        logged_in = False
-        print("You have been logged out")
-    elif choice == 3 and not logged_in:
-        active = False
+        elif choice == 1 and not logged_in:
+            register_form()
+        elif choice == 1 and logged_in:
+            user_menu()
+        elif choice == 2 and not logged_in:
+            logged_in = login_form()
+        elif choice == 2 and logged_in:
+            logged_in = False
+            print("You have been logged out")
+        elif choice == 3 and not logged_in:
+            active = False
+
+main1()

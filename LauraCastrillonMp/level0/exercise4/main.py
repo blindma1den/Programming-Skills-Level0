@@ -2,7 +2,7 @@ import random
 
 login_attempts = 0
 
-def shipping_system():
+def main4():
     global login_attempts
     if login_attempts >= 3:
         print("You have exceeded the maximum number of login attempts. The system is locked.")
@@ -29,7 +29,7 @@ def shipping_system():
     else:
         login_attempts += 1
         print("Incorrect login credentials. Please try again.")
-        shipping_system()
+        main4()
 
 def validate_login(username, password):
     if username == 'admin' and password == 'password':
@@ -70,4 +70,4 @@ def send_package():
         print("Invalid choice. Returning to the main menu.")
         return
 
-shipping_system()
+main4()
