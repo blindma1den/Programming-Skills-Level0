@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Banco Online</title>
+  </head>
+  <body
+    class="bg-zinc-950 opacity-90 flex items-center justify-center w-screen h-screen"
+  >
+    <form
+      id="formulario"
+      class="w-11/12 sm:max-w-md mx-auto flex flex-col p-6 dark:bg-slate-100 rounded-xl gap-3"
+      style="display: flex"
+    >
+      <h2 class="mb-5 text-black self-center font-bold text-xl">
+        Iniciar Sesión
+      </h2>
+      <span class="alert text-red-500" id="alert"
+        >Clave o Contraseña incorrectas vuelva a intertarlo</span
+      >
+      <div class="mb-5 flex gap-2 flex-col">
+        <label for="usuario" class="block text-base font-medium text-black"
+          >Usuario:</label
+        >
+        <input
+          class="bg-gray-200 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+          type="text"
+          id="usuario"
+          name="usuario"
+          placeholder="Ingrese tu nombre de usuario"
+        />
+      </div>
+      <div class="mb-5 flex gap-2 flex-col">
+        <label for="contrasena" class="block text-base font-medium text-black"
+          >Contraseña:</label
+        >
+        <input
+          class="bg-gray-200 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+          type="password"
+          id="contrasena"
+          name="contrasena"
+          placeholder="Ingresa tu Contraseña"
+          required
+        />
+      </div>
+
+      <input
+        type="submit"
+        id="submit"
+        class="text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none cursor-pointer focus:ring-yellow-200 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center mb-2 disabled:bg-yellow-300 disabled:cursor-not-allowed"
+      />
+    </form>
+
+    <!-- seccion que se muestra cuando el usuario inicia sesion-->
+
+    <div
+      id="options-section"
+      style="display: none"
+      class="flex-col gap-5 w-10/12"
+    >
+      <h2 class="text-white">
+        Bienvenido, <span id="bienvenida-username" class="text-white"></span>!
+      </h2>
+      <h3 class="text-white">Balance: <span id="balance"></span></h3>
+      <div class="flex gap-4 flex-wrap ">
+        <div
+          class="flex flex-grow  w-72 p-4 bg-yellow-400 items-center h-72 justify-evenly gap-5 flex-col"
+        >
+          <div class="flex gap-3">
+            <h2 class="text-xl">Depositar</h2>
+            <img class="w-7" src="imagenes/deposit-icon.svg" alt="" />
+          </div>
+          <label for="transferir" class="text-base font-medium text-black self-start"
+            >Ingrese el monto que desea enviar</label
+          >
+          <input
+          id="deposit-amount"
+            type="number"
+            class="bg-gray-200 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+          />
+          <button
+          id="button-deposit"
+            class="text-black bg-blue-500 hover:bg-blue-400 focus:ring-4 focus:outline-none cursor-pointer focus:ring-blue-200 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center mb-2"
+          >
+            Depositar
+          </button>
+        </div>
+        <div
+          class="flex flex-grow w-72 p-4 bg-yellow-400 items-center h-72 justify-evenly gap-2 flex-col"
+        >
+          <div class="flex gap-3">
+            <span class="text-xl">Retirar</span>
+            <img class="w-7" src="imagenes/payments_FILL0_wght400_GRAD0_opsz24.svg" alt="" />
+          </div>
+          <label for="transferir" class="text-base font-medium text-black self-start"
+            >Ingrese el monto que desea enviar</label
+          >
+          <input
+          id="withdraw-amount"
+            type="number"
+            class="bg-gray-200 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+          />
+          <button
+          id="button-withdraw"
+            class="text-black bg-blue-500 hover:bg-blue-400 focus:ring-4 focus:outline-none cursor-pointer focus:ring-blue-200 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center mb-2"
+          >
+            Retirar
+          </button>
+        </div>
+        <div
+          class="flex flex-grow w-72 p-4 bg-yellow-400 items-center h-72 justify-evenly gap-2 flex-col"
+        >
+          <div class="flex gap-3">
+            <span class="text-xl">Transferir</span>
+            <img class="w-7" src="imagenes/tranfer.svg" alt="" />
+          </div>
+
+          <label for="userDestiny" class="text-base font-medium text-black self-start">Ingrese nombre del usuario </label>
+          <input
+            type="text"
+            id="user-destiny"
+            class="bg-gray-200 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+          />
+          <label for="transferir" class="text-base font-medium text-black self-start"
+            >Ingrese el monto que desea enviar</label
+          >
+          <input
+            id="tranfer-amount"
+            type="number"
+            min="0"
+            class="bg-gray-200 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+          />
+          <button
+            id="button-transfer"
+            class="text-black bg-blue-500 hover:bg-blue-400 focus:ring-4 focus:outline-none cursor-pointer focus:ring-blue-200 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center mb-2"
+          >
+            Transferir
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
