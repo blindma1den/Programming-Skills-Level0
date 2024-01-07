@@ -1,0 +1,14 @@
+C:\Users\jordi\OneDrive\Escritorio\RetosDeProgramacion0\Ejercicio1\bin\Debug\net8.0\Ejercicio1.exe
+C:\Users\jordi\OneDrive\Escritorio\RetosDeProgramacion0\Ejercicio1\bin\Debug\net8.0\Ejercicio1.deps.json
+C:\Users\jordi\OneDrive\Escritorio\RetosDeProgramacion0\Ejercicio1\bin\Debug\net8.0\Ejercicio1.runtimeconfig.json
+C:\Users\jordi\OneDrive\Escritorio\RetosDeProgramacion0\Ejercicio1\bin\Debug\net8.0\Ejercicio1.dll
+C:\Users\jordi\OneDrive\Escritorio\RetosDeProgramacion0\Ejercicio1\bin\Debug\net8.0\Ejercicio1.pdb
+C:\Users\jordi\OneDrive\Escritorio\RetosDeProgramacion0\Ejercicio1\obj\Debug\net8.0\Ejercicio1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jordi\OneDrive\Escritorio\RetosDeProgramacion0\Ejercicio1\obj\Debug\net8.0\Ejercicio1.AssemblyInfoInputs.cache
+C:\Users\jordi\OneDrive\Escritorio\RetosDeProgramacion0\Ejercicio1\obj\Debug\net8.0\Ejercicio1.AssemblyInfo.cs
+C:\Users\jordi\OneDrive\Escritorio\RetosDeProgramacion0\Ejercicio1\obj\Debug\net8.0\Ejercicio1.csproj.CoreCompileInputs.cache
+C:\Users\jordi\OneDrive\Escritorio\RetosDeProgramacion0\Ejercicio1\obj\Debug\net8.0\Ejercicio1.dll
+C:\Users\jordi\OneDrive\Escritorio\RetosDeProgramacion0\Ejercicio1\obj\Debug\net8.0\refint\Ejercicio1.dll
+C:\Users\jordi\OneDrive\Escritorio\RetosDeProgramacion0\Ejercicio1\obj\Debug\net8.0\Ejercicio1.pdb
+C:\Users\jordi\OneDrive\Escritorio\RetosDeProgramacion0\Ejercicio1\obj\Debug\net8.0\Ejercicio1.genruntimeconfig.cache
+C:\Users\jordi\OneDrive\Escritorio\RetosDeProgramacion0\Ejercicio1\obj\Debug\net8.0\ref\Ejercicio1.dll
