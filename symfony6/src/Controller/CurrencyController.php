@@ -2,11 +2,14 @@
 
 namespace App\Controller;
 
-use Cassandra\Float_;
+
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Attribute\AsController;
 use Symfony\Component\Routing\Annotation\Route;
 
+#[AsController]
 class CurrencyController extends AbstractController
 {
     #[Route('/', name: 'app_currency')]
@@ -18,9 +21,17 @@ class CurrencyController extends AbstractController
     }
 
     #[Route('/api/change_money', name: 'change_money')]
-    public function change_money(string $moneda1, string $moneda2, int $valor1): int
+    public function change_money(Request $request): \Symfony\Component\HttpFoundation\JsonResponse
     {
+
+        $parameters = json_decode($request->getContent(), true);
+       // echo $parameters['valor']; // will print 'user'
+
         $valor2 = 0;
+
+        $moneda1 = $parameters['moneda1'];
+        $moneda2 = $parameters['moneda2'];
+        $valor1 = $parameters['valor'];
 
         //Tasas de cambio CLP
         $valueCLP_ARS = 0.90812;
@@ -143,6 +154,7 @@ class CurrencyController extends AbstractController
             $valor2 = $valor1 * $valueTRY_CLP;
         }
         if ($moneda1 === "TRY" && $moneda2 === "USD") {
+
             $valor2 = $valor1 * $valueTRY_USD;
         }
         if ($moneda1 === "TRY" && $moneda2 === "EUR") {
@@ -173,8 +185,9 @@ class CurrencyController extends AbstractController
         if ($moneda1 === "GBP" && $moneda2 === "ARS") {
             $valor2 = $valor1 * $valueGBP_ARS;
         }
+//var_dump($valor2);
+       return $this->json($valor2);
 
-        return $valor2;
 
     }
     #[Route('/discount', name: 'discount')]

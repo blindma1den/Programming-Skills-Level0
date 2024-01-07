@@ -13,7 +13,8 @@
         "symfony/flex": "^2",
         "symfony/framework-bundle": "6.4.*",
         "symfony/runtime": "6.4.*",
-        "symfony/yaml": "6.4.*"
+        "symfony/yaml": "6.4.*",
+      "ext-http": "*"
     },
     "require-dev": {
         "symfony/debug-bundle": "6.4.*",
