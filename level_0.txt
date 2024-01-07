@@ -9,6 +9,43 @@ Username: @blindma1den
 * The system must allow users to deposit, withdraw, view, and transfer money.
 * The system must display a menu for users to perform transactions.   2. 
 
+fun main() {
+        println("Enter your User")
+        var enterValue2 = readln()
+        var Usuario = enterValue2
+        var Lifes = 3
+        
+        if (Usuario == "Sposada") {
+            println("Enter your Password")
+        } else {
+            println("invalid user")
+            Lifes-- 1
+        
+        }
+        
+        var enterValue3 = readln()
+        var Password = enterValue3
+        var PasswordLifes = 3
+        
+        if (Password == "Abc123" && Usuario == "Sposada") {
+            println("Welcome to your account")
+        } else {
+            println("invalid password")
+            PasswordLifes-- 1
+        
+        }
+}
+
+
+
+
+
+
+
+
+
+
+
 2. Create a currency converter between CLP, ARS, USD, EUR, TRY, GBP with the following features:
 * 		The user must choose their initial currency and the currency they want to exchange to.
 * 		The user can choose whether or not to withdraw their funds. If they choose not to withdraw, it should return to the main menu.
