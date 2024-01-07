@@ -33,23 +33,6 @@ $(document).ready(function() {
 
      let valorInicial = document.getElementById('valor1').value;
      document.getElementById('valor2').value = 0;
-     // var select1 = document.getElementById('moneda1');
-     // select1.addEventListener("click", () => {
-     //     select1.addEventListener("change",
-     //         function(){
-     //         console.log("moneda1 seleccionada"+ this.options[select1.selectedIndex].text)
-     //             moneda1 = this.options[select1.selectedIndex].text;
-     //             console.log(moneda1);
-     //         })});
-     // let select2 = document.getElementById('moneda2');
-     // select2.addEventListener("click", () => {
-     //     select2.addEventListener('change',
-     //         function () {
-     //             console.log("moneda2 seleccionada"+this.options[select2.selectedIndex].value)
-     //             moneda2 = this.options[select2.selectedIndex].value;
-     //             console.log(moneda2);
-     //         });
-     // });
      console.log("el valor de la moneda1 es :" + moneda1);
      console.log("el valor de la moneda2 es :" + moneda2);
      let datos = {
@@ -66,11 +49,32 @@ $(document).ready(function() {
      );
      const text = await request.text();
      document.getElementById('valor2').value = text;
-     console.log(text)
-     alert(text)
-     // alert("Deposito realizado con exito");
-     // window.location.href = 'index.html'
 
+ }
 
+ async function extraer() {
+     let valorInicial = document.getElementById('valor1').value;
+     let valorExtraccion = document.getElementById('valor2').value;
+     document.getElementById('valor2').value = 0;
+     let datos = {
+         "valor": valorInicial
+     };
+     const request = await fetch('api/discount', {
+             method: 'POST',
+             headers: getHeaders(),
+             body: JSON.stringify(datos),
+             'Content-Type': 'application/json'
+         }
+     );
+     const text = await request.text();
+     document.getElementById('valor2').value = text;
+
+     var respuesta = confirm("Usted extrajo:"+text+moneda2 +'/n'+"Desea realizar otra operacion.")
+
+     if(respuesta)
+         alert("Usted aceptó.");
+     else
+         alert("Usted no aceptó.");
+         window.location.reload();
  }
 

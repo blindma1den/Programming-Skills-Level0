@@ -190,13 +190,15 @@ class CurrencyController extends AbstractController
 
 
     }
-    #[Route('/discount', name: 'discount')]
-    public function withdraw_discount(int $valor2): int
+    #[Route('/api/discount', name: 'discount')]
+    public function withdraw_discount(Request $request): \Symfony\Component\HttpFoundation\JsonResponse
     {
+        $parameters = json_decode($request->getContent(), true);
+        $valor2 = $parameters['valor'];
         $descuento = $valor2 / 100;
         $costo_a_pagar = $valor2 - $descuento;
 
-        return $costo_a_pagar;
+        return $this->json($costo_a_pagar);
 
     }
 
