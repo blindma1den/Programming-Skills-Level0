@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exchange - Currency Exchange</title>
+</head>
+<body>
+    <header>
+        <h1>Currency Exchange</h1>
+    </header>
+    <main>
+        <h2>Exchange preview</h2>
+        <p>From: <strong>{{origin_currency}}</strong> To: <strong>{{destination_currency}}</strong></p>
+        <p>Transaction fee: 1%</p>
+        
+        <table>
+            <tr>
+                <td>Amount:</td>
+                <td>{{amount}} {{origin_currency}}</td>
+            </tr>
+            <tr>
+                <td>Pre-exchange:</td>
+                <td>{{ exchange }} {{destination_currency}}</td>
+            </tr>
+            
+            <tr>
+                <td>Fee:</td>
+                <td>{{ fee }} {{destination_currency}}</td>
+            </tr>
+            <tr>
+                <td>Final exchange:</td>
+                <td>{{ final_exchange }} {{destination_currency}}</td>
+            </tr>
+        </table>
+
+        <p>If you want to confirm this transaction, click on Exchange</p>
+
+        <form action="{{ url_for('currencyexchange.exchange_confirm') }}" method="post">
+            <input type="hidden" name="origin_currency" value="{{origin_currency}}">
+            <input type="hidden" name="destination_currency" value="{{destination_currency}}">
+            <input type="hidden" name="amount" value="{{amount}}">
+            <input type="hidden" name="exchange" value="{{exchange}}">
+            <input type="hidden" name="fee" value="{{fee}}">
+            <input type="hidden" name="final_exchange" value="{{final_exchange}}">
+            <button type="submit">Exchange</button>
+        </form>
+    </main>
+    <footer>
+        <p>by: dlimon.net</p>
+    </footer>
+</body>
+</html>
+

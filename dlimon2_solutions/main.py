@@ -10,10 +10,12 @@ app.secret_key = os.getenv('FLASK_SECRET_KEY')
 # import blueprints
 from _code.blueprints.banking_system import bankingsystem
 from _code.blueprints.shipping_system import shippingsystem
+from _code.blueprints.currency_exchange import currencyexchange
 
 # register blueprints
 app.register_blueprint(bankingsystem)
 app.register_blueprint(shippingsystem)
+app.register_blueprint(currencyexchange)
 
 
 @app.route('/')
