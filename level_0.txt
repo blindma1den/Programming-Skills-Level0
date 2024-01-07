@@ -14,27 +14,26 @@ fun main() {
         var enterValue2 = readln()
         var Usuario = enterValue2
         var Lifes = 3
-
+        
         if (Usuario == "Sposada") {
             println("Enter your Password")
         } else {
             println("invalid user")
             Lifes-- 1
-
+        
         }
-
+        
         var enterValue3 = readln()
         var Password = enterValue3
         var PasswordLifes = 3
-
+        
         if (Password == "Abc123" && Usuario == "Sposada") {
             println("Welcome to your account")
         } else {
             println("invalid password")
             PasswordLifes-- 1
-
+        
         }
-    }
 }
 
 
