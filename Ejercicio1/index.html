@@ -23,7 +23,7 @@
     <title>Banco Online</title>
   </head>
   <body
-    class="bg-zinc-950 opacity-90 flex items-center justify-center w-screen h-screen"
+    class="bg-zinc-950 opacity-90 flex items-center justify-center w-screen min-h-screen"
   >
     <form
       id="formulario"
@@ -74,72 +74,89 @@
     <div
       id="options-section"
       style="display: none"
-      class="flex-col gap-5 w-10/12"
+      class="flex-col gap-5 w-10/12 max-w-5xl p-6 bg-white border border-gray-200 rounded-lg shadow"
     >
-      <h2 class="text-white">
-        Bienvenido, <span id="bienvenida-username" class="text-white"></span>!
+      <h2 class="text-black text-xl">
+        Bienvenido,
+        <span id="bienvenida-username" class="text-black text-xl"></span>!
       </h2>
-      <h3 class="text-white">Balance: <span id="balance"></span></h3>
-      <div class="flex gap-4 flex-wrap ">
+      <h3 class="text-black text-xl">
+        Balance: <span id="balance" class="text-green-500 text-xl"></span>
+      </h3>
+      <div class="flex gap-4 flex-wrap">
         <div
-          class="flex flex-grow  w-72 p-4 bg-yellow-400 items-center h-72 justify-evenly gap-5 flex-col"
+          class="flex flex-grow w-72 p-4 bg-yellow-400 items-center h-72 justify-evenly flex-col rounded-lg"
         >
           <div class="flex gap-3">
             <h2 class="text-xl">Depositar</h2>
             <img class="w-7" src="imagenes/deposit-icon.svg" alt="" />
           </div>
-          <label for="transferir" class="text-base font-medium text-black self-start"
+          <label
+            for="transferir"
+            class="text-base font-medium text-black self-start"
             >Ingrese el monto que desea enviar</label
           >
           <input
-          id="deposit-amount"
+            id="deposit-amount"
             type="number"
             class="bg-gray-200 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
           />
           <button
-          id="button-deposit"
+            id="button-deposit"
             class="text-black bg-blue-500 hover:bg-blue-400 focus:ring-4 focus:outline-none cursor-pointer focus:ring-blue-200 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center mb-2"
           >
             Depositar
           </button>
         </div>
         <div
-          class="flex flex-grow w-72 p-4 bg-yellow-400 items-center h-72 justify-evenly gap-2 flex-col"
+          class="flex flex-grow w-72 p-4 bg-yellow-400 items-center h-72 justify-evenly flex-col rounded-lg"
         >
           <div class="flex gap-3">
             <span class="text-xl">Retirar</span>
-            <img class="w-7" src="imagenes/payments_FILL0_wght400_GRAD0_opsz24.svg" alt="" />
+            <img
+              class="w-7"
+              src="imagenes/payments_FILL0_wght400_GRAD0_opsz24.svg"
+              alt=""
+            />
           </div>
-          <label for="transferir" class="text-base font-medium text-black self-start"
+          <label
+            for="transferir"
+            class="text-base font-medium text-black self-start"
             >Ingrese el monto que desea enviar</label
           >
           <input
-          id="withdraw-amount"
+            id="withdraw-amount"
             type="number"
             class="bg-gray-200 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
           />
           <button
-          id="button-withdraw"
+            id="button-withdraw"
             class="text-black bg-blue-500 hover:bg-blue-400 focus:ring-4 focus:outline-none cursor-pointer focus:ring-blue-200 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center mb-2"
           >
             Retirar
           </button>
         </div>
         <div
-          class="flex flex-grow w-72 p-4 bg-yellow-400 items-center h-72 justify-evenly gap-2 flex-col"
+          class="flex flex-grow w-72 p-4 bg-yellow-400 items-center h-72 justify-evenly flex-col rounded-lg"
         >
           <div class="flex gap-3">
             <span class="text-xl">Transferir</span>
             <img class="w-7" src="imagenes/tranfer.svg" alt="" />
           </div>
 
-          <label for="userDestiny" class="text-base font-medium text-black self-start">Ingrese nombre del usuario </label>
+          <label
+            for="userDestiny"
+            class="text-base font-medium text-black self-start"
+            >Ingrese nombre del usuario
+          </label>
           <input
             type="text"
             id="user-destiny"
             class="bg-gray-200 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
           />
-          <label for="transferir" class="text-base font-medium text-black self-start"
+          <label
+            for="transferir"
+            class="text-base font-medium text-black self-start"
             >Ingrese el monto que desea enviar</label
           >
           <input
