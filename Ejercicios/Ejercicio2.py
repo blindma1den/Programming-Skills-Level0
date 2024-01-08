@@ -5,7 +5,7 @@
 # * 		Set a minimum and maximum amount for each currency, it can be of your choice.
 # * 		The system should ask the user if they want to perform another operation. If they choose to do so, it should restart the process; otherwise, the system should close.
 import sys
-
+# cambiar a ingles
 class menu:
 
     def __init__(self) -> None:
@@ -15,9 +15,9 @@ class menu:
     def select(self):
         while True:
             print("----------------------")
-            print("1. ver monedas")
-            print("2. cambiar")
-            print("3. exti")
+            print("1. view coins")
+            print("2. change")
+            print("3. exit")
             print("----------------------")
             opcion = int(input(f"Enter option: "))
             self.algo(opcion)
@@ -26,22 +26,22 @@ class menu:
     
     def algo(self, opcion):
         if opcion == 1:
-            valores()
+            values()
         elif opcion == 2:
-            cambio()
+            change()
         elif opcion == 3:
             sys.exit()
         else:
             print("Invalid option")
 
-class valores(menu):
+class values(menu):
 
     def __init__(self) -> None:
-        self.monedas()
-        self.ver_monedas()
+        self.coins()
+        self.view_coins()
 
 
-    def monedas(self):
+    def coins(self):
 
         self.clp = 888
         self.arg = 811
@@ -49,60 +49,60 @@ class valores(menu):
         self.lira = 29
         self.gbp = 0.79
     
-    def ver_monedas(self):
+    def view_coins(self):
         print("----------------------")
-        print("Valores \n 1 dolar equivale a:")
-        print(f" chile = {self.clp}\n arg = {self.arg} \n eur = {self.eur}\n try = {self.lira} \n gdp = {self.gbp}")
+        print("Values \n 1 dollar equals :")
+        print(f" clp = {self.clp}\n arg = {self.arg} \n eur = {self.eur}\n try = {self.lira} \n gdp = {self.gbp}")
         print("----------------------")
 
 
-class cambio(valores):
+class change(values):
     
 
     def __init__(self) -> None:
         super().__init__()
-        moneda_inicial = input("elegir una moneda entre clp, arg, eur, try, gdp: ")
-        print(f"ingresar cantidad de $ {moneda_inicial}")
+        initial_currency = input("choose a coin between clp, arg, eur, try, gdp: ")
+        print(f"enter amount of $ {initial_currency}")
 
-        if moneda_inicial == "clp":
-            moneda_inicial = self.clp
-        elif moneda_inicial == "arg":
-            moneda_inicial = self.arg
-        elif moneda_inicial == "eur":
-            moneda_inicial = self.eur
-        elif moneda_inicial == "try":
-            moneda_inicial = self.lira
-        elif moneda_inicial == "gbp":
-            moneda_inicial = self.gbp
+        if initial_currency == "clp":
+            initial_currency = self.clp
+        elif initial_currency == "arg":
+            initial_currency = self.arg
+        elif initial_currency == "eur":
+            initial_currency = self.eur
+        elif initial_currency == "try":
+            initial_currency = self.lira
+        elif initial_currency == "gbp":
+            initial_currency = self.gbp
         else:
-            print("moneda incorrecta")
-            print("cerrando programa")
+            print("Wrong coin")
+            print("Closing program...")
             sys.exit()
-        print (moneda_inicial)
+        print (initial_currency)
         
         
-        cantidad = float(input("ingresar cantidad a cambiar: "))
-        total_dolares = cantidad / moneda_inicial
+        amount = float(input("ingresar cantidad a cambiar: "))
+        total_dollars = amount / initial_currency
 
-        moneda_final = input("ingresar la moneda a la que quiere convertir: ")
-        print(f"moneda a convertir: {moneda_final}")
-        if moneda_final == "clp":
-            moneda_final = self.clp
-        elif moneda_final == "arg":
-            moneda_final = self.arg
-        elif moneda_final == "eur":
-            moneda_final = self.eur
-        elif moneda_final == "try":
-            moneda_final = self.lira
-        elif moneda_final == "gbp":
-            moneda_final = self.gbp
+        final_coin = input("Enter the coin you want to convert to:")
+        print(f"coin to convert: {final_coin}")
+        if final_coin == "clp":
+            final_coin = self.clp
+        elif final_coin == "arg":
+            final_coin = self.arg
+        elif final_coin == "eur":
+            final_coin = self.eur
+        elif final_coin == "try":
+            final_coin = self.lira
+        elif final_coin == "gbp":
+            final_coin = self.gbp
         else:
-            print("moneda incorrecta")
-            print("cerrando programa")
+            print("Wrong coin")
+            print("Closing program...")
             sys.exit()
-        print (moneda_final)
+        print (final_coin)
 
-        total = (total_dolares * moneda_final) 
+        total = (total_dollars * final_coin) 
 
         print(f"el total es de:{total} ")
 
