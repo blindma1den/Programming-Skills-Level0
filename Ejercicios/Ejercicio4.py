@@ -72,7 +72,7 @@ class shipping_data(actions):
     def shipoing_values(self):
         sender = input("enter sender name: ")
         addressee = input("enter recipient name: ")
-        weight = input("Enter package weight: ")
+        weight = int(input("Enter package weight: "))
         number = random.randint(1, 999999)
         shipping_price= weight * 2
 
