@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router'
-import bank from '../assets/money-exchange.png'
+import bank from '../assets/bitmap.png'
 
 export const Home = ({ setData }) => {
 	const navigate = useNavigate()
@@ -39,7 +39,7 @@ export const Home = ({ setData }) => {
 			<div className='w-52'>
 				<img className='w-full' src={bank} alt='' />
 			</div>
-			<h1 className='text-4xl mb-6 text-gray-100'>EXCHANGE SYSTEM</h1>
+			<h1 className='text-4xl mb-6 text-gray-100'>CURRIER COMPANY SYSTEM</h1>
 			<form action='' className=' w-72'>
 				<div className='flex justify-between mb-4 items-center'>
 					<label htmlFor='name' className='text-gray-100'>
