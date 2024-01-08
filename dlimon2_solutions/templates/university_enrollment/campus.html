@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select campus - DevUniversity</title>
+</head>
+<body>
+    <header>
+        <h1>DevUniversity</h1>
+    </header>
+    <main>
+        {% if error %}
+            <p style="color: red;">{{error}}</p>
+        {% endif %}
+        <h2>Select campus</h2>
+        <p>Logged in as {{name}} {{last_name}}</p>
+        <form action="{{url_for('universityenrollment.enrollment')}}" method="post">
+            <table>
+                <tr>
+                    <th>Campus Name</th>
+                    <th>Program</th>
+                    <th>Slots available</th>
+                    <th>Enroll</th>
+                </tr>
+                {% for campus in campus_slots %}
+                <tr>
+                    <td>{{ campus['campus'] }}</td>
+                    <td>{{ campus['slots'][0]['program'] }}</td>
+                    <td>{{ campus['slots'][0]['slots'] }}</td>
+                    <td>
+                        {% if campus['slots'][0]['slots'] > 0 %}
+                            <form action="{{url_for('universityenrollment.enrollment')}}" method="post">
+                                <input type="hidden" name="university_campus" value="{{ campus['campus'] }}">
+                                <input type="hidden" name="university_program" value="{{ campus['slots'][0]['program'] }}">
+                                <button type="submit">Enroll</button>
+                            </form>
+                        {% else %}
+                            <span style="color: red;">Not Available</span>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </table>
+        </form>
+
+    </main>
+    <footer>
+        <p>dev: dlimon.net</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enrolled! - DevUniversity</title>
+</head>
+<body>
+    <header>
+        <h1>DevUniversity</h1>
+    </header>
+    <main>
+        {% if error %}
+            <p style="color: red;">{{error}}</p>
+        {% endif %}
+        <h2>Congratuilations!</h2>
+        <p>Your enrollment process is successfully accepted!</p>
+        <p>Enrollment details:</p>
+        <ul>
+            <li>First name: {{name}}</li>
+            <li>Last name: {{last_name}}</li>
+            <li>Username: {{username}}</li>
+            <li>Program: {{program}}</li>
+            <li>Campus: {{campus}}</li>
+    </main>
+    <footer>
+        <a href="{{url_for('universityenrollment.logout')}}">Logout</a>
+        <p>dev: dlimon.net</p>
+    </footer>
+</body>
+</html>
