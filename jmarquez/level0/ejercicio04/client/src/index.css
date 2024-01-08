@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+h1,
+label,
+legend {
+	@apply font-primaria text-gray-100;
+}
+p,
+li {
+	@apply font-secundaria text-gray-100;
+}
+li {
+	@apply text-3xl;
+}
+.input-text {
+	@apply bg-fleld p-2 rounded-md text-gray-100;
+}
+button {
+	@apply px-5 py-2 font-secundaria text-gray-100;
+}
