@@ -5,7 +5,7 @@
 # * 		Set a minimum and maximum amount for each currency, it can be of your choice.
 # * 		The system should ask the user if they want to perform another operation. If they choose to do so, it should restart the process; otherwise, the system should close.
 import sys
-# cambiar a ingles
+
 class menu:
 
     def __init__(self) -> None:
