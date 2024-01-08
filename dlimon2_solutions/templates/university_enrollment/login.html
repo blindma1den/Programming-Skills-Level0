@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - DevUniversity</title>
+</head>
+<body>
+    <header>
+        <h1>DevUniversity</h1>
+    </header>
+    <main>
+        {% if error %}
+            <p style="color: red;">{{error}}</p>
+        {% endif %}
+        <h2>Login</h2>
+        {% if error == 'too many login attempts' %}
+            <p style="color: red;">Contact university support.</p>
+        {% else %}
+        <form action="{{url_for('universityenrollment.login')}}" method="post">
+            <label for="university_username">Username:</label>
+            <input type="text" id="university_username" name="university_username" required><br><br>
+            <label for="university_password">Password:</label>
+            <input type="university_password" id="university_password" name="university_password" required><br><br>
+            <input type="submit" value="Login">
+        </form>
+        {% endif %}
+
+    </main>
+    <footer>
+        <p>dev: dlimon.net</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exchange - Currency Exchange</title>
+</head>
+<body>
+    <header>
+        <h1>Currency Exchange</h1>
+    </header>
+    <main>
+    {% if error %}
+        <p style="color:red;"><strong>{{ error }}</strong></p>
+    {% endif %}
+        <h2>Make conversion</h2>
+        <form id="exchange" onsubmit="return validate_form()" action="{{ url_for('currencyexchange.exchange_preview') }}" method="post">
+            <label for="origin_currency">Origin currency:</label>
+            <select id="origin_currency" name="origin_currency" onchange="update_destination_currency_list()">
+                <option value="" disabled selected>Select origin currency</option>
+                <option value="CLP">Chilean peso</option>
+                <option value="ARS">Argentine peso</option>
+                <option value="USD">US dollar</option>
+                <option value="EUR">Euro</option>
+                <option value="TRY">Turkish lire</option>
+                <option value="GBP">Great Britain pound</option>
+            </select>
+            <br />
+            <label for="destination_currency">Destination currency:</label>
+            <select id="destination_currency" name="destination_currency">
+                <option value="" disabled selected>Select destination currency</option>
+                <option value="CLP">Chilean peso</option>
+                <option value="ARS">Argentine peso</option>
+                <option value="USD">US dollar</option>
+                <option value="EUR">Euro</option>
+                <option value="TRY">Turkish lire</option>
+                <option value="GBP">Great Britain pound</option>
+            </select>
+            <br />
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" min="0" step="0.01" required>
+          
+            <button type="submit">Get exchange</button>
+          </form>
+
+          {% if exchange_history %}
+            <h3>Exchange history</h3>
+            <table style="border: 1px solid black;">
+                <thead>
+                    <tr>
+                        <th>Exchange ID</th>
+                        <th>Origin currency</th>
+                        <th>Destination currency</th>
+                        <th>Amount</th>
+                        <th>Exchange</th>
+                        <th>Fee</th>
+                        <th>Final exchange</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for exchange in exchange_history %}
+                    <tr>
+                        <td>{{ exchange.id }}</td>
+                        <td>{{ exchange.origin_currency }}</td>
+                        <td>{{ exchange.destination_currency }}</td>
+                        <td>{{ exchange.amount }}</td>
+                        <td>{{ exchange.exchange }}</td>
+                        <td>{{ exchange.fee }}</td>
+                        <td>{{ exchange.final_exchange }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% endif %}
+    </main>
+    <footer>
+        <p>by: dlimon.net</p>
+    </footer>
+
+<script>
+    function update_destination_currency_list() {
+        var origin_currency = document.getElementById("origin_currency").value;
+        var destination_currency = document.getElementById("destination_currency");
+    
+        // set all destination currency options to enabled
+        for (var i = 0; i < destination_currency.options.length; i++) {
+            destination_currency.options[i].disabled = false;
+        }
+    
+        // disable the option that is the same as the origin currency
+        for (var i = 0; i < destination_currency.options.length; i++) {
+            if (destination_currency.options[i].value === origin_currency) {
+                destination_currency.options[i].disabled = true;
+                break;
+            }
+        }
+    }
+
+    function validate_form() {
+        var origin_currency = document.getElementById("origin_currency").value;
+        var destination_currency = document.getElementById("destination_currency").value;
+    
+        if (origin_currency === destination_currency) {
+            alert("Select different currencies so you can make the exchange");
+            return false;
+        }
+    
+        if (origin_currency === "" || destination_currency === "") {
+            alert("Please select a currency");
+            return false;
+        }
+    
+        return true;
+    }
+    </script>
+</body>
+</html>
+

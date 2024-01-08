@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - Banca Dev</title>
+</head>
+<body>
+    <header>
+        <h1>Banca Dev</h1>
+    </header>
+    <main>
+        <form action="{{url_for('bankingsystem.login')}}" method="post">
+            <label for="bancadev_username">Username:</label>
+            <input type="text" id="bancadev_username" name="bancadev_username" required><br><br>
+            <label for="bancadev_password">Password:</label>
+            <input type="bancadev_password" id="bancadev_password" name="bancadev_password" required><br><br>
+            <input type="submit" value="Login">
+        </form>
+    </main>
+    <footer>
+        <p>dev: dlimon.net</p>
+    </footer>
+</body>
+</html>

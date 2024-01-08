@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select program - DevUniversity</title>
+</head>
+<body>
+    <header>
+        <h1>DevUniversity</h1>
+    </header>
+    <main>
+        <p>Logged in as {{name}} {{last_name}}</p>
+        {% if error %}
+            <p style="color: red;">{{error}}</p>
+        {% endif %}
+        <h2>Select program</h2>
+        <form action="{{ url_for('universityenrollment.campus') }}" method="post">
+            <label for="university_program">Program:</label>
+            <select id="university_program" name="university_program">
+                <option value="computer_science">Computer Science</option>
+                <option value="medicine">Medicine</option>
+                <option value="marketing">Marketing</option>
+                <option value="art">Arts</option>
+            </select><br><br>
+            <input type="submit" value="Enroll">
+    </main>
+    <footer>
+        <p>dev: dlimon.net</p>
+    </footer>
+</body>
+</html>

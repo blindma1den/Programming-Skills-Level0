@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Send package - Shipping Dev</title>
+</head>
+<body>
+    <header>
+        <h1>Shipping Dev</h1>
+    </header>
+    <main>
+        <h2>Send a package</h2>
+        
+        <div class="shipping-info">
+            <h3>Shipping Information Confirmation</h3>
+            <ul>
+                <li><strong>Shipping ID:</strong> {{ shipping_id }}</li>
+                <li><strong>Sender:</strong> {{ sender }}</li>
+                <li><strong>Receiver:</strong> {{ receiver }}</li>
+                <li><strong>Weight:</strong> {{ weight }}</li>
+                <li><strong>Total Price:</strong> {{ total_price }}</li>
+            </ul>
+        </div>
+
+        <form action="{{url_for('shippingsystem.send_confirmation')}}" method="post">
+            <input type="hidden" name="shipping_id" value="{{ shipping_id }}">
+            <input type="hidden" name="shipping_sender" value="{{ sender }}">
+            <input type="hidden" name="shipping_receiver" value="{{ receiver }}">
+            <input type="hidden" name="shipping_package_weight" value="{{ weight }}">
+            <input type="hidden" name="shipping_total_price" value="{{ total_price }}">
+            <p>Confirm shipping information?</p>
+            <input type="submit" value="Confirm">
+        </form>
+
+    </main>
+    <footer>
+        <p>dev: dlimon.net</p>
+    </footer>
+</body>
+</html>
+
