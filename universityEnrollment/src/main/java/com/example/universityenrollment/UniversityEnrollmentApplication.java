@@ -40,7 +40,7 @@ public class UniversityEnrollmentApplication {
         var programa = consola.nextLine();
         System.out.println("Campus: ");
         var campus = consola.nextLine();
-        
+
         return ProgramaController.registrarPrograma(name,apellidos,programa,campus);
 
     }

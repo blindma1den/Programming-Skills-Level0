@@ -1,18 +1,11 @@
 package cursojava.curso.controllers;
 
-import com.mysql.cj.xdevapi.JsonArray;
-import com.mysql.cj.xdevapi.JsonValue;
 import cursojava.curso.dao.BancoDao;
 import cursojava.curso.dao.UsuarioDao;
 import cursojava.curso.dto.BancoDTO;
-import cursojava.curso.models.Banco;
 import cursojava.curso.models.Usuario;
-import cursojava.curso.utils.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.lang.reflect.Array;
-import java.util.List;
 
 @RestController
 public class BancoController {
@@ -23,8 +16,6 @@ public class BancoController {
     @Autowired
     private BancoDao bancoDao;
 
-    @Autowired
-    private JWTUtil jwtUtil;
 
 
     @RequestMapping(value = "api/deposit",method = RequestMethod.POST)

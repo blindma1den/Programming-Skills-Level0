@@ -11,8 +11,6 @@ async function iniciarSesion() {
 
     let datos = {};
 
-
-
     datos.email = document.getElementById('txtEmail').value;
     datos.password = document.getElementById('txtPassword').value;
 
@@ -30,12 +28,11 @@ async function iniciarSesion() {
 
     console.log(respuesta)
     if(respuesta !== 'Fail'){
-        localStorage.token = respuesta;
         localStorage.email = datos.email;
         window.location.href = 'usuarios.html'
 
     }
-    else if((respuesta !== 'Usuario bloqueado')){
+    else if((respuesta === 'Usuario bloqueado')){
         alert('Su usuario se encuentra bloqueado.Contacte al admin')
     }
     else {
