@@ -1,0 +1,73 @@
+.finance-situation {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.incomes-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.expenses-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+button {
+  outline: none;
+  border-width: 0px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-size: inherit;
+  font-weight: 500;
+
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.1s ease-out 0s,
+    box-shadow 0.15s cubic-bezier(0.47, 0.03, 0.49, 1.38) 0s;
+  background: rgb(0, 82, 204);
+  cursor: pointer;
+  height: 32px;
+  line-height: 32px;
+  padding: 0px 12px;
+  vertical-align: middle;
+  width: auto;
+  font-size: 12px;
+  color: rgb(255, 255, 255);
+  :hover {
+    background: rgb(0, 101, 255);
+    text-decoration: inherit;
+    transition-duration: 0s, 0.15s;
+    color: rgb(255, 255, 255);
+  }
+}
+
+input,
+select {
+  color: rgb(36, 35, 42);
+  font-size: 14px;
+  line-height: 15px;
+
+  min-height: 12px;
+  border-radius: 4px;
+  padding: 8px 16px;
+  border: 2px solid transparent;
+  box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px;
+  background: rgb(251, 251, 251);
+  transition: all 0.1s ease 0s;
+  :focus {
+    border: 2px solid rgb(124, 138, 255);
+  }
+}
+label {
+  font-size: 16px;
+  line-height: 20px;
+  color: rgb(36, 35, 42);
+  display: block;
+  margin-bottom: 4px;
+  margin-top: 4px;
+}

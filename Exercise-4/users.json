@@ -1,0 +1,38 @@
+[
+    {
+        "id": "001",
+        "username": "leniador",
+        "password": "123",
+        "fullName": ""
+    },
+    {
+        "id": "002",
+        "username": "daniela",
+        "password": "321",
+        "fullName": ""
+    },
+    {
+        "id": "003",
+        "username": "lucas",
+        "password": "123",
+        "fullName": ""
+    },
+    {
+        "id": "004",
+        "username": "sacul",
+        "password": "321",
+        "fullName": ""
+    },
+    {
+        "id": "005",
+        "username": "bl1nd",
+        "password": "123",
+        "fullName": ""
+    },
+    {
+        "id": "006",
+        "username": "noPlace",
+        "password": "321",
+        "fullName": ""
+    }
+]

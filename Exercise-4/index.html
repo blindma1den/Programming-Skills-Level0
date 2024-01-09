@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 4 | Shipping System</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./app.js"></script>
+  </head>
+  <body>
+    <section class="form-container">
+      <form class="form">
+        <h2>LOGIN FORM</h2>
+        <input type="text" id="username" placeholder="Enter your username" />
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter your password"
+        />
+        <input type="submit" id="login-button" value="Login" />
+      </form>
+    </section>
+
+    <!-- SHIPPING SECTION -->
+    <section id="shipping-section" class="shipping-form-section">
+      <h1>Shipping System</h1>
+      <form class="form">
+        <h2>Sender Data</h2>
+        <div class="form-control">
+          <input
+            type="text"
+            id="senderName"
+            placeholder="Enter your Full name"
+            required
+          />
+          <input
+            type="number"
+            id="senderPhone"
+            placeholder="Enter your Phone Number"
+            required
+          />
+        </div>
+        <h2>Recipient Data</h2>
+        <div class="form-control">
+          <input
+            type="text"
+            id="recipientName"
+            placeholder="Enter recipient Full name"
+            required
+          />
+          <input
+            type="number"
+            id="recipientPhone"
+            placeholder="Enter recipient Phone Number"
+            required
+          />
+          <input
+            type="text"
+            id="recipientAddress"
+            placeholder="Enter recipient Address"
+            required
+          />
+          <input
+            type="text"
+            id="recipientCity"
+            placeholder="Enter recipient city"
+            required
+          />
+          <input
+            type="text"
+            id="recipientCountry"
+            placeholder="Enter recipient Country"
+            required
+          />
+        </div>
+        <h2>Package Data</h2>
+        <div class="form-control">
+          <input
+            type="text"
+            id="packageDescription"
+            placeholder="Package description"
+            required
+          />
+
+          <input
+            type="number"
+            id="packageWeight"
+            placeholder="Enter the weight of package in KG"
+            required
+          />
+        </div>
+        <input
+          type="button"
+          id="calculate-button"
+          class="calculate-button"
+          value="Calculate Cost"
+        />
+        <input
+          type="submit"
+          id="send-button"
+          class="send-button"
+          value="Send Order"
+        />
+        <button id="logout-button">LOGOUT</button>
+      </form>
+    </section>
+  </body>
+</html>

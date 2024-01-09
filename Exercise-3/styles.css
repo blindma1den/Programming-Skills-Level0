@@ -1,0 +1,47 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+
+  width: 50%;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+h2 {
+  text-align: center;
+}
+.enrollment-container {
+  display: none;
+  margin: 10px;
+}
+.enrollment-container input {
+  width: 40%;
+  padding: 5px;
+  margin: 5px;
+}
+.enrollment-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  background-color: cadetblue;
+  font-size: 18px;
+  margin: 20px;
+  padding: 5px;
+}
+.enrollment-button:hover {
+  background-color: aquamarine;
+}
+.enrollment-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

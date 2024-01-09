@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 1 | Online Banking System</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./app.js"></script>
+  </head>
+  <body>
+    <section class="form-container">
+      <h2>LOGIN FORM</h2>
+      <form class="form">
+        <input type="text" id="username" placeholder="Enter your username" />
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter your password"
+        />
+        <input type="submit" id="login-button" value="Login" />
+      </form>
+    </section>
+    <section class="operations-container" id="operations-container">
+      <h2>Welcome to Online Banking System</h2>
+      <h3>Ceck details in console</h3>
+      <div class="deposit">
+        <input
+          id="deposit-input"
+          type="number"
+          placeholder="Enter the amount to deposit"
+        />
+        <button class="operations-button" id="deposit-button">Deposit</button>
+      </div>
+      <div class="withdraw">
+        <input
+          id="withdraw-input"
+          type="number"
+          placeholder="Enter the amount to Withdraw"
+        />
+        <button class="operations-button" id="withdraw-button">Withdraw</button>
+      </div>
+      <div class="transfer">
+        <input
+          id="transfer-recipient-input"
+          type="number"
+          placeholder="Enter the recipient's account number"
+        />
+        <input
+          id="transfer-input"
+          type="number"
+          placeholder="Enter the amount to Transfer"
+        />
+        <button class="operations-button" id="transfer-button">Transfer</button>
+      </div>
+      <div class="balance">
+        <button class="operations-button" id="balance-button">
+          View Balance
+        </button>
+      </div>
+    </section>
+  </body>
+</html>

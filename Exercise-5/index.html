@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 5 | Finance Management App</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./app.js"></script>
+  </head>
+  <body>
+    <section class="finance-situation">
+      <div class="incomes-container">
+        <label for="">Enter your monthly incomes:</label>
+        <input
+          type="number"
+          id="incomes-input"
+          placeholder="Enter your Monthly incomes"
+        />
+        <button id="incomes-button" class="incomes">Add Incomes</button>
+      </div>
+      <div class="expenses-container">
+        <label for="">Choose your expense Category</label>
+        <select id="expenses-select">
+          <option value="Medical">Medical Expenses</option>
+          <option value="HouseHold">HouseHold Expenses</option>
+          <option value="Leisure">Leisure Expenses</option>
+          <option value="Savings">Savings Expenses</option>
+          <option value="Education">Education Expenses</option>
+        </select>
+        <input
+          id="expense-description-input"
+          type="text"
+          placeholder="Enter your expense name"
+        />
+        <input
+          id="expense-amount-input"
+          type="number"
+          placeholder="Enter your expense in $$$"
+        />
+        <button id="add-expense-button" disabled>Add Expenses</button>
+      </div>
+      <button id="finish-button" disabled>Finish</button>
+    </section>
+  </body>
+</html>
