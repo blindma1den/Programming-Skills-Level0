@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="mb-3">
+    <label for="total" class="form-label">Ingreso total</label>
+    <input type="number" class="form-control" id="total" min="5" placeholder="total">
+    <button onclick="ingresar()">Ingresar</button>
+</div>
+
+<div class="mb-3">
+    <label for="monto" class="form-label">Total a gastar</label>
+    <input type="number" class="form-control" id="monto" min="5" placeholder="monto a gastar">
+
+    <select class="form-select" id="category" aria-label="Default select example">
+        <option disabled >Seleccione la categoria del gasto</option>
+        <option value="1">Medical expenses</option>
+        <option value="2">Household expenses</option>
+        <option value="3">Leisure</option>
+        <option value="4">Savings</option>
+        <option value="5">Education</option>
+    </select>
+
+    <button onclick="gastar()">Gastar</button>
+</div>
+<br>
+<button onclick="totalGastos()">Ver total de gastos</button>
+<button onclick="gastoXCategoria()">Tabla de gastos</button>
+<button onclick="consejo()">Recomendacion financiera</button>
+<br><br>
+<p id="totalGastado"></p>
+<table class="table" hidden="hidden" id="misGastos">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Categoria</th>
+        <th scope="col">Total gastado</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row">1</th>
+        <td>Medical expenses</td>
+        <td id="gasto1" data-name="Medical expenses"></td>
+    </tr>
+    <tr>
+        <th scope="row">2</th>
+        <td>Household expenses</td>
+        <td id="gasto2" data-name="Household expenses"></td>
+    </tr>
+    <tr>
+        <th scope="row">3</th>
+        <td colspan="2">Leisure</td>
+        <td id="gasto3" data-name = 'Leisure'></td>
+    </tr>
+    <tr>
+        <th scope="row">4</th>
+        <td colspan="2">Savings</td>
+        <td id="gasto4" data-name = 'Savings'></td>
+    </tr>
+    <tr>
+        <th scope="row">5</th>
+        <td colspan="2">Education</td>
+        <td id="gasto5" data-name = 'Education'></td>
+    </tr>
+    </tbody>
+</table>
+
+<script src="jquery.js"></script>
+<script src="finance.js"></script>
+</body>
+</html>
