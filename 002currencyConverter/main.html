@@ -9,7 +9,7 @@
 <body>
     <div id="principalContainer">
         <h1>Currency Converter</h1>
-        <input id="amount" type="text" placeholder="Amount">
+        <input id="amount" type="number" min="10" max="1000" placeholder="Amount" required>
         
         <div id="initialCurrency">
             <p>Please, select your currency</p>
@@ -30,15 +30,12 @@
             <label><input type="radio" name="secondCoin" id="trySelected">TRY</label>
             <label><input type="radio" name="secondCoin" id="gbpSelected">GBP</label>
         </div>
-
+        <br>
         <div id="result">The total is: $<span id="total">0</span></div>
-
-        
-
-
+        <br>
         <div class="withdraw">
-            <button id="withdraw">Withdraw</button>
-            <button id="notWithdraw">Not Withdraw</button>
+            <button id="withdrawButton">Withdraw</button>
+            <button id="notWithdrawButton">Not Withdraw</button>
         </div>
     </div>
     <script src="script.js"></script>
