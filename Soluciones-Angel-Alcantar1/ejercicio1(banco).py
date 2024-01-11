@@ -1,6 +1,5 @@
 #Ejercicio 1
 #Angel alcántar	
-
 """
 1. Create an online banking system with the following features:
 
