@@ -1,0 +1,15 @@
+C:\Users\luis_\source\repos\Programming-Skills-Level0\UniversityEnrollment\bin\Debug\net8.0\UniversityEnrollment.exe
+C:\Users\luis_\source\repos\Programming-Skills-Level0\UniversityEnrollment\bin\Debug\net8.0\UniversityEnrollment.deps.json
+C:\Users\luis_\source\repos\Programming-Skills-Level0\UniversityEnrollment\bin\Debug\net8.0\UniversityEnrollment.runtimeconfig.json
+C:\Users\luis_\source\repos\Programming-Skills-Level0\UniversityEnrollment\bin\Debug\net8.0\UniversityEnrollment.dll
+C:\Users\luis_\source\repos\Programming-Skills-Level0\UniversityEnrollment\bin\Debug\net8.0\UniversityEnrollment.pdb
+C:\Users\luis_\source\repos\Programming-Skills-Level0\UniversityEnrollment\obj\Debug\net8.0\UniversityEnrollment.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\luis_\source\repos\Programming-Skills-Level0\UniversityEnrollment\obj\Debug\net8.0\UniversityEnrollment.AssemblyInfoInputs.cache
+C:\Users\luis_\source\repos\Programming-Skills-Level0\UniversityEnrollment\obj\Debug\net8.0\UniversityEnrollment.AssemblyInfo.cs
+C:\Users\luis_\source\repos\Programming-Skills-Level0\UniversityEnrollment\obj\Debug\net8.0\UniversityEnrollment.csproj.CoreCompileInputs.cache
+C:\Users\luis_\source\repos\Programming-Skills-Level0\UniversityEnrollment\obj\Debug\net8.0\UniversityEnrollment.sourcelink.json
+C:\Users\luis_\source\repos\Programming-Skills-Level0\UniversityEnrollment\obj\Debug\net8.0\UniversityEnrollment.dll
+C:\Users\luis_\source\repos\Programming-Skills-Level0\UniversityEnrollment\obj\Debug\net8.0\refint\UniversityEnrollment.dll
+C:\Users\luis_\source\repos\Programming-Skills-Level0\UniversityEnrollment\obj\Debug\net8.0\UniversityEnrollment.pdb
+C:\Users\luis_\source\repos\Programming-Skills-Level0\UniversityEnrollment\obj\Debug\net8.0\UniversityEnrollment.genruntimeconfig.cache
+C:\Users\luis_\source\repos\Programming-Skills-Level0\UniversityEnrollment\obj\Debug\net8.0\ref\UniversityEnrollment.dll

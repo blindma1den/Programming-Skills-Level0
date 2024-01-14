@@ -1,0 +1,15 @@
+C:\Users\luis_\source\repos\Programming-Skills-Level0\Programming-Skills-Level0\bin\Debug\net8.0\Programming-Skills-Level0.exe
+C:\Users\luis_\source\repos\Programming-Skills-Level0\Programming-Skills-Level0\bin\Debug\net8.0\Programming-Skills-Level0.deps.json
+C:\Users\luis_\source\repos\Programming-Skills-Level0\Programming-Skills-Level0\bin\Debug\net8.0\Programming-Skills-Level0.runtimeconfig.json
+C:\Users\luis_\source\repos\Programming-Skills-Level0\Programming-Skills-Level0\bin\Debug\net8.0\Programming-Skills-Level0.dll
+C:\Users\luis_\source\repos\Programming-Skills-Level0\Programming-Skills-Level0\bin\Debug\net8.0\Programming-Skills-Level0.pdb
+C:\Users\luis_\source\repos\Programming-Skills-Level0\Programming-Skills-Level0\obj\Debug\net8.0\Programming-Skills-Level0.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\luis_\source\repos\Programming-Skills-Level0\Programming-Skills-Level0\obj\Debug\net8.0\Programming-Skills-Level0.AssemblyInfoInputs.cache
+C:\Users\luis_\source\repos\Programming-Skills-Level0\Programming-Skills-Level0\obj\Debug\net8.0\Programming-Skills-Level0.AssemblyInfo.cs
+C:\Users\luis_\source\repos\Programming-Skills-Level0\Programming-Skills-Level0\obj\Debug\net8.0\Programming-Skills-Level0.csproj.CoreCompileInputs.cache
+C:\Users\luis_\source\repos\Programming-Skills-Level0\Programming-Skills-Level0\obj\Debug\net8.0\Programming-Skills-Level0.sourcelink.json
+C:\Users\luis_\source\repos\Programming-Skills-Level0\Programming-Skills-Level0\obj\Debug\net8.0\Programming-Skills-Level0.dll
+C:\Users\luis_\source\repos\Programming-Skills-Level0\Programming-Skills-Level0\obj\Debug\net8.0\refint\Programming-Skills-Level0.dll
+C:\Users\luis_\source\repos\Programming-Skills-Level0\Programming-Skills-Level0\obj\Debug\net8.0\Programming-Skills-Level0.pdb
+C:\Users\luis_\source\repos\Programming-Skills-Level0\Programming-Skills-Level0\obj\Debug\net8.0\Programming-Skills-Level0.genruntimeconfig.cache
+C:\Users\luis_\source\repos\Programming-Skills-Level0\Programming-Skills-Level0\obj\Debug\net8.0\ref\Programming-Skills-Level0.dll

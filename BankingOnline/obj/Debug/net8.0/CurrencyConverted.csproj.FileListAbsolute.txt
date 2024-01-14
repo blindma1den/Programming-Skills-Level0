@@ -1,0 +1,15 @@
+C:\Users\luis_\source\repos\Programming-Skills-Level0\BankingOnline\bin\Debug\net8.0\CurrencyConverted.exe
+C:\Users\luis_\source\repos\Programming-Skills-Level0\BankingOnline\bin\Debug\net8.0\CurrencyConverted.deps.json
+C:\Users\luis_\source\repos\Programming-Skills-Level0\BankingOnline\bin\Debug\net8.0\CurrencyConverted.runtimeconfig.json
+C:\Users\luis_\source\repos\Programming-Skills-Level0\BankingOnline\bin\Debug\net8.0\CurrencyConverted.dll
+C:\Users\luis_\source\repos\Programming-Skills-Level0\BankingOnline\bin\Debug\net8.0\CurrencyConverted.pdb
+C:\Users\luis_\source\repos\Programming-Skills-Level0\BankingOnline\obj\Debug\net8.0\CurrencyConverted.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\luis_\source\repos\Programming-Skills-Level0\BankingOnline\obj\Debug\net8.0\CurrencyConverted.AssemblyInfoInputs.cache
+C:\Users\luis_\source\repos\Programming-Skills-Level0\BankingOnline\obj\Debug\net8.0\CurrencyConverted.AssemblyInfo.cs
+C:\Users\luis_\source\repos\Programming-Skills-Level0\BankingOnline\obj\Debug\net8.0\CurrencyConverted.csproj.CoreCompileInputs.cache
+C:\Users\luis_\source\repos\Programming-Skills-Level0\BankingOnline\obj\Debug\net8.0\CurrencyConverted.sourcelink.json
+C:\Users\luis_\source\repos\Programming-Skills-Level0\BankingOnline\obj\Debug\net8.0\CurrencyConverted.dll
+C:\Users\luis_\source\repos\Programming-Skills-Level0\BankingOnline\obj\Debug\net8.0\refint\CurrencyConverted.dll
+C:\Users\luis_\source\repos\Programming-Skills-Level0\BankingOnline\obj\Debug\net8.0\CurrencyConverted.pdb
+C:\Users\luis_\source\repos\Programming-Skills-Level0\BankingOnline\obj\Debug\net8.0\CurrencyConverted.genruntimeconfig.cache
+C:\Users\luis_\source\repos\Programming-Skills-Level0\BankingOnline\obj\Debug\net8.0\ref\CurrencyConverted.dll

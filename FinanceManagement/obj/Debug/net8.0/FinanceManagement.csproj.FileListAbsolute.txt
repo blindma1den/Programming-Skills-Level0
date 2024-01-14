@@ -1,0 +1,15 @@
+C:\Users\luis_\source\repos\Programming-Skills-Level0\FinanceManagement\bin\Debug\net8.0\FinanceManagement.exe
+C:\Users\luis_\source\repos\Programming-Skills-Level0\FinanceManagement\bin\Debug\net8.0\FinanceManagement.deps.json
+C:\Users\luis_\source\repos\Programming-Skills-Level0\FinanceManagement\bin\Debug\net8.0\FinanceManagement.runtimeconfig.json
+C:\Users\luis_\source\repos\Programming-Skills-Level0\FinanceManagement\bin\Debug\net8.0\FinanceManagement.dll
+C:\Users\luis_\source\repos\Programming-Skills-Level0\FinanceManagement\bin\Debug\net8.0\FinanceManagement.pdb
+C:\Users\luis_\source\repos\Programming-Skills-Level0\FinanceManagement\obj\Debug\net8.0\FinanceManagement.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\luis_\source\repos\Programming-Skills-Level0\FinanceManagement\obj\Debug\net8.0\FinanceManagement.AssemblyInfoInputs.cache
+C:\Users\luis_\source\repos\Programming-Skills-Level0\FinanceManagement\obj\Debug\net8.0\FinanceManagement.AssemblyInfo.cs
+C:\Users\luis_\source\repos\Programming-Skills-Level0\FinanceManagement\obj\Debug\net8.0\FinanceManagement.csproj.CoreCompileInputs.cache
+C:\Users\luis_\source\repos\Programming-Skills-Level0\FinanceManagement\obj\Debug\net8.0\FinanceManagement.sourcelink.json
+C:\Users\luis_\source\repos\Programming-Skills-Level0\FinanceManagement\obj\Debug\net8.0\FinanceManagement.dll
+C:\Users\luis_\source\repos\Programming-Skills-Level0\FinanceManagement\obj\Debug\net8.0\refint\FinanceManagement.dll
+C:\Users\luis_\source\repos\Programming-Skills-Level0\FinanceManagement\obj\Debug\net8.0\FinanceManagement.pdb
+C:\Users\luis_\source\repos\Programming-Skills-Level0\FinanceManagement\obj\Debug\net8.0\FinanceManagement.genruntimeconfig.cache
+C:\Users\luis_\source\repos\Programming-Skills-Level0\FinanceManagement\obj\Debug\net8.0\ref\FinanceManagement.dll
