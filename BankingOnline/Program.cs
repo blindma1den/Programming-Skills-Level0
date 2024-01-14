@@ -1,105 +1,128 @@
-﻿#region variables
-var currencyValues = new Dictionary<string, double>()
+﻿#region Creamos usuarios de prueba
+
+User userTest1 = new User
 {
-    { "USD", 1.00},
-    { "CLP", 887.48 },
-    { "ARG", 811.74  },
-    { "EUR", 0.91  },
-    { "TRY",29.85 },
-    { "GBP", 0.79  }
+    Name = "luis",
+    Password = "1234",
+    Balance = 2000
 };
-int optionMenu = 0, optionMenuSecundary = 0, initialCurrency = 0, finalCurrency = 0;
-string pressedKeySecundaryMenu;
+User userTest2 = new User
+{
+    Name = "pedro",
+    Password = "1234",
+    Balance = 2000
+};
+List<User> ltUser = new List<User>();
+ltUser.Add(userTest1);
+ltUser.Add(userTest2);
 #endregion
-Console.WriteLine("Bienvenido al convertidor de moneda del Grupo de estudio!!!");
-while (optionMenu != 2)
+bool flagLogin = false;
+int countErrorsLogin = 0;
+string pressedKey = "";
+int optionMenu = 0;
+string userName = "";
+string password = "";
+User userLogged;
+while (!flagLogin)
 {
-    Console.WriteLine("Menu de opciones");
-    Console.WriteLine("------------------------------------------");
-    Console.WriteLine("1 - Cambiar moneda");
-    Console.WriteLine("2 - Salir del programa");
-    Console.WriteLine("------------------------------------------");
-    string pressedKey = Console.ReadLine();
-    if (int.TryParse(pressedKey, out optionMenu) == true && (optionMenu == 1 || optionMenu == 2))
+    countErrorsLogin++;
+    Console.Clear();
+    Console.WriteLine("Login Banco");
+    Console.WriteLine("Ingrese Usuario");
+    userName = Console.ReadLine();
+    Console.WriteLine("Ingrese password");
+    password = Console.ReadLine();
+    if (ltUser.Where(x => x.Name == userName && x.Password == password).Count() == 1)
     {
-        if (optionMenu == 2)
-        {
-            Console.Clear();
-            Console.WriteLine("Hasta la proxima");
-        }
-        initialCurrency = showMenuSecundary("Elija una moneda");
-        finalCurrency = showMenuSecundary("Elija la moneda que desea obtener");
 
-        int mountToChange = readMountToChange();
-        double valueConverted = resultConvert(currencyValues.ElementAt(initialCurrency - 1).Value, currencyValues.ElementAt(finalCurrency - 1).Value, mountToChange);
-        Console.WriteLine($"Felicidades tu cambio es {Math.Floor(valueConverted * 0.99)}");
-
-        //int optionfinalcurrency = readoptionfinal();
-        //if (optionfinalcurrency == 2)
-        //{
-        //    break;
-        //}
+        flagLogin = true;
     }
-    else
-    {
-        Console.WriteLine("La opcion ingresada no es valida");
-    }
-    #region Volvemos valores a 0 por si el usuario desea hacer otra operacion
-    optionMenu = 0; optionMenuSecundary = 0; initialCurrency = 0; finalCurrency = 0;
-    #endregion
+    if (countErrorsLogin == 3)
+        break;
 }
-#region Funciones
-int readOptionFinal()
-{
-    int optionFinal = 0;
-    string pressKeyOptionFinal = "";
-    Console.WriteLine("¿Desea salir del programa o desea hacer otra conversion?");
-    Console.WriteLine("1 - Realizar otra operacion");
-    Console.WriteLine("2 - Salir del programa");
-    do
-    {
-        pressKeyOptionFinal = Console.ReadLine();
-    } while (!int.TryParse(pressKeyOptionFinal, out optionFinal) && (optionFinal == 1 || optionFinal == 2));
-    return optionFinal;
-}
-int readMountToChange()
-{
-    int mountToChange = 0;
-    string pressKeyMount = "";
-    Console.WriteLine("¿Cuanto dinero quiere cambiar?");
-    while (!int.TryParse(pressKeyMount, out mountToChange) || mountToChange < 1000 || mountToChange > 5700)
-    {
-        Console.WriteLine($"---Recuerda que el minimo a cambiar es 1000 y el maximo es 5700---");
-        pressKeyMount = Console.ReadLine();
-    }
-    return mountToChange;
-}
-int showMenuSecundary(string messageMenu)
+userLogged = userLogged = ltUser.FirstOrDefault(x => x.Name == userName && x.Password == password);
+if (flagLogin)
 {
     do
     {
         Console.Clear();
-        int count = 0;
-        Console.WriteLine(messageMenu);
-        foreach (var index in currencyValues)
-        {
-            count++;
-            if (initialCurrency != count)
-                Console.WriteLine($"{count} - {index.Key}");
-        }
-        pressedKeySecundaryMenu = Console.ReadLine();
-    } while (!validateOptionMenuSecundary(pressedKeySecundaryMenu));
-    return Convert.ToInt32(pressedKeySecundaryMenu);
-}
-bool validateOptionMenuSecundary(string pressedKeySecundaryMenu)
-{
-    return int.TryParse(pressedKeySecundaryMenu, out optionMenuSecundary) == true
-            && optionMenuSecundary >= 1
-            && optionMenuSecundary <= 6;
+        Console.WriteLine("Elija alguna de las siguientes opciones");
+        Console.WriteLine("1 - Depositar");
+        Console.WriteLine("2 - Retirar");
+        Console.WriteLine("3 - Ver");
+        Console.WriteLine("4 - Transferir");
+        Console.WriteLine("5 - Salir");
+        pressedKey = Console.ReadLine();
+    } while (!int.TryParse(pressedKey, out optionMenu) || optionMenu <= 0 || optionMenu >= 6);
+    switch (optionMenu)
+    {
+        case 1:
+            DepositMoneyUser(userLogged); break;
+        case 2:
+            WithDrawMoneyUser(userLogged); break;
+        case 3:
+            ViewMoneyUser(userLogged); break;
+        case 4:
+            DepositMoneyOtherUser(userLogged); break;
+        default:
+            break;
+    }
 }
 
-double resultConvert(double initialCurrency, double currencyToConvert, double mountToConvert)
+Console.WriteLine("Adios!!");
+#region Funciones
+void DepositMoneyOtherUser(User userLogged)
 {
-    return (mountToConvert * currencyToConvert) / initialCurrency;
+    Console.Clear();
+    Console.WriteLine("Ingrese el nombre de la persona a la que enviara dinero");
+    string userNameToTransfer = Console.ReadLine();
+    User userToTransfer = ltUser.FirstOrDefault(x => x.Name == userNameToTransfer);
+    string mountToDeposit = "";
+    int mount = 0;
+    do
+    {
+        Console.WriteLine($"Usted puede enviar un maximo de ${userLogged.Balance}");
+        mountToDeposit = Console.ReadLine();
+    } while (!int.TryParse(mountToDeposit, out mount) || userLogged.Balance < mount);
+    userToTransfer.DepositMoneyUser(mount);
+    userLogged.WithDrawMoneyUser(mount);
+}
+
+void ViewMoneyUser(User userLogged)
+{
+    Console.Clear();
+    Console.WriteLine($"Usted cuenta con ${userLogged.Balance} en su balance");
+}
+
+void WithDrawMoneyUser(User userLogged)
+{
+    Console.Clear();
+    Console.WriteLine("¿Cuanto dinero retirara?");
+    string mountToDeposit = "";
+    int mount = 0;
+    do
+    {
+        if (userLogged.Balance < mount)
+        {
+            Console.WriteLine($"Usted puede retirar un maximo de ${userLogged.Balance}");
+        }
+        mountToDeposit = Console.ReadLine();
+    } while (!int.TryParse(mountToDeposit, out mount) || userLogged.Balance < mount);
+    userLogged.WithDrawMoneyUser(mount);
+}
+
+void DepositMoneyUser(User userLogged)
+{
+
+    Console.Clear();
+    Console.WriteLine("¿Cuanto dinero depositara?");
+    string mountToDeposit = "";
+    int mount = 0;
+    do
+    {
+        mountToDeposit = Console.ReadLine();
+    } while (!int.TryParse(mountToDeposit, out mount) && mount < 1);
+    userLogged.DepositMoneyUser(mount);
 }
 #endregion
+

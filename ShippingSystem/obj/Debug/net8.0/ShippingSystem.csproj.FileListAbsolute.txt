@@ -1,0 +1,5 @@
+C:\Users\luis_\source\repos\Programming-Skills-Level0\ShippingSystem\obj\Debug\net8.0\ShippingSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\luis_\source\repos\Programming-Skills-Level0\ShippingSystem\obj\Debug\net8.0\ShippingSystem.AssemblyInfoInputs.cache
+C:\Users\luis_\source\repos\Programming-Skills-Level0\ShippingSystem\obj\Debug\net8.0\ShippingSystem.AssemblyInfo.cs
+C:\Users\luis_\source\repos\Programming-Skills-Level0\ShippingSystem\obj\Debug\net8.0\ShippingSystem.csproj.CoreCompileInputs.cache
+C:\Users\luis_\source\repos\Programming-Skills-Level0\ShippingSystem\obj\Debug\net8.0\ShippingSystem.sourcelink.json

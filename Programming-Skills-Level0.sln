@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34316.72
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankingOnline", "BankingOnline\BankingOnline.csproj", "{92E3E77D-085D-40B8-B0FC-4A2718F0D473}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankingOnline", "BankingOnline\BankingOnline.csproj", "{92E3E77D-085D-40B8-B0FC-4A2718F0D473}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyConverted", "CurrencyConverted\CurrencyConverted.csproj", "{1B77C467-5E0F-44BB-A8C2-46CC4CB3B0F5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UniversityEnrollment", "UniversityEnrollment\UniversityEnrollment.csproj", "{5DF2AD9B-75A7-4CD2-A4A9-1567C81CB38A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShippingSystem", "ShippingSystem\ShippingSystem.csproj", "{46BBB3A3-BCA7-4605-ADC6-9EDF3554B50E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceManagement", "FinanceManagement\FinanceManagement.csproj", "{FBFB2B96-E301-4478-A20E-3262CFA0CC93}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{92E3E77D-085D-40B8-B0FC-4A2718F0D473}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92E3E77D-085D-40B8-B0FC-4A2718F0D473}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92E3E77D-085D-40B8-B0FC-4A2718F0D473}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B77C467-5E0F-44BB-A8C2-46CC4CB3B0F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B77C467-5E0F-44BB-A8C2-46CC4CB3B0F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B77C467-5E0F-44BB-A8C2-46CC4CB3B0F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B77C467-5E0F-44BB-A8C2-46CC4CB3B0F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DF2AD9B-75A7-4CD2-A4A9-1567C81CB38A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DF2AD9B-75A7-4CD2-A4A9-1567C81CB38A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DF2AD9B-75A7-4CD2-A4A9-1567C81CB38A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DF2AD9B-75A7-4CD2-A4A9-1567C81CB38A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46BBB3A3-BCA7-4605-ADC6-9EDF3554B50E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46BBB3A3-BCA7-4605-ADC6-9EDF3554B50E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46BBB3A3-BCA7-4605-ADC6-9EDF3554B50E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46BBB3A3-BCA7-4605-ADC6-9EDF3554B50E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBFB2B96-E301-4478-A20E-3262CFA0CC93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBFB2B96-E301-4478-A20E-3262CFA0CC93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBFB2B96-E301-4478-A20E-3262CFA0CC93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBFB2B96-E301-4478-A20E-3262CFA0CC93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
