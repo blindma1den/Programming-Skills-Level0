@@ -1,0 +1,10 @@
+{
+    "rust-analyzer.linkedProjects": [
+        ".\\Cargo.toml",
+
+    ],
+    "rust-analyzer.showUnlinkedFileNotification": true,
+    "cSpell.words": [
+        "freecurrencyapi"
+    ]
+}
