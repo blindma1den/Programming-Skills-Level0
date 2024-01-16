@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 1</title>
+    <script src="./exercise1.js"></script>
+</head>
+<body>
+    <h1>Exercise 1: Banking System</h1>   
+    <h2>Sing in:</h2> 
+    <div>
+    <form action="">
+      <label for"user">User: </label>
+      <input id="user" type="Text">  
+      
+      <label for"pass"> Password: </label>
+      <input id="pass" type="password">  
+      <button id="sesion" type="button" onclick="login()"> Log In</button>
+      <br>
+    </form>
+    </div>
+
+    <section id="bank" hidden>
+      <h2>Banking System</h2>
+      <p>Welcome to the Banking System</p>
+      <br>
+      <button id="view" type="button" onclick="view()">View</button>
+      <br>
+      <button id="deposit" type="button" onclick="deposit()">Deposit</button>
+      <br>
+      <button id="transfer" type="button" onclick="transfer()">Transfer</button>
+      <br>
+      <button id="withdraw" type="button" onclick="withdraw()">Withdraw</button>
+      <br>
+      <button id="exit" type="button" onclick="exit()">Exit</button>
+      <p><span id="console"></span></p>
+      <p><span id="p-1" hidden></span></p>
+      <div id="deposit-section" hidden>
+        <input type="text" id="deposit-input">
+        <button id="deposit-button" type="button" onclick="rdeposit()"> Deposit</button>               
+      </div>  
+      <div id="transfer-section" hidden>
+        <input type="text" id="transfer-input">
+        <button id="transfer-button" type="button" onclick="rtransfer()"> Transfer</button>               
+      </div>  
+      <div id="withdraw-section" hidden>
+        <input type="text" id="withdraw-input">
+        <button id="withdraw-button" type="button" onclick="rwithdraw()"> Whitdraw</button>               
+      </div> 
+      <p><span id="console-2"></span></p>      
+    </section>
+</body>
+</html>
