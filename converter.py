@@ -4,3 +4,31 @@
 # * 		If the user decides to withdraw the funds, the system will charge a 1% commission.
 # * 		Set a minimum and maximum amount for each currency, it can be of your choice.
 # * 		The system should ask the user if they want to perform another operation. If they choose to do so, it should restart the process; otherwise, the system should close.
+
+
+#Variables iniciales: 
+
+balance_init = 2000
+transfer_user = ''
+account = int
+
+while True:
+    print('1. CLP - Pesos Chilenos')
+    print('2. ARS - Pesos Argentinos')
+    print('3. USD - Dólares Americanos ')
+    print('4. EUR - Euros')
+    print('5. TRY - Liras Turcas')
+    print('6. GBP - Libras Esterlinas')
+
+opcion = int(input('Ingrese la divisa que tiene: '))
+
+
+
+while True:
+    print('Convertidor de divisas')
+    print('1. CLP - Pesos Chilenos')
+    print('2. ARS - Pesos Argentinos')
+    print('3. USD - Dólares Americanos ')
+    print('4. EUR - Euros')
+    print('5. TRY - Liras Turcas')
+    print('6. GBP - Libras Esterlinas')
