@@ -53,6 +53,7 @@ void base_convert()
     switch (base_currency)
     {
     case 1:
+        
         v_cop = value * CLP_RATE;
         break;
 
@@ -122,6 +123,7 @@ void exchange()
     cout << "The convertion between " << base_currency << " and " << conv_currency << " is: ";
     cout << value << endl;
 }
+
 void withdraw()
 {
     cout<<"Do you want to withdraw your founds? (Y/N): ";
