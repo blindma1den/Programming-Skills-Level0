@@ -2,9 +2,9 @@
 # University enrollment system
 
 diccUsers={"Mena":"1234", "Fidel":"ojos"}
-diccPrograms={1:["Computer Science",5, 1 ,3,1 ],2:["Medicine",5, 1 ,3,1],3:["Marketing",5, 1 ,3,1],4:["Arts",5, 1 ,3,1]}
+diccPrograms={"1":["Computer Science",0, 0 ,0,0 ],"2":["Medicine",5, 0 ,3,1],"3":["Marketing",5, 1 ,3,1],"4":["Arts",5, 1 ,3,1]}
 
-diccDatos={}
+diccDatos=dict.fromkeys(diccUsers.keys(), ["", 0, 0])
 
 def login():
     auth=0
@@ -24,22 +24,24 @@ def login():
             oportunidades = oportunidades-1
     if oportunidades==0:
         salida(0)
-    return auth==1, name
+    return name
 
 
 def salida(motivo):
     if motivo==0:
         print ("\nNo es posible loguearlo.")
         exit()
+    else:
+        if motivo==1:
+            print("Gracias ", diccDatos[nickname][0],  "\npor inscribirse en ", diccPrograms[program][0])
     return    
 
-def menuProgramas(nick):
+def menuProgramas():
     choise=None
-    while choise in [1,2,3,4]:
+    while choise not in ["1","2","3","4"]:
         print("\nProgramas posibles.")    
-        print("\n1. Computer Science\n2. Medicine \n3. Marketing \n 4. Arts")
-        choise=int(input("\nElija el programa deseado: "))
-        diccDatos[nick][1]=choise
+        print("\n1. Computer Science\n2. Medicine \n3. Marketing \n4. Arts")
+        choise=input("\nElija el programa deseado: ")
     return choise
 
 def ingresarDatos(nick):
@@ -50,18 +52,29 @@ def ingresarDatos(nick):
 def chequearVacantes(program):
     return diccPrograms.get(program)[1]>0
       
-    
-
 def menuCampus():
+    camp="0"
+    while camp not in ["2","3", "4"]:
+        print("\nIngrese el campus: \n2.London. \n3.Manchester \n4. Liverpool")
+        camp=input("\n")
+    return camp
 
-    return 
+nickname =login() # Login
 
-log, nickname =login()
-if log:
-     ingresarDatos(nickname)
-     program=menuProgramas(nickname)
-     while not chequearVacantes(program):
-        program=menuProgramas(nickname)
+ingresarDatos(nickname)
+program=menuProgramas()
+vacantes=chequearVacantes(program)
+while vacantes==0:
+    print("\nEn ese programa no quedan vacantes. Elija otra:\n")
+    program=menuProgramas()
+    vacantes=chequearVacantes(program)
+diccDatos[nickname][1]=program
+campus=menuCampus()
+while diccPrograms[program][int(campus)]==0:
+    print("En ese campus no quedan vacantes, elija otro.")
+    campus=menuCampus()
 
-else:
-    salida()
+diccPrograms[program][int(campus)]-=1
+diccDatos[nickname][2]==int(campus)
+
+salida(1)
