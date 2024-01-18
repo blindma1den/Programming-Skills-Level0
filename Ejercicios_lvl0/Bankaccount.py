@@ -87,8 +87,6 @@ def transferir(din):
 def menu(monto):
     print('Bienvenido usuario, elija una opción:')
     print('*' * 50)
-    print(f'Balance: ${monto}CLP')
-    print('*' * 50)
     print('[D] Depositar\n[R] Retirar\n[V] Ver saldo actual\n[T] Transferir dinero\n[F] Finalizar programa')
 
     try:
