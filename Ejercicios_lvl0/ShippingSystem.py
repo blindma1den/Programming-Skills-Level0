@@ -110,8 +110,7 @@ def main():
             precio_paquete(datos)
             validacion = continuar()
         else:
-            system('cls')
-            print('Se ha finalizado el programa')
+            validacion = False
     system('cls')
     print('Se ha finalizado el programa')
 
