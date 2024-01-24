@@ -10,17 +10,16 @@ import java.util.Scanner;
 public class Main {
     static int balance = 2000;
     public static void main(String[] args) {
-
-
-
-        boolean loged = false;
+        
         do{
             if(login()) System.out.println("Bienvenido");
             else break;
 
+            System.out.println(buildMenu());
 
 
-        }while (loged);
+
+        }while (true);
     }
 
     private static boolean login() {
@@ -44,6 +43,14 @@ public class Main {
         return false;
     }
 
-
+    private static String buildMenu() {
+        StringBuilder menu = new StringBuilder();
+        menu.append("1. Depositar dinero");
+        menu.append("2. Retirar dinero");
+        menu.append("3. Ver balance");
+        menu.append("4. Transferir dinero");
+        menu.append("0. Salir");
+        return menu.toString();
+    }
 }
 
