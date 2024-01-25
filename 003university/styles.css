@@ -1,0 +1,17 @@
+#form {
+    display: block;
+}
+
+#invalid {
+    display: none;
+    color: red;
+}
+
+#blocked {
+    display: none;
+    color: red;
+}
+
+#selection {
+    display: none;
+}
