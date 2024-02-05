@@ -62,6 +62,7 @@ let menu = (username) => {
             console.log("You will enroll in Computer Science"); 
             submitFullName(username)
             users[username]['Program'] = "Computer Science"
+            choiceCampus();
                 }
             else {
                 console.log("Program Unavailable")};
@@ -69,54 +70,91 @@ let menu = (username) => {
         case "2":
             if (counterMed < 2) {
                 counterMed++
-                console.log("You will enroll in Medicine");
+            console.log("You will enroll in Medicine");
+            submitFullName(username)
+            users[username]['Program'] = 'Medicine'
             }
+            else {console.log("Program unavailable")}
             break;
         case "3":
-            console.log("You will enroll in Marketing");
+            if (counterMarketing < 2) {
+                counterMarketing++
+            console.log("You will enroll in Marketing")
+            submitFullName(username)
+            users[username]['Program'] = 'Marketing'
+            } else {console.log("Program unavailable")}
             break;
         case "4":
+            if (counterArts < 2) {
+                counterArts++
             console.log("You will enroll in Arts");
+            submitFullName(username)
+            user[username]['Program'] = 'Arts'
+            } else { console.log("Program unavailable")}
             break;
         case "5":
             break
         default:
             console.log("Incorrect Option");
              }
-    console.log(counterCS)
         }
     }
 
+    
 let choiceCampus = () => {
-    let menuOptionCampus = 0;
+   
+
     let counterCampusLondon = 0;
     let counterCampusManchester = 0;
     let counterCampusLiverpool = 0;
 
-    while (menuOptionCampus =! 4) {
+    let menuOptionCampus = 0;
+
+    while (menuOptionCampus != 4) {
         console.log(`
-        BlindMaiden University
-        1.London
-        2.Manchester
-        3.Liverpool
-        4.Quit
-        `);
+    BlindMaiden University
+    1.London
+    2.Manchester
+    3.Liverpool
+    4.Quit
+    `);
 
         menuOptionCampus = prompt("Choose a campus");
         switch(menuOptionCampus) {
             case "1":
+                if (counterCampusLondon < 1) {
+                    counterCampusLondon++
+                console.log("You will study in London")
+                menuOptionCampus = 4
+                } else {
+                    console.log("No slots available in London. Choose another campus")
+                }
                 break;
             case "2":
+                if (counterCampusManchester < 3) {
+                    ++counterCampusManchester
+                    console.log("You will study in Manchester")
+                    menuOptionCampus = 4
+                } else {
+                    console.log("No slots available in Manchester. Choose another campus")
+                }
                 break;
             case "3":
+                if (counterCampusLiverpool < 1) {
+                    ++counterCampusLiverpool
+                    console.log("You will study in Liverpool")
+                    menuOptionCampus = 4
+                } else {
+                    console.log("No slots available in Liverpool. Choose another campus")
+                }
                 break;
             case "4":
                 break;
+            default:
+                console.log("Incorrect Option")
         }
     }
 }
 
 console.log(users)
 login("user1", 1234)
-
-
