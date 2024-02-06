@@ -42,8 +42,7 @@ function selection() {
 
 function check() {
     if(document.getelement("selection)")) {
-        function 
-
+        function selection 
     }
 }
 

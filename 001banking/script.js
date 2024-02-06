@@ -133,7 +133,7 @@ function transferMoney() {
         invalidAccountNumber.style.display = "block";
     }
 
-    updateViewTotalAmount()
+    updateViewTotalAmount() 
 
     document.getElementById("transferAmountInput").value = "0";
     document.getElementById("transferToAccountInput").value = "";
@@ -158,6 +158,10 @@ function showviewMenu() {
 function updateViewTotalAmount() {
     document.getElementById("viewTotalAmount").innerText = total;
 }
+
+
+
+
 
 
    
