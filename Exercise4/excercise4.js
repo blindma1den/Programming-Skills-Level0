@@ -46,7 +46,31 @@ let packageDetails = (sender, recipient) => {
     calculatePrice(inputWeight)
 }
 
+let submenu = () => {
+    let subMenu = 0
+    let menuOption = 0
 
+    while(subMenu != 2) {
+        console.log(`
+        BlindMaiden DHL
+        1.Yes
+        2.No
+        `);
+
+        subMenu = prompt("Do you want to perform another operation?")
+        switch (subMenu) {
+            case "1":
+                subMenu = 2
+                break;
+            case "2":
+                menuOption = 2
+                subMenu = 2
+                console.log("Logging out from the system");
+                break;
+        }
+    }
+    return menuOption
+}
 
 let menu = () => {
 
@@ -54,7 +78,7 @@ let menu = () => {
     
     while (menuOption != 2) {
         console.log(`
-    BlindMaiden Bank
+    BlindMaiden DHL
     1.Send a package
     2.Quit
     `);
@@ -64,14 +88,8 @@ let menu = () => {
         case "1":
             console.log("You will send a package")
             packageDetails();
-            
-            menuOption2 = prompt("Do you want to continue?");
-            if (menuOption2 == "yes") {
-                break;
-            } else {
-                menuOption = 2
-                break;
-            }
+            menuOption = submenu();
+            break;
         case "2":
             console.log("Logging out from the system");
             break;
