@@ -1,17 +1,3 @@
-'''
-The Valencia Hospital is developing an application to manage appointments. Design an algorithm for this application with the following features:
-
-It must have a login and validate the data; after the third failed attempt, it should be locked.
-The user can schedule an appointment for: General Medicine, Emergency Care, Clinical Analysis, Cardiology, Neurology, Nutrition, Physiotherapy, Traumatology, and Internal Medicine.
-There are 3 doctors for each specialty.
-The user can only book one appointment per specialist. An error message should be displayed if the user tries to choose two appointments with the same doctor or the same specialty. As a developer, you can choose the doctors' names.
-The maximum limit for appointments, in general, is 3.
-Upon selecting a specialty, it will display if the user prefers a morning or afternoon appointment and show available hours. As a developer, you can choose the hours.
-Display available specialists.
-The user can choose their preferred specialist.
-The basic process is: Login -> Choose specialty -> Choose doctor -> Choose time slot.
-'''
-
 from datetime import datetime
 import getpass
 
@@ -56,8 +42,7 @@ def register():
   while True:
     register_username = input('Enter the username you want to use: ')
     if len(register_username) < min_username_length or len(register_username) > max_username_length:
-      print('Username input should be between 8 and 12 characters')
-      register_username = input('Enter the username you want to use: ')
+      print('** Username input should be between 8 and 12 characters. **\n')
     else:
       user_info['username'] = register_username
       break
@@ -65,43 +50,28 @@ def register():
   while True:
     register_password = getpass.getpass('Enter the password you want to use: ')
     if len(register_password) < min_password_length or len(register_password) > max_password_length:
-      print('Password input should be between 10 and 14 characters')
-      register_password = getpass.getpass('Enter the password you want to use: ')
+      print('** Password input should be between 10 and 14 characters. **')
     else:
       confirm_password = getpass.getpass('Re-enter the password to confirm: ')
       if confirm_password != register_password:
-        print('Passwords are not the same')
-        confirm_password = getpass.getpass('Re-enter the password to confirm: ')
+        print('** Passwords are not the same. **')
       else:
-        print('Registration successful!')
+        print('** CONGRATULATIONS! Your account has been successfully created. **')
         user_info['password'] = register_password
-      break
+        break
 
 def validate_username():
   min_username_length = 8
   max_username_length = 12
-  attempts = 0
-  attempts_limit = 3
 
-  while attempts < attempts_limit:
+  while True:
     username_input = input('Enter your username: ')
     if len(username_input) < min_username_length or len(username_input) > max_username_length:
-      attempts += 1
-      print('Username input should be between 8 and 12 characters')
+      print('Username input should be between 8 and 12 characters.\n')
     elif username_input != user_info['username']:
-      print(f'"{username_input}" does not exist. Try again.')
-      attempts += 1
+      print(f'"{username_input}" does not exist. Try again.\n')
     else:
       break
-
-  if attempts == attempts_limit and not username_input:
-    print('You did not input your credentials. System is locked. Try again later.')
-    exit()
-  elif attempts == attempts_limit:
-    print('You did not input your credentials correctly. System is locked. Try again later.')
-    exit()
-
-  return True
 
 def validate_password():
   min_password_length = 10
@@ -113,7 +83,7 @@ def validate_password():
     password_input = getpass.getpass('Enter your password: ')
     if len(password_input) < min_password_length or len(password_input) > max_password_length:
       attempts += 1
-      print('Password input should be between 10 and 14 characters')
+      print('Password input should be between 10 and 14 characters.')
     elif password_input != user_info['password']:
       print(f'Your password is incorrect. Try again.')
       attempts += 1
@@ -128,14 +98,12 @@ def validate_password():
     print('You did not input your credentials correctly. System is locked. Try again later.')
     exit()
 
-  return True
-
 def login():
   validate_username()
   validate_password()
 
 def login_menu():
-  options = ['1. Register', '2. Login', '3. Exit']
+  options = ['1. Register', '2. Login', '0. Exit']
 
   for option in options:
     print(f'- {option}')
@@ -779,7 +747,7 @@ def main_menu():
   time = datetime.now()
   current_time = time.strftime('%H:%M')
   current_date = time.strftime('%x')
-  print(f'** WELCOME {user_info["username"]}. Date: {current_date} - Time: {current_time}')
+  print(f'** WELCOME {user_info["username"]}. Date: {current_date} - Time: {current_time} **')
 
   options = ['1. Schedule an appointment', '0. Exit']
   for option in options:
@@ -790,10 +758,10 @@ def main_menu():
     case '1':
       choose_specialty()
     case '0':
-      print('Have a nice day!')
+      print('Closing app. Have a nice day!')
       exit()
     case _:
-      print('That option does not exist. Try again.')
+      print('\n** That option does not exist. Try again. **\n')
       main_menu()
 
 def run_app():
