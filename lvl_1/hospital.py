@@ -18,6 +18,10 @@ import getpass
 user_info = {
    'username': '',
    'password': '',
+   'chosen_specialties': [],
+   'chosen_specialists': [],
+   'appointments': [],
+   'chosen_time': []
    }
 
 specialties = {
@@ -42,8 +46,6 @@ nutrition_list = specialties['nutrition']
 physiotherapy_list = specialties['physiotherapy']
 traumatology_list = specialties['traumatology']
 internal_medicine_list = specialties['internal medicine']
-
-# => login
 
 def register():
   min_username_length = 8
@@ -153,6 +155,62 @@ def login_menu():
       print('That option does not exist.')
       login_menu()
 
+def choose_time():
+  morning_shift = list(range(7, 12))
+  afternoon_shift = list(range(1, 6))
+  parts_of_the_day = ['Morning', 'Afternoon']
+
+  i = 0
+
+  print(f'Available hours in the morning:')
+  for hour in morning_shift:
+    if hour in [user_info['chosen_time']]:
+      morning_shift.remove(hour)
+    print(f'- {hour} AM')
+
+  print(f'Available hours in the afternoon:')
+  for hour in afternoon_shift:
+    if hour in [user_info['chosen_time']]:
+      afternoon_shift.remove(hour)
+    print(f'- {hour} PM')
+
+  print('\nMorning or Afternoon?')
+
+  for part in parts_of_the_day:
+    i += 1
+    print(f'{i}. {part}')
+
+  choose_part_of_the_day = input('Enter the number: ')
+
+  match choose_part_of_the_day:
+    case '1':
+      while True:
+        time_appointment = input('Enter the time you want to book your appointment: ')
+        time_appointment = int(time_appointment)
+        if time_appointment in morning_shift:
+          user_info['chosen_time'] = time_appointment
+          print(f'Your appointment is booked at {time_appointment} AM.')
+          break
+        elif time_appointment in [user_info['chosen_time']]:
+          print('That time is not available')
+        else:
+          print('Morning appointments are from 7 AM to 11 AM.')
+    case '2':
+      while True:
+        time_appointment = input('Enter the time you want to book your appointment: ')
+        time_appointment = int(time_appointment)
+        if time_appointment in afternoon_shift:
+          user_info['chosen_time'] = time_appointment
+          print(f'Your appointment is booked at {time_appointment} AM.')
+          break
+        elif time_appointment in [user_info['chosen_time']]:
+          print('That time is not available')
+        else:
+          print('Afternoon appointments are from 1 PM to 5 PM.')
+    case _:
+      print('That option does not exist.')
+      choose_time()
+
 def choose_general_medicine():
   i = 0
 
@@ -199,6 +257,8 @@ def choose_general_medicine():
     case _:
       print(f'\n** The option "{choose_specialist}" option does not exist. Try again. **\n')
 
+  choose_time()
+
   while True:
     book_again = input('Do you want to book another appointment? Y/N => ')
     book_again = book_again.upper().strip()
@@ -209,7 +269,469 @@ def choose_general_medicine():
     else:
       print('You have to enter "Y" for Yes or "N" for No')
 
-# => schedule
+def choose_emergency_care():
+  i = 0
+
+  if specialties_list[1] in user_info['chosen_specialties']:
+    print('You cannot book another appointment for Emergency Care.')
+    choose_specialty()
+
+  while i < len(specialties):
+    for specialist in specialties['emergency care']:
+      i += 1
+      print(f'{i}. {specialist}')
+    print('0. Back')
+    break
+
+  choose_specialist = input('Enter the number of the specialist: ')
+
+  match choose_specialist:
+    case'1':
+      if emergency_care_list[0] in user_info['chosen_specialists']:
+        print(f'You already booked an appointment with {emergency_care_list[0]}. Try again.\n')
+        choose_specialty()
+      else:
+        user_info['chosen_specialties'].append(specialties_list[1])
+        user_info['chosen_specialists'].append(emergency_care_list[0])
+        print(f'Your appointment is booked with {emergency_care_list[0]}')
+    case'2':
+      if emergency_care_list[1] in user_info['chosen_specialists']:
+        print(f'You already booked an appointment with {emergency_care_list[1]}. Try again.\n')
+        choose_specialty()
+      else:
+        user_info['chosen_specialties'].append(specialties_list[1])
+        user_info['chosen_specialists'].append(emergency_care_list[1])
+        print(f'Your appointment is booked with {emergency_care_list[1]}')
+    case'3':
+      if emergency_care_list[2] in user_info['chosen_specialists']:
+        print(f'You already booked an appointment with {emergency_care_list[2]}. Try again.\n')
+        choose_specialty()
+      else:
+        user_info['chosen_specialties'].append(specialties_list[1])
+        user_info['chosen_specialists'].append(emergency_care_list[2])
+        print(f'Your appointment is booked with {emergency_care_list[2]}')
+    case '0':
+      choose_specialty()
+    case _:
+      print(f'\n** The option "{choose_specialist}" option does not exist. Try again. **\n')
+
+  choose_time()
+
+  while True:
+    book_again = input('Do you want to book another appointment? Y/N => ')
+    book_again = book_again.upper().strip()
+    if book_again == 'Y':
+      choose_specialty()
+    elif book_again == 'N':
+      exit()
+    else:
+      print('You have to enter "Y" for Yes or "N" for No')
+
+def choose_clinical_analysis():
+  i = 0
+
+  if specialties_list[2] in user_info['chosen_specialties']:
+    print('You cannot book another appointment for Clinical Analysis.')
+    choose_specialty()
+
+  while i < len(specialties):
+    for specialist in specialties['clinical analysis']:
+      i += 1
+      print(f'{i}. {specialist}')
+    print('0. Back')
+    break
+
+  choose_specialist = input('Enter the number of the specialist: ')
+
+  match choose_specialist:
+    case'1':
+      if clinical_analysis_list[0] in user_info['chosen_specialists']:
+        print(f'You already booked an appointment with {clinical_analysis_list[0]}. Try again.\n')
+        choose_specialty()
+      else:
+        user_info['chosen_specialties'].append(specialties_list[2])
+        user_info['chosen_specialists'].append(clinical_analysis_list[0])
+        print(f'Your appointment is booked with {clinical_analysis_list[0]}')
+    case'2':
+      if clinical_analysis_list[1] in user_info['chosen_specialists']:
+        print(f'You already booked an appointment with {clinical_analysis_list[1]}. Try again.\n')
+        choose_specialty()
+      else:
+        user_info['chosen_specialties'].append(specialties_list[2])
+        user_info['chosen_specialists'].append(clinical_analysis_list[1])
+        print(f'Your appointment is booked with {clinical_analysis_list[1]}')
+    case'3':
+      if clinical_analysis_list[2] in user_info['chosen_specialists']:
+        print(f'You already booked an appointment with {clinical_analysis_list[2]}. Try again.\n')
+        choose_specialty()
+      else:
+        user_info['chosen_specialties'].append(specialties_list[2])
+        user_info['chosen_specialists'].append(clinical_analysis_list[2])
+        print(f'Your appointment is booked with {clinical_analysis_list[2]}')
+    case '0':
+      choose_specialty()
+    case _:
+      print(f'\n** The option "{choose_specialist}" option does not exist. Try again. **\n')
+
+  choose_time()
+
+  while True:
+    book_again = input('Do you want to book another appointment? Y/N => ')
+    book_again = book_again.upper().strip()
+    if book_again == 'Y':
+      choose_specialty()
+    elif book_again == 'N':
+      exit()
+    else:
+      print('You have to enter "Y" for Yes or "N" for No')
+
+def choose_cardiology():
+  i = 0
+
+  if specialties_list[3] in user_info['chosen_specialties']:
+    print('You cannot book another appointment for Cardiology.')
+    choose_specialty()
+
+  while i < len(specialties):
+    for specialist in specialties['cardiology']:
+      i += 1
+      print(f'{i}. {specialist}')
+    print('0. Back')
+    break
+
+  choose_specialist = input('Enter the number of the specialist: ')
+
+  match choose_specialist:
+    case'1':
+      if cardiology_list[0] in user_info['chosen_specialists']:
+        print(f'You already booked an appointment with {cardiology_list[0]}. Try again.\n')
+        choose_specialty()
+      else:
+        user_info['chosen_specialties'].append(specialties_list[3])
+        user_info['chosen_specialists'].append(cardiology_list[0])
+        print(f'Your appointment is booked with {cardiology_list[0]}')
+    case'2':
+      if cardiology_list[1] in user_info['chosen_specialists']:
+        print(f'You already booked an appointment with {cardiology_list[1]}. Try again.\n')
+        choose_specialty()
+      else:
+        user_info['chosen_specialties'].append(specialties_list[3])
+        user_info['chosen_specialists'].append(cardiology_list[1])
+        print(f'Your appointment is booked with {cardiology_list[1]}')
+    case'3':
+      if cardiology_list[2] in user_info['chosen_specialists']:
+        print(f'You already booked an appointment with {cardiology_list[2]}. Try again.\n')
+        choose_specialty()
+      else:
+        user_info['chosen_specialties'].append(specialties_list[3])
+        user_info['chosen_specialists'].append(cardiology_list[2])
+        print(f'Your appointment is booked with {cardiology_list[2]}')
+    case '0':
+      choose_specialty()
+    case _:
+      print(f'\n** The option "{choose_specialist}" option does not exist. Try again. **\n')
+
+  choose_time()
+
+  while True:
+    book_again = input('Do you want to book another appointment? Y/N => ')
+    book_again = book_again.upper().strip()
+    if book_again == 'Y':
+      choose_specialty()
+    elif book_again == 'N':
+      exit()
+    else:
+      print('You have to enter "Y" for Yes or "N" for No')
+
+def choose_neurology():
+  i = 0
+
+  if specialties_list[4] in user_info['chosen_specialties']:
+    print('You cannot book another appointment for Neurology.')
+    choose_specialty()
+
+  while i < len(specialties):
+    for specialist in specialties['neurology']:
+      i += 1
+      print(f'{i}. {specialist}')
+    print('0. Back')
+    break
+
+  choose_specialist = input('Enter the number of the specialist: ')
+
+  match choose_specialist:
+    case'1':
+      if neurology_list[0] in user_info['chosen_specialists']:
+        print(f'You already booked an appointment with {neurology_list[0]}. Try again.\n')
+        choose_specialty()
+      else:
+        user_info['chosen_specialties'].append(specialties_list[4])
+        user_info['chosen_specialists'].append(neurology_list[0])
+        print(f'Your appointment is booked with {neurology_list[0]}')
+    case'2':
+      if neurology_list[1] in user_info['chosen_specialists']:
+        print(f'You already booked an appointment with {neurology_list[1]}. Try again.\n')
+        choose_specialty()
+      else:
+        user_info['chosen_specialties'].append(specialties_list[4])
+        user_info['chosen_specialists'].append(neurology_list[1])
+        print(f'Your appointment is booked with {neurology_list[1]}')
+    case'3':
+      if neurology_list[2] in user_info['chosen_specialists']:
+        print(f'You already booked an appointment with {neurology_list[2]}. Try again.\n')
+        choose_specialty()
+      else:
+        user_info['chosen_specialties'].append(specialties_list[4])
+        user_info['chosen_specialists'].append(neurology_list[2])
+        print(f'Your appointment is booked with {neurology_list[2]}')
+    case '0':
+      choose_specialty()
+    case _:
+      print(f'\n** The option "{choose_specialist}" option does not exist. Try again. **\n')
+
+  choose_time()
+
+  while True:
+    book_again = input('Do you want to book another appointment? Y/N => ')
+    book_again = book_again.upper().strip()
+    if book_again == 'Y':
+      choose_specialty()
+    elif book_again == 'N':
+      exit()
+    else:
+      print('You have to enter "Y" for Yes or "N" for No')
+
+def choose_nutrition():
+  i = 0
+
+  if specialties_list[5] in user_info['chosen_specialties']:
+    print('You cannot book another appointment for Nutrition.')
+    choose_specialty()
+
+  while i < len(specialties):
+    for specialist in specialties['nutrition']:
+      i += 1
+      print(f'{i}. {specialist}')
+    print('0. Back')
+    break
+
+  choose_specialist = input('Enter the number of the specialist: ')
+
+  match choose_specialist:
+    case'1':
+      if nutrition_list[0] in user_info['chosen_specialists']:
+        print(f'You already booked an appointment with {nutrition_list[0]}. Try again.\n')
+        choose_specialty()
+      else:
+        user_info['chosen_specialties'].append(specialties_list[5])
+        user_info['chosen_specialists'].append(nutrition_list[0])
+        print(f'Your appointment is booked with {nutrition_list[0]}')
+    case'2':
+      if nutrition_list[1] in user_info['chosen_specialists']:
+        print(f'You already booked an appointment with {nutrition_list[1]}. Try again.\n')
+        choose_specialty()
+      else:
+        user_info['chosen_specialties'].append(specialties_list[5])
+        user_info['chosen_specialists'].append(nutrition_list[1])
+        print(f'Your appointment is booked with {nutrition_list[1]}')
+    case'3':
+      if nutrition_list[2] in user_info['chosen_specialists']:
+        print(f'You already booked an appointment with {nutrition_list[2]}. Try again.\n')
+        choose_specialty()
+      else:
+        user_info['chosen_specialties'].append(specialties_list[5])
+        user_info['chosen_specialists'].append(nutrition_list[2])
+        print(f'Your appointment is booked with {nutrition_list[2]}')
+    case '0':
+      choose_specialty()
+    case _:
+      print(f'\n** The option "{choose_specialist}" option does not exist. Try again. **\n')
+
+  choose_time()
+
+  while True:
+    book_again = input('Do you want to book another appointment? Y/N => ')
+    book_again = book_again.upper().strip()
+    if book_again == 'Y':
+      choose_specialty()
+    elif book_again == 'N':
+      exit()
+    else:
+      print('You have to enter "Y" for Yes or "N" for No')
+
+def choose_physiotherapy():
+  i = 0
+
+  if specialties_list[6] in user_info['chosen_specialties']:
+    print('You cannot book another appointment for Physiotherapy.')
+    choose_specialty()
+
+  while i < len(specialties):
+    for specialist in specialties['physiotherapy']:
+      i += 1
+      print(f'{i}. {specialist}')
+    print('0. Back')
+    break
+
+  choose_specialist = input('Enter the number of the specialist: ')
+
+  match choose_specialist:
+    case'1':
+      if physiotherapy_list[0] in user_info['chosen_specialists']:
+        print(f'You already booked an appointment with {physiotherapy_list[0]}. Try again.\n')
+        choose_specialty()
+      else:
+        user_info['chosen_specialties'].append(specialties_list[6])
+        user_info['chosen_specialists'].append(physiotherapy_list[0])
+        print(f'Your appointment is booked with {physiotherapy_list[0]}')
+    case'2':
+      if physiotherapy_list[1] in user_info['chosen_specialists']:
+        print(f'You already booked an appointment with {physiotherapy_list[1]}. Try again.\n')
+        choose_specialty()
+      else:
+        user_info['chosen_specialties'].append(specialties_list[6])
+        user_info['chosen_specialists'].append(physiotherapy_list[1])
+        print(f'Your appointment is booked with {physiotherapy_list[1]}')
+    case'3':
+      if physiotherapy_list[2] in user_info['chosen_specialists']:
+        print(f'You already booked an appointment with {physiotherapy_list[2]}. Try again.\n')
+        choose_specialty()
+      else:
+        user_info['chosen_specialties'].append(specialties_list[6])
+        user_info['chosen_specialists'].append(physiotherapy_list[2])
+        print(f'Your appointment is booked with {physiotherapy_list[2]}')
+    case '0':
+      choose_specialty()
+    case _:
+      print(f'\n** The option "{choose_specialist}" option does not exist. Try again. **\n')
+
+  choose_time()
+
+  while True:
+    book_again = input('Do you want to book another appointment? Y/N => ')
+    book_again = book_again.upper().strip()
+    if book_again == 'Y':
+      choose_specialty()
+    elif book_again == 'N':
+      exit()
+    else:
+      print('You have to enter "Y" for Yes or "N" for No')
+
+def choose_traumatology():
+  i = 0
+
+  if specialties_list[7] in user_info['chosen_specialties']:
+    print('You cannot book another appointment for Traumatology.')
+    choose_specialty()
+
+  while i < len(specialties):
+    for specialist in specialties['traumatology']:
+      i += 1
+      print(f'{i}. {specialist}')
+    print('0. Back')
+    break
+
+  choose_specialist = input('Enter the number of the specialist: ')
+
+  match choose_specialist:
+    case'1':
+      if traumatology_list[0] in user_info['chosen_specialists']:
+        print(f'You already booked an appointment with {traumatology_list[0]}. Try again.\n')
+        choose_specialty()
+      else:
+        user_info['chosen_specialties'].append(specialties_list[7])
+        user_info['chosen_specialists'].append(traumatology_list[0])
+        print(f'Your appointment is booked with {traumatology_list[0]}')
+    case'2':
+      if traumatology_list[1] in user_info['chosen_specialists']:
+        print(f'You already booked an appointment with {traumatology_list[1]}. Try again.\n')
+        choose_specialty()
+      else:
+        user_info['chosen_specialties'].append(specialties_list[7])
+        user_info['chosen_specialists'].append(traumatology_list[1])
+        print(f'Your appointment is booked with {traumatology_list[1]}')
+    case'3':
+      if traumatology_list[2] in user_info['chosen_specialists']:
+        print(f'You already booked an appointment with {traumatology_list[2]}. Try again.\n')
+        choose_specialty()
+      else:
+        user_info['chosen_specialties'].append(specialties_list[7])
+        user_info['chosen_specialists'].append(traumatology_list[2])
+        print(f'Your appointment is booked with {traumatology_list[2]}')
+    case '0':
+      choose_specialty()
+    case _:
+      print(f'\n** The option "{choose_specialist}" option does not exist. Try again. **\n')
+
+  choose_time()
+
+  while True:
+    book_again = input('Do you want to book another appointment? Y/N => ')
+    book_again = book_again.upper().strip()
+    if book_again == 'Y':
+      choose_specialty()
+    elif book_again == 'N':
+      exit()
+    else:
+      print('You have to enter "Y" for Yes or "N" for No')
+
+def choose_internal_medicine():
+  i = 0
+
+  if specialties_list[8] in user_info['chosen_specialties']:
+    print('You cannot book another appointment for Internal Medicine.')
+    choose_specialty()
+
+  while i < len(specialties):
+    for specialist in specialties['internal medicine']:
+      i += 1
+      print(f'{i}. {specialist}')
+    print('0. Back')
+    break
+
+  choose_specialist = input('Enter the number of the specialist: ')
+
+  match choose_specialist:
+    case'1':
+      if internal_medicine_list[0] in user_info['chosen_specialists']:
+        print(f'You already booked an appointment with {internal_medicine_list[0]}. Try again.\n')
+        choose_specialty()
+      else:
+        user_info['chosen_specialties'].append(specialties_list[8])
+        user_info['chosen_specialists'].append(internal_medicine_list[0])
+        print(f'Your appointment is booked with {internal_medicine_list[0]}')
+    case'2':
+      if internal_medicine_list[1] in user_info['chosen_specialists']:
+        print(f'You already booked an appointment with {internal_medicine_list[1]}. Try again.\n')
+        choose_specialty()
+      else:
+        user_info['chosen_specialties'].append(specialties_list[8])
+        user_info['chosen_specialists'].append(internal_medicine_list[1])
+        print(f'Your appointment is booked with {internal_medicine_list[1]}')
+    case'3':
+      if internal_medicine_list[2] in user_info['chosen_specialists']:
+        print(f'You already booked an appointment with {internal_medicine_list[2]}. Try again.\n')
+        choose_specialty()
+      else:
+        user_info['chosen_specialties'].append(specialties_list[8])
+        user_info['chosen_specialists'].append(internal_medicine_list[2])
+        print(f'Your appointment is booked with {internal_medicine_list[2]}')
+    case '0':
+      choose_specialty()
+    case _:
+      print(f'\n** The option "{choose_specialist}" option does not exist. Try again. **\n')
+
+  choose_time()
+
+  while True:
+    book_again = input('Do you want to book another appointment? Y/N => ')
+    book_again = book_again.upper().strip()
+    if book_again == 'Y':
+      choose_specialty()
+    elif book_again == 'N':
+      exit()
+    else:
+      print('You have to enter "Y" for Yes or "N" for No')
 
 def choose_specialty():
   i = 0
@@ -227,18 +749,31 @@ def choose_specialty():
   if len(user_info['chosen_specialties']) == booking_limit:
     print('You cannot book another appointment because you have reached the limit.')
     choose_specialty()
-  
 
   match choice:
     case '1':
       choose_general_medicine()
+    case '2':
+      choose_emergency_care()
+    case '3':
+      choose_clinical_analysis()
+    case '4':
+      choose_cardiology()
+    case '5':
+      choose_neurology()
+    case '6':
+      choose_nutrition()
+    case '7':
+      choose_physiotherapy()
+    case '8':
+      choose_traumatology()
+    case '9':
+      choose_internal_medicine()
     case '0':
       main_menu()
     case _:
       print(f'\n** The option "{choice}" option does not exist. Try again. **\n')
       choose_specialty()
-
-# => main_menu
 
 def main_menu():
   time = datetime.now()
@@ -262,7 +797,7 @@ def main_menu():
       main_menu()
 
 def run_app():
-  # login_menu()
+  login_menu()
   main_menu()
 
 run_app()
