@@ -32,6 +32,17 @@ specialties = {
   'internal medicine': ['Hugh House', 'Walter White', 'Monica Geller']
   }
 
+specialties_list = list(specialties)
+general_medicine_list = specialties['general medicine']
+emergency_care_list = specialties['emergency care']
+clinical_analysis_list = specialties['clinical analysis']
+cardiology_list = specialties['cardiology']
+neurology_list = specialties['neurology']
+nutrition_list = specialties['nutrition']
+physiotherapy_list = specialties['physiotherapy']
+traumatology_list = specialties['traumatology']
+internal_medicine_list = specialties['internal medicine']
+
 # => login
 
 def register():
@@ -142,40 +153,90 @@ def login_menu():
       print('That option does not exist.')
       login_menu()
 
+def choose_general_medicine():
+  i = 0
+
+  if specialties_list[0] in user_info['chosen_specialties']:
+    print(f'You cannot book another appointment for General Medicine.')
+    choose_specialty()
+
+  while i < len(specialties):
+    for specialist in specialties['general medicine']:
+      i += 1
+      print(f'{i}. {specialist}')
+    print('0. Back')
+    break
+
+  choose_specialist = input('Enter the number of the specialist: ')
+
+  match choose_specialist:
+    case'1':
+      if general_medicine_list[0] in user_info['chosen_specialists']:
+        print(f'You already booked an appointment with {general_medicine_list[0]}. Try again.\n')
+        choose_specialty()
+      else:
+        user_info['chosen_specialties'].append(specialties_list[0])
+        user_info['chosen_specialists'].append(general_medicine_list[0])
+        print(f'Your appointment is booked with {general_medicine_list[0]}')
+    case'2':
+      if general_medicine_list[1] in user_info['chosen_specialists']:
+        print(f'You already booked an appointment with {general_medicine_list[1]}. Try again.\n')
+        choose_specialty()
+      else:
+        user_info['chosen_specialties'].append(specialties_list[0])
+        user_info['chosen_specialists'].append(general_medicine_list[1])
+        print(f'Your appointment is booked with {general_medicine_list[1]}')
+    case'3':
+      if general_medicine_list[2] in user_info['chosen_specialists']:
+        print(f'You already booked an appointment with {general_medicine_list[2]}. Try again.\n')
+        choose_specialty()
+      else:
+        user_info['chosen_specialties'].append(specialties_list[0])
+        user_info['chosen_specialists'].append(general_medicine_list[2])
+        print(f'Your appointment is booked with {general_medicine_list[2]}')
+    case '0':
+      choose_specialty()
+    case _:
+      print(f'\n** The option "{choose_specialist}" option does not exist. Try again. **\n')
+
+  while True:
+    book_again = input('Do you want to book another appointment? Y/N => ')
+    book_again = book_again.upper().strip()
+    if book_again == 'Y':
+      choose_specialty()
+    elif book_again == 'N':
+      main_menu()
+    else:
+      print('You have to enter "Y" for Yes or "N" for No')
+
 # => schedule
 
-def schedule():
-
+def choose_specialty():
   i = 0
+  booking_limit = 3
+
   while i < len(specialties):
     for specialty in specialties:
       i += 1
       print(f'{i}. {specialty.capitalize()}')
+    print('0. Back')
     break
 
-  choose_specialty = input('Enter the specialty you want to choose: ')
+  choice = input('Enter the number of the specialty you need: ')
 
-  match choose_specialty:
+  if len(user_info['chosen_specialties']) == booking_limit:
+    print('You cannot book another appointment because you have reached the limit.')
+    choose_specialty()
+  
+
+  match choice:
     case '1':
-      print('General Medicine')
-    case '2':
-      print('Emergency care')
-    case '3':
-      print('Clinical analysis')
-    case '4':
-      print('Cardiology')
-    case '5':
-      print('Neurology')
-    case '6':
-      print('Nutrition')
-    case '7':
-      print('Physiotherapy')
-    case '8':
-      print('Traumatology')
-    case '9':
-      print('Internal Medicine')
+      choose_general_medicine()
+    case '0':
+      main_menu()
     case _:
-      print('This option does not exist. Try again.')
+      print(f'\n** The option "{choice}" option does not exist. Try again. **\n')
+      choose_specialty()
 
 # => main_menu
 
@@ -192,7 +253,7 @@ def main_menu():
   choose_option = input('Enter a number: ')
   match choose_option:
     case '1':
-      schedule()
+      choose_specialty()
     case '0':
       print('Have a nice day!')
       exit()
