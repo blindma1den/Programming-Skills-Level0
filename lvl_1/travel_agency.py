@@ -15,6 +15,7 @@ Clue: You could consider the user's budget.
 
 user_info = {
   'budget': 0,
+  'season': '',
   'interests': [],
   }
 
@@ -28,6 +29,8 @@ activities = [
   'cultural and historical activities'
   ]
 
+seasons = ['spring', 'summer', 'autumn', 'winter']
+
 countries = {
   'Andorra': 'skiing',
   'Switzerland': 'tour',
@@ -39,6 +42,15 @@ countries = {
   'Austria': 'cultural and historical activities'
   }
 
+prices = {
+  'spring': 300,
+  'summer': 400,
+  'autumn': 200,
+  'winter': 100
+  }
+
+countries_list = list(countries)
+prices_list = list(prices.values())
 spain_list = countries['Spain']
 belgium_list = countries['Belgium']
 
@@ -48,14 +60,76 @@ belgium_list = countries['Belgium']
 - Show what it is affordable to the user
 """
 
-def budget_requirement():
+def budget_requirement(ask_budget):
   min_budget = 100
   ask_budget = int(input('How much budget do you have?\n=> $'))
+  user_budget = ask_budget
+  user_info['budget'] = user_budget
 
-  if ask_budget < min_budget:
-    print('You do not have enough money to take a trip 😢')
+  if user_budget < min_budget:
+    print('😢 Your budget is too low to take a trip.')
+    exit()
   else:
-    print(f'Your budget is: ${ask_budget}')
+    print(f'Your budget is: ${user_budget}')
+
+  def request_season():
+    i = 0
+
+    print('\n** CHOOSE THE SEASON YOU WANT TO TRAVEL **\n')
+    for season in seasons:
+      i += 1
+      print(f'{i}. {season.capitalize()}')
+
+    ask_season = int(input('\nWhat season do you want to travel?\n=> '))
+    match ask_season:
+      case 1:
+        if user_budget < prices_list[0]:
+          print('\nYou cannot afford it.\n')
+          request_season()
+        else:
+          print(f'You chose "{seasons[0].capitalize()}".')
+          print(f'Available countries to travel in {seasons[0]}:')
+          print(f'{countries_list[0]} - {countries_list[1]}')
+          user_info['season'] = seasons[0]
+      case 2:
+        if user_budget < prices_list[1]:
+          print('\nYou cannot afford it.\n')
+          request_season()
+        else:
+          print(f'You chose "{seasons[1].capitalize()}".')
+          print(f'Available countries to travel in {seasons[1]}:')
+          print(f'{countries_list[4]} - {countries_list[5]}')
+          user_info['season'] = seasons[1]
+      case 3:
+        if user_budget < prices_list[2]:
+          print('\nYou cannot afford it.\n')
+          request_season()
+        else:
+          print(f'You chose "{seasons[2].capitalize()}".')
+          print(f'Available countries to travel in {seasons[2]}:')
+          print(f'{countries_list[4]} - {countries_list[5]}')
+          user_info['season'] = seasons[2]
+      case 4:
+        print(f'You chose "{seasons[3].capitalize()}".')
+        print(f'Available countries to travel in {seasons[3]}:')
+        print(f'{countries_list[6]} - {countries_list[7]}')
+        user_info['season'] = seasons[3]
+      case _:
+        print('That option does not exist.')
+        request_season()
+
+  request_season()
+
+  while True:
+    confirm_season = input('\nDo you confirm? Y/N\n=> ')
+    if confirm_season.upper() == 'Y':
+      break
+    elif confirm_season.upper() == 'N':
+      request_season()
+    else:
+      print('That option does not exist.')
+      confirm_season = input('\nDo you confirm? Y/N\n=> ')
+
 
 def ask_activities():
   i = 0
@@ -125,6 +199,7 @@ def ask_activities():
       case _:
         print('\n** That activity does not exist. **\n')
         ask_activities()
+
   except ValueError:
     print('\n** Type numbers. Not letters. **\n')
     ask_activities()
@@ -141,7 +216,7 @@ def ask_activities():
       print('That option does not exist.')
 
 def run_app():
-  # budget_requirement()
+  budget_requirement(ask_budget=int())
   ask_activities()
 
 run_app()
