@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>CurrencyConverter</title>
+</head>
+<body>
+    <div id="principalContainer">
+        <h1>Currency Converter</h1>
+        <input id="amount" type="number" min="10" max="1000" placeholder="Amount" required>
+        
+        <div id="initialCurrency">
+            <p>Please, select your currency</p>
+            <label><input type="radio" name="firstCoin" id="clpFirst">CLP</label>
+            <label><input type="radio" name="firstCoin" id="arsFirst">ARS</label>
+            <label><input type="radio" name="firstCoin" id="usdFirst">USD</label>
+            <label><input type="radio" name="firstCoin" id="eurFirst">EUR</label>
+            <label><input type="radio" name="firstCoin" id="tryFirst">TRY</label>
+            <label><input type="radio" name="firstCoin" id="gbpFirst">GBP</label>
+        </div>
+      
+        <div id="finalCurrency">
+            <p>now, please choose the currency you want to exchange to</p>
+            <label><input type="radio" name="secondCoin" id="clpSelected">CLP</label>
+            <label><input type="radio" name="secondCoin" id="arsSelected">ARS</label>
+            <label><input type="radio" name="secondCoin" id="usdSelected">USD</label>
+            <label><input type="radio" name="secondCoin" id="eurSelected">EUR</label>
+            <label><input type="radio" name="secondCoin" id="trySelected">TRY</label>
+            <label><input type="radio" name="secondCoin" id="gbpSelected">GBP</label>
+        </div>
+        <br>
+        <div id="result">The total is: $<span id="total">0</span></div>
+        <br>
+        <div class="withdraw">
+            <button id="withdrawButton">Withdraw</button>
+            <button id="notWithdrawButton">Not Withdraw</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

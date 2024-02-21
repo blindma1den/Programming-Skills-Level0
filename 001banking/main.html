@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Login Page</title>
+</head>
+<body>
+    <div id="contentContainer">
+        <div id="loginContainer">
+            <form id="loginForm">
+                <h1 id="login">Login</h1>
+                <label for="username"></label>
+                <input class="pass" type="text" id="username" placeholder="Username" required>
+
+                <label for="password"></label>
+                <input class="pass"  type="password" id="password" placeholder="Password" required>
+
+                <button id="loginButton" type="button">Login</button>
+            </form>
+        </div>
+        <p id="invalidLoginHide">Invalid username or password. Please try again."</p>
+        <p id="blockedAccountMessageHide">The account has been blocked. Please contact support."</p>
+    </div>
+    <div id="balanceContainer">
+        <div id="balance">
+            <p id="currentBalance">Current balance: </p>
+            <p id="amount">$<span id="total">2000</span></p>
+        </div>
+        <div id="buttons">
+            <button class="button" id="deposit" >Deposit</button>
+            <button class="button" id="withdraw">Withdraw</button>
+            <button class="button" id="view">View</button>
+            <button class="button" id="transfer">Transfer</button>
+        </div>
+        <div id="depositContainer">
+            <label id="depositAmountLable" for="depositAmount">How much do you want to deposit:
+                <input name="depositAmount" id="depositAmountInput" type="text" placeholder="0">
+                <button id="send">Send</button>
+            </label>
+        </div>
+        <div id="withdrawContainer">
+
+            <label id="withdrawAmountLable" for="withdrawAmount">How much do you want to withdraw:
+                <input name="withdrawAmount" id="withdrawAmountInput" type="text" placeholder="0">
+                <button id="withdrawSendButton">Send</button>
+            </label>
+        </div>
+        <div id="viewContainer">
+            <p id="viewTotal">Right now you have: $<span id="viewTotalAmount"></span></p>
+        </div>
+        <div id="transferContainer">
+            <label id="transferAmountLable" for="transferAmount">How much do you want to transfer:
+                <input name="transferAmount" id="transferAmountInput" type="text" placeholder="0">
+                <label id="transferToAccountLable" for="transferToAccountLable">Transfer to account:
+                    <input name="transferToAccountInput" id="transferToAccountInput" type="text" placeholder="Account number"> 
+                <button id="transferSendButton">Send</button>
+                <p id="invalidAccountNumber">Invalid account number, please provide a valid one</p>
+            </label>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
