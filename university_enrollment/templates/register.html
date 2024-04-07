@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %} Register {% endblock %}
+
+{% block content %}
+<h1>Register</h1>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="mb-3">
+        {{ form.username.label(class="form-label") }}
+        {{ form.username(class="form-control") }}
+    </div>
+    <div class="mb-3">
+        {{ form.password.label(class="form-label") }}
+        {{ form.password(class="form-control") }}
+    </div>
+    <div>
+        {{ form.first_name.label(class="form-label") }}
+        {{ form.first_name(class="form-control") }}
+    </div>
+    <div>
+        {{ form.last_name.label(class="form-label") }}
+        {{ form.last_name(class="form-control") }}
+    </div>
+    <div>
+        {{ form.campus.label(class="form-label") }}
+        {{ form.campus(id="campus", class="form-control") }}
+    </div>
+    <div>
+        {{ form.program.label(class="form-label") }}
+        {{ form.program(id="program", class="form-control") }}
+    </div>
+    <div>
+        <input type="submit" value="Register" class="btn btn-primary">
+    </div>
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#campus').change(function() {
+        var campus_id = $(this).val();
+        $.getJSON('/get-programs/' + campus_id, function(data) {
+            var select = $('#program');
+            select.empty();
+            $.each(data, function(key, value) {
+                select.append('<option value="' + value[0] + '">' + value[1] + '</option>');
+            });
+        });
+    });
+});
+</script>
+{% endblock %}

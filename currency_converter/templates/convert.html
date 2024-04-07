@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Currency Converter</title>
+</head>
+<body>
+    <h1>Currency Converter</h1>
+    <form action="/convert" method="POST">
+        <input type="text" name="from_currency" placeholder="From Currency">
+        <input type="text" name="to_currency" placeholder="To Currency">
+        <input type="text" name="amount" placeholder="Amount">
+        <label for="withdraw">Withdraw funds (1% commission)</label>
+        <input type="checkbox" id="withdraw" name="withdraw">
+        <input type="submit" value="Convert">
+    </form>
+</body>
+{% if error %}
+    <p>Error: {{ error }}</p>
+{% endif %}
+<p>The converted amount is: {{ converted }}</p>
+</html>
