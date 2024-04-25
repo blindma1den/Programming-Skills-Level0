@@ -1,0 +1,58 @@
+[
+    {
+        "londres": {
+            "informatica": {
+                "cupos_programa": 5,
+                "cupos_campus": 1
+            },
+            "medicina": {
+                "cupos_programa": 5,
+                "cupos_campus": 1
+            },
+            "marketing": {
+                "cupos_programa": 5,
+                "cupos_campus": 1
+            },
+            "artes": {
+                "cupos_programa": 5,
+                "cupos_campus": 1
+            }
+        },
+        "liverpool": {
+            "informatica": {
+                "cupos_programa": 5,
+                "cupos_campus": 0
+            },
+            "medicina": {
+                "cupos_programa": 4,
+                "cupos_campus": 0
+            },
+            "marketing": {
+                "cupos_programa": 5,
+                "cupos_campus": 1
+            },
+            "artes": {
+                "cupos_programa": 5,
+                "cupos_campus": 1
+            }
+        },
+        "manchester": {
+            "informatica": {
+                "cupos_programa": 5,
+                "cupos_campus": 2
+            },
+            "medicina": {
+                "cupos_programa": 4,
+                "cupos_campus": 3
+            },
+            "marketing": {
+                "cupos_programa": 5,
+                "cupos_campus": 3
+            },
+            "artes": {
+                "cupos_programa": 5,
+                "cupos_campus": 3
+            }
+        }
+    }
+]
