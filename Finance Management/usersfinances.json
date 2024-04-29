@@ -1,0 +1,130 @@
+[
+	{
+		"balance": {
+			"amount": 500,
+			"biggestExpense": {
+				"amount": 300,
+				"from": "medical",
+				"description": "medical emergency"
+			}
+		},
+		"status": null,
+		"id": 1,
+		"monthlyIncomes": [
+			{
+				"description": "Salary",
+				"amount": 1000
+			},
+			{
+				"description": "extra hours in work",
+				"amount": 300
+			},
+			{
+				"description": "youtube chanel",
+				"amount": 100
+			}
+		],
+		"bills": {
+			"medical": [
+				{
+					"description": "Secure",
+					"amount": 100
+				},
+				{
+					"description": "medical emergency",
+					"amount": 300
+				}
+			],
+			"homespends": [
+				{
+					"description": "taxes",
+					"amount": 250
+				}
+			],
+			"leisure": [
+				{
+					"description": "Movies Plataforms",
+					"amount": 50
+				}
+			],
+			"saving": [
+				{
+					"description": "to travel",
+					"amount": 150
+				}
+			],
+			"education": [
+				{
+					"description": "University Books",
+					"amount": 50
+				}
+			]
+		}
+	},
+	{
+		"balance": {
+			"amount": 0,
+			"biggestExpense": {
+				"amount": 1000,
+				"from": "medical",
+				"description": "medical emergency"
+			}
+		},
+		"status": null,
+		"id": 2,
+		"monthlyIncomes": [
+			{
+				"description": "Nuclear plant salary",
+				"amount": 2000
+			},
+			{
+				"description": "extra hours in work",
+				"amount": 400
+			},
+			{
+				"description": "extra hours in work",
+				"amount": 200
+			}
+		],
+		"bills": {
+			"medical": [
+				{
+					"description": "Secure",
+					"amount": 300
+				},
+				{
+					"description": "medical emergency",
+					"amount": 1000
+				}
+			],
+			"homespends": [
+				{
+					"description": "taxes",
+					"amount": 300
+				},
+				{
+					"description": "food",
+					"amount": 200
+				}
+			],
+			"leisure": [
+				{
+					"description": "Movies Plataforms",
+					"amount": 200
+				}
+			],
+			"saving": [
+				{
+					"description": "to travel",
+					"amount": 200
+				}
+			],
+			"education": [
+				{
+					"description": "University",
+					"amount": 400
+				}
+			]
+		}
+	}
+]

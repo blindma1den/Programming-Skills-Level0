@@ -1,0 +1,33 @@
+[
+	{
+		"username": "gonza24",
+		"password": "123456",
+		"name": "Gonzalo",
+		"lastname": "Ismael",
+		"loginFailed": 0,
+		"status": true,
+		"id": 1,
+		"shipments": []
+	},
+	{
+		"username": "homerosimpsons",
+		"password": "andalaosa",
+		"name": "Homero",
+		"lastname": "Simpsons",
+		"loginFailed": 2,
+		"status": true,
+		"id": 2,
+		"shipments": [
+			{
+				"id": 1,
+				"status": false,
+				"destinatary": "Marge Simpsons"
+			},
+			{
+				"id": 2,
+				"status": false,
+				"destinatary": "Lisa Simpsons"
+			}
+		]
+	}
+]

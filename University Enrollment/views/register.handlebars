@@ -1,0 +1,27 @@
+<body class="bg-gray-800">
+    <div class="container mx-auto mt-8">
+        <h1 class="text-3xl text-center mb-4">Register</h1>
+        <p class="text-center mb-8">Fill the registration form</p>
+        
+        <form action="/register" class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md" id="register" method="post">
+            <div class="mb-4">
+                <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+                <input type="text" id="name" name="name" class="border border-gray-300 p-2 w-full" placeholder="Enter your name">
+            </div>
+            <div class="mb-4">
+                <label for="lastname" class="block text-gray-700 text-sm font-bold mb-2">Lastname</label>
+                <input type="text" id="lastname" name="lastname" class="border border-gray-300 p-2 w-full" placeholder="Enter your lastname">
+            </div>
+            <div class="mb-4">
+                <label for="username" class="block text-gray-700 text-sm font-bold mb-2">Username</label>
+                <input type="text" id="username" name="username" class="border border-gray-300 p-2 w-full" placeholder="Enter your username">
+            </div>
+            <div class="mb-4">
+                <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Password</label>
+                <input type="password" id="password" name="password" class="border border-gray-300 p-2 w-full" placeholder="Enter your password">
+            </div>
+            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full">Register</button>
+        </form>
+    </div>
+</body>
+<script src="/js/register.js"></script>

@@ -1,0 +1,61 @@
+<style>
+        body {
+            background: linear-gradient(to right,#009900,#0099cc)
+        }
+    </style>
+<body>
+<div class="flex justify-center items-center h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-md max-w-md w-full overflow-y-auto">
+        <h2 class="text-2xl font-bold mb-3">Register your monthly income</h2>
+        <!-- Sección de ingresos mensuales -->
+        <form id="register">
+            <div class="mb-2">
+                <label for="monthly_income" class="block mb-1">Monthly Income</label>
+                <input type="text" id="monthly_income_description" name="monthly_income_description" placeholder="Description" class="w-full px-4 py-2 border rounded-lg">
+                <input type="number" id="monthly_income" name="monthly_income" class="w-full px-4 py-2 border rounded-lg mb-1" required>
+                
+            </div>
+            <!-- Línea separadora -->
+            <hr class="my-4">
+            <!-- Sección de gastos mensuales -->
+            <h3 class="text-lg font-bold mb-2">Register your monthly expenses</h3>
+            <!-- Formulario de gastos mensuales -->
+            <div class="mb-2">
+                <label for="education" class="block mb-1">Education</label>
+                <input type="text" id="education_description" name="education_description" placeholder="Description" class="w-full px-4 py-2 border rounded-lg">
+                <input type="number" id="education" name="education" class="w-full px-4 py-2 border rounded-lg mb-1" value="0" required>
+               
+            </div>
+            <div class="mb-2">
+                <label for="entertainment" class="block mb-1">Entertainment</label>
+                <input type="text" id="entertainment_description" name="entertainment_description" placeholder="Description" class="w-full px-4 py-2 border rounded-lg">
+                <input type="number" id="entertainment" name="entertainment" class="w-full px-4 py-2 border rounded-lg mb-1" value="0" required>
+                
+            </div>
+            <div class="mb-2">
+                <label for="medical" class="block mb-1">Medical</label>
+                <input type="text" id="medical_description" name="medical_description" placeholder="Description" class="w-full px-4 py-2 border rounded-lg">
+                <input type="number" id="medical" name="medical" class="w-full px-4 py-2 border rounded-lg mb-1" value="0" required>
+                
+            </div>
+            <div class="mb-2">
+                <label for="savings" class="block mb-1">Savings</label>
+                <input type="text" id="savings_description" name="savings_description" placeholder="Description" class="w-full px-4 py-2 border rounded-lg">
+                <input type="number" id="savings" name="savings" class="w-full px-4 py-2 border rounded-lg mb-1" value="0" required>
+                
+            </div>
+            <div class="mb-2">
+                <label for="home_expenses" class="block mb-1">Home Expenses</label>
+                <input type="text" id="home_expenses_description" name="home_expenses_description" placeholder="Description" class="w-full px-4 py-2 border rounded-lg">
+                <input type="number" id="home_expenses" name="home_expenses" class="w-full px-4 py-2 border rounded-lg mb-1" value="0" required>
+                
+            </div>
+            <!-- Botón de enviar -->
+            <button type="submit" class="w-full bg-green-500 text-white px-4 py-2 rounded-lg mb-4">Submit</button>
+        </form>
+    </div>
+</div>
+
+</body>
+<script>const id="{{{user.id}}}"</script>
+<script src="/js/inicialBalance.js"></script>

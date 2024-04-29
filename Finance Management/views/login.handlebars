@@ -1,0 +1,33 @@
+
+    <style>
+        body {
+            background: linear-gradient(to right,#009900,#0099cc)
+        }
+    </style>
+<body>
+
+<div class="flex justify-center items-center h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-xl">
+        <h1 class="text-3xl mb-4">Finance Management</h1>
+        <img src="/img/magment.jpeg" alt="Cabecera" class="w-full mb-4 rounded-lg">
+        <h2 class="text-xl mb-4">Log in</h2>
+        <form id="login" method="POST">
+            <div class="mb-4">
+                <label for="username" class="block mb-2">Username</label>
+                <input type="text" id="username" name="username" class="w-full px-4 py-2 border rounded-lg">
+            </div>
+            <div class="mb-4">
+                <label for="password" class="block mb-2">Password</label>
+                <input type="password" id="password" name="password" class="w-full px-4 py-2 border rounded-lg">
+            </div>
+            <button type="submit" class="w-full bg-green-500 text-white px-4 py-2 rounded-lg mb-4">Submit</button>
+        </form>
+        <p class="mb-2">Don't have an account yet? Register</p>
+        <a href="/register" class="block w-full bg-green-500 text-white px-4 py-2 rounded-lg text-center">Register</a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/login.js"></script>
+

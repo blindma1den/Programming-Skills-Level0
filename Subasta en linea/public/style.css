@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:sans-serif;
+  }
+  .body_login{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    min-height:100vh;
+    background: linear-gradient(to right,#009900,#0099cc)
+  }
+  form{
+    display:flex;
+    flex-direction: column;
+    background: #fff;
+    text-align: center;
+    padding: 20px 25px;
+    box-shadow: 0 5px 10px rgba(71,3,6,0.7);
+  }
+  form .title{
+    color:black;
+    font-size: 35px;
+    font-weight: 800;
+    margin-bottom: 15px;
+  }
+  form label{
+    margin-bottom: 35px;
+  }
+  .fa-solid,.fa-regular,.fa-envelope{
+    font-size: 20px;
+    color:black;
+    margin-right:10px;
+  }
+  form label input ::placeholder{
+    color: rgba(37,37,37,0.5);
+  }
+  
+  .botones{
+    color:#fff;
+    border:none;
+    background: linear-gradient(to right,#009900,#0099cc);
+    padding: 10px 15;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  .img__portada{
+    background-image:url(./img/escuela.jpg);
+    height:200px;
+    width:400px;
+    background-size: cover;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+  }
+  

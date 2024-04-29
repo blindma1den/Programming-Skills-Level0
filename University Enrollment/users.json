@@ -1,0 +1,72 @@
+[
+	{
+		"username": "goosisca",
+		"password": "123456",
+		"name": "Gonzalo",
+		"lastname": "Casimiro",
+		"loginFailed": 3,
+		"status": false,
+		"inPorgram": false,
+		"program": ""
+	},
+	{
+		"username": "Goosisca",
+		"password": "123456",
+		"name": "Gonzalo",
+		"lastname": "Casimiro",
+		"loginFailed": 2,
+		"status": true,
+		"inProgram": true,
+		"program": "Marketing"
+	},
+	{
+		"username": "Scocco24",
+		"password": "riverplate",
+		"name": "Nacho",
+		"lastname": "Scocco",
+		"loginFailed": 0,
+		"status": true,
+		"program": "Medicine",
+		"inProgram": true
+	},
+	{
+		"username": "homerosimpsons",
+		"password": "andalaosa",
+		"name": "Homero",
+		"lastname": "Simpsons",
+		"loginFailed": 0,
+		"status": true,
+		"program": "",
+		"inProgram": false
+	},
+	{
+		"username": "lisasimpsons",
+		"password": "lisa",
+		"name": "lisa",
+		"lastname": "simpsons",
+		"loginFailed": 0,
+		"status": true,
+		"program": "",
+		"inProgram": false
+	},
+	{
+		"username": "bartsimpsons",
+		"password": "bart",
+		"name": "bart",
+		"lastname": "simpsons",
+		"loginFailed": 0,
+		"status": true,
+		"program": "Medicine",
+		"inProgram": true
+	},
+	{
+		"username": "gaston22",
+		"password": "gaston22",
+		"name": "Gaston",
+		"lastname": "Perez",
+		"loginFailed": 0,
+		"status": true,
+		"program": "Medicine",
+		"inProgram": true
+	}
+]

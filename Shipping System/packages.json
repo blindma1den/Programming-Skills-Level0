@@ -1,0 +1,14 @@
+[
+	{
+		"sender": "Homero Simpsons",
+		"destinatary": "Marge Simpsons",
+		"instructions": "",
+		"id": 1
+	},
+	{
+		"sender": "Homero Simpsons",
+		"destinatary": "Lisa Simpsons",
+		"instructions": "Next to flanders house",
+		"id": 2
+	}
+]

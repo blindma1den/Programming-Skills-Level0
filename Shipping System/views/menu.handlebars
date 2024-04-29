@@ -1,0 +1,49 @@
+
+<body>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">Package Shipping Menu</h2>
+
+                    <!-- Perfil -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h3 class="card-title mb-3">Profile</h3>
+                            <p id="username">{{{user.username}}}</p>
+                            <p id="name-lastname">{{{user.name}}} {{{user.lastname}}}</p>
+                            <div class="text-center mt-3">
+                                <button id="getShipments"class="btn btn-primary mr-2">Shipments</button>
+                                <button id="logOut"class="btn btn-danger">Log out</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formulario de envío -->
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title mb-3">Calculate Shipping</h3>
+                            <form action="#" method="post" id="shippingPrice">
+                                <div class="form-group">
+                                    <label for="peso">Package Weight (in kg)</label>
+                                    <input type="number" id="peso" name="peso" class="form-control">
+                                </div>
+                                <div class="text-center mt-4">
+                                    <button type="submit" class="btn btn-primary">Calculate</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script>const id="{{{user.id}}}"
+</script>
+<script src="/js/menu.js"></script>
+

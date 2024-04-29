@@ -1,0 +1,30 @@
+[
+	{
+		"username": "goosisca1",
+		"password": "goosisca123",
+		"balance": 4000,
+		"status": true,
+		"strike": 2
+	},
+	{
+		"username": "goosisca",
+		"password": "goosisca123",
+		"balance": 4000,
+		"status": true,
+		"strike": 0
+	},
+	{
+		"username": "goosisca3",
+		"password": "goosisca123",
+		"balance": 2000,
+		"status": false,
+		"strike": 3
+	},
+	{
+		"username": "momo",
+		"password": "apa",
+		"balance": 2000,
+		"status": true,
+		"strike": 0
+	}
+]

@@ -1,0 +1,26 @@
+[
+	{
+		"username": "Gonzalo",
+		"password": "123456",
+		"wallet": {
+			"USD": 1203,
+			"EUR": 1010,
+			"ARS": 2500000,
+			"CLP": 978880,
+			"TRY": 37270,
+			"GBP": 912
+		}
+	},
+	{
+		"username": "homero",
+		"password": "simpsons",
+		"wallet": {
+			"USD": 1439,
+			"EUR": 1016,
+			"ARS": 688000,
+			"CLP": 928870,
+			"TRY": 37270,
+			"GBP": 944
+		}
+	}
+]

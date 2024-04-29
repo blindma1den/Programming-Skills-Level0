@@ -1,0 +1,24 @@
+[
+	{
+		"username": "GonzaloIsmael",
+		"password": "123456",
+		"name": "Gonzalo",
+		"lastname": "Ismael",
+		"email": "ejemplo@gmail.com",
+		"loginFailed": 0,
+		"status": true,
+		"id": 1,
+		"monthlyIncome": true
+	},
+	{
+		"username": "homerosimpsons",
+		"password": "andalaosa",
+		"name": "Homero",
+		"lastname": "Simpsons",
+		"email": "homerosimpsons@gmail.com",
+		"loginFailed": 0,
+		"status": true,
+		"id": 2,
+		"monthlyIncome": true
+	}
+]

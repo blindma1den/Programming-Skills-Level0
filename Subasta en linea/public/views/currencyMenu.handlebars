@@ -1,0 +1,113 @@
+<h1>MENU DE DIVISAS</h1>
+<section class="flex justify-between p-4">
+  <div class="bg-white shadow-md rounded-lg p-6 w-1/3 mx-2">
+  <div class="flex justify-between items-center mb-4">
+    <h2 class="text-xl font-bold">Wallet</h2>
+    <span class="text-gray-500 font-bold">Balance</span>
+  </div>
+  <ul>
+    <li class="flex justify-between mb-2">
+      <span class="text-gray-700">USD</span>
+      <span class="text-3xl font-bold text-blue-500">${{{user.wallet.USD}}}</span>
+    </li>
+    <li class="flex justify-between mb-2">
+      <span class="text-gray-700">EUR</span>
+      <span class="text-3xl font-bold text-green-500">€{{{user.wallet.EUR}}}</span>
+    </li>
+    <li class="flex justify-between mb-2">
+      <span class="text-gray-700">ARS</span>
+      <span class="text-3xl font-bold text-orange-500">${{{user.wallet.ARS}}}</span>
+    </li>
+    <li class="flex justify-between mb-2">
+      <span class="text-gray-700">CLP</span>
+      <span class="text-3xl font-bold text-yellow-500">${{{user.wallet.CLP}}}</span>
+    </li>
+    <li class="flex justify-between mb-2">
+      <span class="text-gray-700">TRY</span>
+      <span class="text-3xl font-bold text-gray-500">₺{{{user.wallet.TRY}}}</span>
+    </li>
+    <li class="flex justify-between mb-2">
+      <span class="text-gray-700">GBP</span>
+      <span class="text-3xl font-bold text-red-500">£{{{user.wallet.GBP}}}</span>
+    </li>
+    <!-- Agrega más elementos de lista según sea necesario -->
+  </ul>
+</div>
+<div class="flex justify-center mt-8">
+  <form id="exchangeForm" class="w-96 p-4 border border-gray-300 rounded shadow-lg">
+    <h2 class="text-xl font-semibold mb-4">Intercambio de Divisas</h2>
+    
+    <!-- Selección de moneda a intercambiar -->
+    <div>
+      <label for="currency_from" class="block mb-2">Selecciona la moneda a intercambiar:</label>
+      <select name="currency_from" id="currency_from" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-400">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="ARS">ARS</option>
+        <option value="CLP">CLP</option>
+        <option value="TRY">TRY</option>
+        <option value="GBP">GBP</option>
+        <!-- Agrega más opciones según necesites -->
+      </select>
+    </div>
+    
+    <!-- Cantidad a intercambiar -->
+    <div class="mt-4">
+      <label for="amount" class="block mb-2">Cantidad:</label>
+      <input type="number" name="amount" id="amount" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-400" placeholder="Cantidad a intercambiar">
+    </div>
+    
+    <!-- Selección de moneda a recibir -->
+    <div class="mt-4">
+      <label for="currency_to" class="block mb-2">Selecciona la moneda a recibir:</label>
+      <select name="currency_to" id="currency_to" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-400">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="ARS">ARS</option>
+        <option value="CLP">CLP</option>
+        <option value="TRY">TRY</option>
+        <option value="GBP">GBP</option>
+        <!-- Agrega más opciones según necesites -->
+      </select>
+    </div>
+
+    <!-- Botón de enviar -->
+    <div class="mt-6">
+      <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Enviar</button>
+    </div>
+  </form>
+</div>
+<div class="bg-white shadow-md rounded-lg p-6 w-1/3 mx-2">
+  <h2 class="text-2xl font-bold mb-4">RETIRAR FONDOS</h2>
+  <form id="withdrawForm" action="#" method="POST">
+    <!-- Selección de moneda -->
+    <div class="mb-4">
+      <label for="currency" class="block text-gray-700 font-bold mb-2">Moneda:</label>
+      <select name="currency" id="currency" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-400">
+        <option value="USD">USD</option>
+        <option value="ARS">ARS</option>
+        <option value="CLP">CLP</option>
+        <option value="EUR">EUR</option>
+        <option value="TRY">TRY</option>
+        <option value="GBP">GBP</option>
+      </select>
+    </div>
+    <!-- Monto a retirar -->
+    <div class="mb-6">
+      <label for="amount" class="block text-gray-700 font-bold mb-2">Monto a retirar:</label>
+      <input type="number" name="amount" id="withdrawAmount" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-400" placeholder="Ingrese el monto">
+    </div>
+    <!-- Botón de enviar -->
+    <div class="flex items-center justify-center">
+      <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">RETIRAR</button>
+    </div>
+  </form>
+</div>
+
+</section>
+<script>
+  window.username="{{{user.username}}}"
+</script>
+<script src="../js/menu.js"></script>
+
+

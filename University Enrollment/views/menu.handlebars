@@ -1,0 +1,59 @@
+
+<body class="bg-gray-100 p-4">
+
+<div class="max-w-md mx-auto bg-white p-6 rounded-md shadow-md">
+    <form id="form" method="POST">
+        
+        <h2 class="text-2xl font-semibold mb-4 text-center">University Enrollment</h2>
+        <label for="name" class="block mb-2">First Name:</label>
+        <input type="text" id="name" name="name" class="w-full border border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 mb-4">
+
+        <label for="lastname" class="block mb-2">Last Name:</label>
+        <input type="text" id="lastname" name="lastname" class="w-full border border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 mb-4">
+
+        <div class="mb-4">
+            <p class="mb-2">You must pick a program:</p>
+            <div class="flex items-center mb-2">
+                <input type="radio" id="ComputerScience" name="program" value="Computer Science" class="mr-2">
+                <label for="ComputerScience">Computer Science</label>
+            </div>
+            <div class="flex items-center mb-2">
+                <input type="radio" id="art" name="program" value="Art" class="mr-2">
+                <label for="art">ART</label>
+            </div>
+            <div class="flex items-center mb-2">
+                <input type="radio" id="Medicine" name="program" value="Medicine" class="mr-2">
+                <label for="Medicine">Medicine</label>
+            </div>
+            <div class="flex items-center mb-2">
+                <input type="radio" id="marketing" name="program" value="Marketing" class="mr-2">
+                <label for="marketing">Marketing</label>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <p class="mb-2">Pick a campus:</p>
+            <div class="flex items-center mb-2">
+                <input type="radio" id="London" name="campus" value="London" class="mr-2">
+                <label for="London">London</label>
+            </div>
+            <div class="flex items-center mb-2">
+                <input type="radio" id="Manchester" name="campus" value="Manchester" class="mr-2">
+                <label for="Manchester">Manchester</label>
+            </div>
+            <div class="flex items-center mb-2">
+                <input type="radio" id="Liverpool" name="campus" value="Liverpool" class="mr-2">
+                <label for="Liverpool">Liverpool</label>
+            </div>
+        </div>
+
+        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
+    </form>
+</div>
+
+</body>
+<script>
+    const username="{{{user.username}}}"
+</script>
+<script src="/js/menu.js
+"></script>

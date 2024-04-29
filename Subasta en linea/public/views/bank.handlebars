@@ -1,0 +1,35 @@
+<body id="body" class="body_login">
+    <div id="contenedor">
+    <form action="/login" id="form" method="post">
+        <h2 id="titulo">Currency </h2>
+        <div class="img__portada"></div>
+        <h2 class="title">Ingresar</h2>
+        <label>
+            <i class="fa-regular fa-user"></i>
+            <input placeholder="usuario"type="text" id="username">
+        </label>
+        <label >
+            <i class="fa-solid fa-lock"></i>
+            <input placeholder="contraseña"type="password" id="password">
+        </label>
+        <button id="sendData" class="botones" type="submit">Entrar</button>
+        <p class="parrafo__login" id="parrafo_login">¿Aun no te has registrado?</p>
+        <button id="register"class="botones" type="">Registrate</button>
+    </form>
+    <form action="/createUser" id="registerForm" style="display:none" method="post">
+        <h2 id="titulo">Registrarse </h2>
+        <div class="img__portada"></div>
+        <h2 class="title" style="font-size: 1.5em;">Crea tu Usuario</h2>
+        <label>
+            <i class="fa-regular fa-user"></i>
+            <input placeholder="usuario" type="text" id="registerUsername">
+        </label>
+        <label>
+            <i class="fa-solid fa-lock"></i>
+            <input placeholder="contraseña" type="password" id="registerPassword">
+        </label>
+       <button id="enviar_registro"  value="Enviar registro" class="botones" type="submit">Enviar Registro</button>
+       </form>
+        
+</div>
+<script src="../js/login.js"></script>

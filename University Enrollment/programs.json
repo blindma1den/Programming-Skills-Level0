@@ -1,0 +1,116 @@
+[
+	{
+		"name": "Medicine",
+		"slots": 0,
+		"students": [
+			{
+				"name": "Nacho",
+				"lastname": "Scocco",
+				"campus": "Manchester",
+				"program": "Medicine"
+			},
+			{
+				"name": "Barti",
+				"lastname": "Simpsons",
+				"campus": "Manchester",
+				"program": "Medicine"
+			},
+			{
+				"name": "lisa",
+				"lastname": "simpsons",
+				"campus": "Manchester",
+				"program": "Medicine"
+			},
+			{
+				"name": "homero",
+				"lastname": "simpsons",
+				"campus": "London",
+				"program": "Medicine"
+			},
+			{
+				"name": "Gaston",
+				"lastname": "Perez",
+				"campus": "Liverpool",
+				"program": "Medicine"
+			}
+		],
+		"campus": [
+			{
+				"name": "London",
+				"slots": 0
+			},
+			{
+				"name": "Manchester",
+				"slots": 0
+			},
+			{
+				"name": "Liverpool",
+				"slots": 0
+			}
+		]
+	},
+	{
+		"name": "Computer Science",
+		"slots": 5,
+		"students": [],
+		"campus": [
+			{
+				"name": "London",
+				"slots": 1
+			},
+			{
+				"name": "Manchester",
+				"slots": 3
+			},
+			{
+				"name": "Liverpool",
+				"slots": 1
+			}
+		]
+	},
+	{
+		"name": "Art",
+		"slots": 5,
+		"students": [],
+		"campus": [
+			{
+				"name": "London",
+				"slots": 1
+			},
+			{
+				"name": "Manchester",
+				"slots": 3
+			},
+			{
+				"name": "Liverpool",
+				"slots": 1
+			}
+		]
+	},
+	{
+		"name": "Marketing",
+		"slots": 4,
+		"students": [
+			{
+				"name": "",
+				"lastname": "",
+				"campus": "Liverpool",
+				"program": "Marketing"
+			}
+		],
+		"campus": [
+			{
+				"name": "London",
+				"slots": 1
+			},
+			{
+				"name": "Manchester",
+				"slots": 3
+			},
+			{
+				"name": "Liverpool",
+				"slots": 0
+			}
+		]
+	}
+]

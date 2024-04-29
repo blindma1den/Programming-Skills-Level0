@@ -1,0 +1,223 @@
+
+<body class="bg-gray-100 font-sans">
+    <ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link" href="/">Log Out</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/register">Register</a>
+  </li>
+</ul>
+            <div class="bg-red-500 text-white rounded-lg p-6 mb-8 shadow-lg "id="div-warning">
+                <h2 class="text-lg font-semibold mb-2" id="h2-warning"></h2>
+
+                <p id="p-warning">Your account balance is dangerously low. Please take action immediately.</p>
+                <p>Your balance is : {{{finances.balance.amount}}}</p>
+            </div>
+            <div class="flex items-center mb-2 bg-red-500 text-white rounded-lg p-6 shadow-lg">
+    <h2 class="text-lg font-semibold mr-2">Your biggest expense</h2>
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M12 17h.01M20.485 13.828A10 10 0 1111.83 3.172a10 10 0 018.655 10.656z" />
+    </svg>
+    <p class="mb-4 ml-8">
+        Your biggest expense is in : {{{finances.balance.biggestExpense.from}}}<br> with an amount of {{{finances.balance.biggestExpense.amount}}} <br>description: {{{finances.balance.biggestExpense.description}}},please 
+        <a id="a-link"href="#" style="color:black">  visit our canal for saving tips</a>
+    </p>
+</div>
+
+            <section>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+
+                    <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+
+    <form id="registerIncome">
+        <h2 class="text-lg font-semibold mb-4">Register New Income</h2>
+        <div class="mb-4">
+            <label for="income_description" class="block mb-2">Description</label>
+            <input type="text" id="income_description" name="income_description" class="w-full px-4 py-2 border rounded-lg mb-2" placeholder="Enter description" required>
+        </div>
+        <div class="mb-4">
+            <label for="income_amount" class="block mb-2">Amount</label>
+            <input type="number" id="income_amount" name="income_amount" class="w-full px-4 py-2 border rounded-lg mb-2" placeholder="Enter amount" required>
+        </div>
+        <button type="submit" class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg">Submit</button>
+    </form>
+    <hr class="my-8">
+    <form id="registerExpense">
+        <h2 class="text-lg font-semibold mb-4">Register New Expense</h2>
+        <div class="mb-4">
+            <label for="expense_category" class="block mb-2">Category</label>
+            <select id="expense_category" name="expense_category" class="w-full px-4 py-2 border rounded-lg mb-2">
+                <option value="medical">Medical</option>
+                <option value="homespends">Home Spending</option>
+                <option value="leisure">Leisure</option>
+                <option value="saving">Saving</option>
+                <option value="education">Education</option>
+            </select>
+        </div>
+        <div class="mb-4">
+            <label for="expense_description" class="block mb-2">Description</label>
+            <input type="text" id="expense_description" name="expense_description" class="w-full px-4 py-2 border rounded-lg mb-2" placeholder="Enter description" required>
+        </div>
+        <div class="mb-4">
+            <label for="expense_amount" class="block mb-2">Amount</label>
+            <input type="number" id="expense_amount" name="expense_amount" class="w-full px-4 py-2 border rounded-lg mb-2" placeholder="Enter amount" required>
+        </div>
+        <button type="submit" class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg">Submit</button>
+    </form>
+</div>
+<div class="bg-white rounded-lg shadow-md p-6 mb-8">
+    <!-- gastos totales por categoría -->
+    <form id="getExpensesById">
+        <h2 class="text-lg font-semibold mb-4">Get Total Expenses by Category</h2>
+        <div class="mb-4">
+            <label for="expense_category" class="block mb-2">Category</label>
+            <select id="expense_by_category" name="expense_category" class="w-full px-4 py-2 border rounded-lg mb-2">
+                <option value="medical">Medical</option>
+                <option value="homespends">Home Spending</option>
+                <option value="leisure">Leisure</option>
+                <option value="saving">Saving</option>
+                <option value="education">Education</option>
+            </select>
+        </div>
+        <button type="submit" class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg mb-4">Get Total Expenses</button>
+    </form>
+
+    <hr class="my-46">
+    <!--ingresos totales -->
+    <h2 class="text-lg font-semibold mb-4">Total Incomes</h2>
+    <button id="totalIncomes"class="w-full bg-green-500 text-white px-4 py-2 rounded-lg mb-4">Get Total Incomes</button>
+    <hr class="my-4">
+    <h2 class="text-lg font-semibold mb-4">Total Expenses</h2>
+    <!-- gastos totales -->
+    <button id="totalExpenses"class="w-full bg-red-500 text-white px-4 py-2 rounded-lg">Get Total Expenses</button>
+</div>
+
+   <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+    <h2 class="text-lg font-semibold mb-2">Get Lists</h2>
+    <p class="mb-4">Choose your list:</p>
+    <div class="grid grid-cols-1 gap-4">
+        <!-- Botónes  -->
+        <button id="medicalButton"class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg mb-2 hover:underline-red">Medical</button>
+        <hr class="my-2">
+
+        <button id="homeSpendingButton"class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg mb-2 hover:underline-red">Home Spending</button>
+        <hr class="my-2">
+
+        <button id="educationButton"class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg mb-2 hover:underline-red">Education</button>
+        <hr class="my-2">
+
+        <button id="leisureButton"class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg mb-2 hover:underline-red">Leisure</button>
+        <hr class="my-2">
+
+        <button id="savingButton"class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg mb-2 hover:underline-red">Saving</button>
+        <hr class="my-2">
+
+        <button id="incomesButton"class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:underline-red">Incomes</button>
+    </div>
+</div>
+<div class="bg-white rounded-lg shadow-md p-6 mb-8" id="divList">
+    <h2 class="text-lg font-semibold mb-4">List Render</h2>
+    
+    <div id="medicalList" class="hidden">
+        <h3 class="text-lg font-semibold mb-2">Medical List</h3>
+        <ul>
+            {{#each bills.medical}}
+            <li>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <p>Description: {{this.description}}</p>
+                    <p>Amount: {{this.amount}}</p>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+
+    <!-- lista "Homespends" -->
+    <div id="homespendsList" class="hidden">
+        <h3 class="text-lg font-semibold mb-2">Homespends List</h3>
+        <ul>
+            {{#each bills.homespends}}
+            <li>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <p>Description: {{this.description}}</p>
+                    <p>Amount: {{this.amount}}</p>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+
+    <!-- lista "Leisure" -->
+    <div id="leisureList" class="hidden">
+        <h3 class="text-lg font-semibold mb-2">Leisure List</h3>
+        <ul>
+            {{#each bills.leisure}}
+            <li>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <p>Description: {{this.description}}</p>
+                    <p>Amount: {{this.amount}}</p>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+
+    <!-- lista "Saving" -->
+    <div id="savingList" class="hidden">
+        <h3 class="text-lg font-semibold mb-2">Saving List</h3>
+        <ul>
+            {{#each bills.saving}}
+            <li>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <p>Description: {{this.description}}</p>
+                    <p>Amount: {{this.amount}}</p>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+
+    <!-- lista "Education" -->
+    <div id="educationList" class="hidden">
+        <h3 class="text-lg font-semibold mb-2">Education List</h3>
+        <ul>
+            {{#each bills.education}}
+            <li>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <p>Description: {{this.description}}</p>
+                    <p>Amount: {{this.amount}}</p>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+    <div id="incomesList" class="block">
+        <h3 class="text-lg font-semibold mb-2">Incomes List</h3>
+        <ul>
+            {{#each incomes}}
+            <li>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <p>Description: {{this.description}}</p>
+                    <p>Amount: {{this.amount}}</p>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+
+
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+<script>
+    const biggestExpense="{{{finances.balance.biggestExpense.from}}}"
+    const id="{{{user.id}}}"
+    let balance="{{{finances.balance.amount}}}"
+    const bills="{{{bills}}}"
+</script>
+<script src="/js/menu.js"></script>
