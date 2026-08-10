@@ -1,0 +1,15 @@
+C:\Users\jordi\OneDrive\Escritorio\RetosDeProgramacion0\Programming-Skills-Level0\Ejercicios\Ejercicio2\obj\Debug\net7.0\Ejercicio2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jordi\OneDrive\Escritorio\RetosDeProgramacion0\Programming-Skills-Level0\Ejercicios\Ejercicio2\obj\Debug\net7.0\Ejercicio2.AssemblyInfoInputs.cache
+C:\Users\jordi\OneDrive\Escritorio\RetosDeProgramacion0\Programming-Skills-Level0\Ejercicios\Ejercicio2\obj\Debug\net7.0\Ejercicio2.AssemblyInfo.cs
+C:\Users\jordi\OneDrive\Escritorio\RetosDeProgramacion0\Programming-Skills-Level0\Ejercicios\Ejercicio2\obj\Debug\net7.0\Ejercicio2.csproj.CoreCompileInputs.cache
+C:\Users\jordi\OneDrive\Escritorio\RetosDeProgramacion0\Programming-Skills-Level0\Ejercicios\Ejercicio2\obj\Debug\net7.0\Ejercicio2.sourcelink.json
+C:\Users\jordi\OneDrive\Escritorio\RetosDeProgramacion0\Programming-Skills-Level0\Ejercicios\Ejercicio2\bin\Debug\net7.0\Ejercicio2.exe
+C:\Users\jordi\OneDrive\Escritorio\RetosDeProgramacion0\Programming-Skills-Level0\Ejercicios\Ejercicio2\bin\Debug\net7.0\Ejercicio2.deps.json
+C:\Users\jordi\OneDrive\Escritorio\RetosDeProgramacion0\Programming-Skills-Level0\Ejercicios\Ejercicio2\bin\Debug\net7.0\Ejercicio2.runtimeconfig.json
+C:\Users\jordi\OneDrive\Escritorio\RetosDeProgramacion0\Programming-Skills-Level0\Ejercicios\Ejercicio2\bin\Debug\net7.0\Ejercicio2.dll
+C:\Users\jordi\OneDrive\Escritorio\RetosDeProgramacion0\Programming-Skills-Level0\Ejercicios\Ejercicio2\bin\Debug\net7.0\Ejercicio2.pdb
+C:\Users\jordi\OneDrive\Escritorio\RetosDeProgramacion0\Programming-Skills-Level0\Ejercicios\Ejercicio2\obj\Debug\net7.0\Ejercicio2.dll
+C:\Users\jordi\OneDrive\Escritorio\RetosDeProgramacion0\Programming-Skills-Level0\Ejercicios\Ejercicio2\obj\Debug\net7.0\refint\Ejercicio2.dll
+C:\Users\jordi\OneDrive\Escritorio\RetosDeProgramacion0\Programming-Skills-Level0\Ejercicios\Ejercicio2\obj\Debug\net7.0\Ejercicio2.pdb
+C:\Users\jordi\OneDrive\Escritorio\RetosDeProgramacion0\Programming-Skills-Level0\Ejercicios\Ejercicio2\obj\Debug\net7.0\Ejercicio2.genruntimeconfig.cache
+C:\Users\jordi\OneDrive\Escritorio\RetosDeProgramacion0\Programming-Skills-Level0\Ejercicios\Ejercicio2\obj\Debug\net7.0\ref\Ejercicio2.dll
